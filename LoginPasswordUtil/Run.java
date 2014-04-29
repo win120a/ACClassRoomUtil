@@ -1,7 +1,7 @@
 import java.io.*;
 
 public class Run implements IWriter{
-  int decrypt(String[] ar){
+  private int decrypt(String[] ar){
     int vc = Integer.parseInt(ar[0]);
     int ask = Integer.parseInt(ar[1]);
     int final = vc + ask;
