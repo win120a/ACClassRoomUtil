@@ -20,3 +20,8 @@ A collection use in classroom.
 
 These programs is licensed with Apache License. <br>
 (You can see it at https://github.com/win120a/ACClassRoomUtil/blob/master/LICENSE)
+
+Compiling
+=========
+
+This release is wrote by
