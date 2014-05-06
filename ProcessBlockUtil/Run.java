@@ -13,3 +13,10 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 **/
+
+class LockThread implements Callable{}
+public class Run{
+  public static void main(String[] a){
+    LockThread LockObjInstance = new LockThread();
+    // Write already var. (hosts)
+    FutureTask lt_ft = new FutureTask(LockObjInstance);
