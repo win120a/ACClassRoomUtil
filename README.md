@@ -24,4 +24,7 @@ These programs is licensed with Apache License. <br>
 Compiling
 =========
 
-This release is wrote by
+This release is wrote by Java + Batch.
+
+'cd /d C:\Utils\[ToolPath]
+javac [File].java'
