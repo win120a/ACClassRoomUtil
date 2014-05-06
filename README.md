@@ -16,6 +16,7 @@
 
 ACClassRoomUtil
 ============
-This is a collection about My Programs used our classroom.
+A collection use in classroom.
 
-These programs is licensed with Apache License. (https://github.com/win120a/ACClassRoomUtil/blob/master/LICENSE)
+These programs is licensed with Apache License. 
+(You can see it at https://github.com/win120a/ACClassRoomUtil/blob/master/LICENSE)
