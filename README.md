@@ -33,8 +33,9 @@ cd /d C:\Path\to\Utils\[ToolPath]
 javac [File].java
 ```
 
-Some System tools I used
+System tools
 ========
+I used system tools to implement some functions, there is a list about this.
 ```
 taskkill, hosts (File), net
 ```
