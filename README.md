@@ -27,6 +27,8 @@ Compiling
 This release is wrote by Java + Batch.
 
 ```Batchfile
+set path=%path%;C:\Path\to\Java\bin
+Rem If you added Java to PATH, skip this.
 cd /d C:\Path\to\Utils\[ToolPath]
 javac [File].java
 ```
