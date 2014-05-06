@@ -26,7 +26,7 @@ Compiling
 
 This release is wrote by Java + Batch.
 
-```
+```Batchfile
 cd /d C:\Path\to\Utils\[ToolPath]
 javac [File].java
 ```
