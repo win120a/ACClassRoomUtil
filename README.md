@@ -17,7 +17,7 @@
 ACClassRoomUtil
 ============
 A collection use in classroom.
-
+(Windows ONLY! If need, shutdown UAC.)
 These programs is licensed with Apache License. <br>
 (You can see it at https://github.com/win120a/ACClassRoomUtil/blob/master/LICENSE)
 
@@ -31,4 +31,10 @@ set path=%path%;C:\Path\to\Java\bin
 Rem If you added Java to PATH, skip this.
 cd /d C:\Path\to\Utils\[ToolPath]
 javac [File].java
+```
+
+Some System tools I used
+========
+```
+taskkill, hosts (File), net
 ```
