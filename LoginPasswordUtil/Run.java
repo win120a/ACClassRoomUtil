@@ -36,7 +36,17 @@ public class Run implements IWriter{
           return;
     }
   }
-
+  private void writeText(String path,String text){
+    File tBatchF = new File(path);
+    FileOutputStream tBatchStream = FileOutputStream(tBatchF);
+    PrintStream tBatchPStream = new PrintStream(tBatchStream);
+    tBatchPStream.append(text);
+    tBatchPStream.flush();
+    tBatchPStream.close();
+  }
+  private void writeBR(String p){
+    writeText("\n");
+  }
   public static void main(String[] a){
     Run thisInstance = new Run();
     if(a[0] == "x" && a[1] == "x"){
@@ -57,12 +67,6 @@ public class Run implements IWriter{
     else{
       int rv = thisInstance.decrypt(a);
       if(rv >= 5 && !(rv < 0)){
-        File tBatchF = new File("C:\t.cmd");
-        FileOutputStream tBatchStream = FileOutputStream(tBatchF);
-        PrintStream tBatchPStream = new PrintStream(tBatchStream);
-        tBatchPStream.append(IWriter.baseCmd + IWriter.armv7a + rv);
-        tBatchPStream.flush();
-        tBatchPStream.close();
         Runtime.getRuntime().exec("cmd.exe " + "C:\t.cmd");
       }
     }
