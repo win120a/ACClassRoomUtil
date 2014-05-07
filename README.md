@@ -16,7 +16,7 @@
 
 ACClassRoomUtil
 ============
-A collection use in classroom.
+A collection use in classroom.<br>
 (Windows ONLY! If need, shutdown UAC.)
 These programs is licensed with Apache License. <br>
 (You can see it at https://github.com/win120a/ACClassRoomUtil/blob/master/LICENSE)
@@ -32,6 +32,10 @@ Rem If you added Java to PATH, skip this.
 cd /d C:\Path\to\Utils\[ToolPath]
 javac [File].java
 ```
+
+Running
+========
+Use `java Run` to run these tools. (Switch to path of tools first)
 
 System tools
 ========
