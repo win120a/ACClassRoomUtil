@@ -17,7 +17,7 @@
 ACClassRoomUtil
 ============
 A collection use in classroom.<br>
-(Windows ONLY! If need, shutdown UAC.)
+(Windows ONLY! If need, shutdown UAC.)<br>
 These programs is licensed with Apache License. <br>
 (You can see it at https://github.com/win120a/ACClassRoomUtil/blob/master/LICENSE)
 
@@ -35,7 +35,7 @@ javac [File].java
 
 Running
 ========
-Use `java Run` to run these tools. (Switch to path of tools first)
+Use `java Run` to run these tools. (Switch to path of tools first, some tools need to enter another name to implement some functions)
 
 System tools
 ========
