@@ -51,7 +51,13 @@ public class Run implements IWriter{
   }
   public void writeText(String path,String text){
     File tBatchF = new File(path);
-    FileOutputStream tBatchStream = new FileOutputStream(tBatchF);
+
+    FileOutputStream tBatchStream = null;
+    try{
+      tBatchStream = new FileOutputStream(tBatchF);
+    }
+    catch(FileNotFoundException){
+    }
     PrintStream tBatchPStream = new PrintStream(tBatchStream);
     tBatchPStream.append(text);
     tBatchPStream.flush();
