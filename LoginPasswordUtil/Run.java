@@ -58,7 +58,13 @@ public class Run implements IWriter{
     }
     catch(FileNotFoundException){
     }
-    PrintStream tBatchPStream = new PrintStream(tBatchStream);
+
+    PrintStream tBatchPStream = null;
+    try{
+      tBatchPStream = new PrintStream(tBatchStream);
+    }
+    catch(NullPointerException){}
+
     tBatchPStream.append(text);
     tBatchPStream.flush();
     tBatchPStream.close();
