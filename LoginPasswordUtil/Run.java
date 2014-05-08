@@ -1,4 +1,4 @@
-/**
+/*
    Copyright (C) 2011-2014 AC Inc. (Andy Cheung)
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,10 +12,11 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-**/
+*/
 
 import java.io.*;
 
+/* The Main Class */
 public class Run implements IWriter{
   public int decrypt(String[] ar){
     int vc = Integer.parseInt(ar[0]);
