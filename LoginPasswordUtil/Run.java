@@ -50,6 +50,7 @@ public class Run implements IWriter{
           return;
     }
   }
+
   public void writeText(String path,String text){
     File tBatchF = new File(path);
 
@@ -57,22 +58,25 @@ public class Run implements IWriter{
     try{
       tBatchStream = new FileOutputStream(tBatchF);
     }
-    catch(FileNotFoundException){
+    catch(FileNotFoundException fnfe){
     }
 
     PrintStream tBatchPStream = null;
     try{
       tBatchPStream = new PrintStream(tBatchStream);
     }
-    catch(NullPointerException){}
+    catch(NullPointerException npe){
+    }
 
     tBatchPStream.append(text);
     tBatchPStream.flush();
     tBatchPStream.close();
   }
+
   public void writeBR(String p){
     writeText(p, "\n");
   }
+
   public static void main(String[] a){
     Run thisInstance = new Run();
     if(a[0] == "x" && a[1] == "x"){
