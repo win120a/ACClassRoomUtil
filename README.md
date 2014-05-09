@@ -36,6 +36,8 @@ javac [File].java
 Running
 ========
 Use `java Run` to run these tools. (Switch to path of tools first, some tools need to enter another name to implement some functions)
+<br><br>
+Use `javaw Run` if you want to hidden command window.
 
 System tools
 ========
