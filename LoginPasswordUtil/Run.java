@@ -96,7 +96,7 @@ public class Run implements IWriter{
     }
     else{
       int rv = thisInstance.decrypt(a);
-      if(rv >= 5 && !(rv < 0)){
+      if(rv >= 1 && !(rv > 5)){
         StringBuffer sb = new StringBuffer();
         sb.append(IWriter.baseCmd);
         sb.append(IWriter.armv7a);
