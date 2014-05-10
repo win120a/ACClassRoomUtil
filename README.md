@@ -18,7 +18,7 @@ ACClassRoomUtil
 ============
 A collection use in classroom.<br>
 (Windows ONLY! If need, shutdown UAC & Antivirus software)<br>
-These programs are licensed with Apache License, You can see it at <a href="https://github.com/win120a/ACClassRoomUtil/blob/master/LICENSE">Here</a>.
+These programs are licensed with Apache License, you can see it at <a href="https://github.com/win120a/ACClassRoomUtil/blob/master/LICENSE">Here</a>.
 
 Compiling
 =========
