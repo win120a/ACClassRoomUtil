@@ -23,7 +23,7 @@ These programs are licensed with Apache License, you can see it at <a href="http
 Compiling
 =========
 
-This release is wrote by Java + Batch.
+These releases are wrote by Java + Batch.
 
 ```Batchfile
 set path=%path%;C:\Path\to\Java\bin
