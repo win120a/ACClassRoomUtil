@@ -43,5 +43,5 @@ System tools
 ========
 I used system tools to implement some functions, there is a list about this.
 ```
-taskkill, hosts (File), net
+taskkill, hosts (File), net, tasklist
 ```
