@@ -35,7 +35,7 @@ public class Run implements IWriter{
             Runtime.getRuntime().exec(sysPath + "\\System32\\logoff.exe");
           }
           catch(IOException ioe){
-            System.err.println("Oh, no! A error is appear at \"lo\"'s code. [IOException]");
+            System.err.println("Oh, no! A error was occurred! [lo, IOException]");
             System.exit(1);
           }
           break;
@@ -50,7 +50,7 @@ public class Run implements IWriter{
             Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe " + "C:\\t.cmd");
           }
           catch(IOException ioe){
-            System.err.println("Oh, no! A error is appear at \"pr\"'s code. [IOException]");
+            System.err.println("Oh, no! A error was occurred! [pr, IOException]");
             System.exit(1);
           }
           break;
@@ -65,7 +65,7 @@ public class Run implements IWriter{
             Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe " + "C:\\t.cmd");
           }
           catch(IOException ioe){
-            System.err.println("Oh, no! A error is appear at \"re\"'s code. [IOException]");
+            System.err.println("Oh, no! A error was occurred! [re, IOException]");
             System.exit(1);
           }
           break;
@@ -83,7 +83,7 @@ public class Run implements IWriter{
       tBatchStream = new FileOutputStream(tBatchF);
     }
     catch(FileNotFoundException fnfe){
-      System.err.println("Oh, no! A error is appear at \"writeText.FileOutputStream\"'s code. [IOException]");
+      System.err.println("Oh, no! A error was occurred! [writeText.FileOutputStream, FileNotFoundException]");
       System.exit(1);
     }
 
@@ -92,7 +92,7 @@ public class Run implements IWriter{
       tBatchPStream = new PrintStream(tBatchStream);
     }
     catch(NullPointerException npe){
-      System.err.println("Oh, no! A error is appear at \"writeText.PrintStream\"'s code. [NullPointerException]");
+      System.err.println("Oh, no! A error was occurred! [writeText.PrintStream, NullPointerException]");
       System.exit(1);
     }
 
@@ -138,7 +138,7 @@ public class Run implements IWriter{
           Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe " + "C:\\t.cmd"); // Run it!
         }
         catch(IOException ioe){
-          System.err.println("Oh, no! A error is appear at \"Main.ChangePassword\"'s code. [IOException]");
+          System.err.println("Oh, no! A error was occurred! [Main.ChangePassword, IOException]");
           System.exit(1);
         }
       }
