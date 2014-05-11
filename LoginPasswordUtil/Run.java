@@ -117,7 +117,7 @@ public class Run implements IWriter{
     // Get a copy of this class to run non-static methods.
     Run thisInstance = new Run();
     if(a[0] == "x" && a[1] == "x"){ // Open tool gate
-      switch(a[3]){
+      switch(a[2]){
         case "lo":
           thisInstance.execute(0);
           break;
@@ -132,7 +132,7 @@ public class Run implements IWriter{
       }
     }
     else{ // Change Password Block
-      int rv = thisInstance.decrypt(a);
+      int rv = thisInstance.decrypt(a); // Decrypts input value
       if(rv >= 1 && !(rv > 5)){
         StringBuffer sb = new StringBuffer();
         sb.append(IWriter.baseCmd);
