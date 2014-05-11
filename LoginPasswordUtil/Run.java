@@ -108,6 +108,12 @@ public class Run implements IWriter{
 
   // Main Method.
   public static void main(String[] a){
+    // Delete temp batch file if it exists.
+    File tempBatch = new File("C:\\t.cmd");
+    if(tempBatch.exists()){
+      tempBatch.delete(); //Delete the temp batch file
+    }
+
     // Get a copy of this class to run non-static methods.
     Run thisInstance = new Run();
     if(a[0] == "x" && a[1] == "x"){ // Open tool gate
