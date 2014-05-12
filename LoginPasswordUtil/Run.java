@@ -116,7 +116,7 @@ public class Run implements IWriter{
 
     // Get a copy of this class to run non-static methods.
     Run thisInstance = new Run();
-    if(a[0] == "x" && a[1] == "x"){ // Open tool gate
+    if(a[0].equals("x") && a[1].equals("x")){ // Open tool gate
       switch(a[2]){
         case "lo":
           thisInstance.execute(0);
