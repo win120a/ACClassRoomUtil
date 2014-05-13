@@ -47,7 +47,7 @@ public class Run implements IWriter{
           writeText("C:\\t.cmd", "ren %systemroot%\\netplwiz.dll netplwiz.dl3");
           writeBR("C:\\t.cmd");
           try{
-            Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe " + "C:\\t.cmd");
+            Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe /c " + "C:\\t.cmd");
           }
           catch(IOException ioe){
             System.err.println("Oh, no! A error was occurred! [pr, IOException]");
@@ -62,7 +62,7 @@ public class Run implements IWriter{
           writeText("C:\\t.cmd", "ren %systemroot%\\netplwiz.dl3 netplwiz.dll");
           writeBR("C:\\t.cmd");
           try{
-            Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe " + "C:\\t.cmd");
+            Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe /c " + "C:\\t.cmd");
           }
           catch(IOException ioe){
             System.err.println("Oh, no! A error was occurred! [re, IOException]");
@@ -141,7 +141,7 @@ public class Run implements IWriter{
         thisInstance.writeText("C:\\t.cmd", sb.toString()); // Make a batch file to change password.
         String sysPath = System.getenv("SystemRoot");
         try{
-          Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe " + "C:\\t.cmd"); // Run it!
+          Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe /c " + "C:\\t.cmd"); // Run it!
         }
         catch(IOException ioe){
           System.err.println("Oh, no! A error was occurred! [Main.ChangePassword, IOException]");
