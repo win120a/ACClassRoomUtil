@@ -149,5 +149,9 @@ public class Run implements IWriter{
         }
       }
     }
+    // CLEANUP!
+    if(tempBatch.exists()){
+      tempBatch.delete(); //Delete the temp batch file
+    }
   }
 }
