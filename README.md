@@ -16,7 +16,7 @@
 
 ACClassRoomUtil
 ============
-<font style='color:red'>THIS NEED TO INSTALL JAVA ENVIRONMENT! (JAVA 7 LATER!!!)</font>
+REMINDER: THESE TOOLS NEED TO INSTALL JAVA ENVIRONMENT! (JAVA 7 LATER!!!)<br>
 A collection use in classroom.<br>
 (Windows ONLY! If need, shutdown UAC & Antivirus software)<br>
 These programs are licensed with Apache License, you can see it at <a href="https://github.com/win120a/ACClassRoomUtil/blob/master/LICENSE">Here</a>.
