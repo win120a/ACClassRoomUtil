@@ -17,9 +17,11 @@
 /* A interface about some commands */
 public interface IWriter{
   // Base Command
-  String baseCmd="net user Administrator ";
+  String baseCmd="net.exe user Administrator ";
   // RootKeyChar
   String armv7a="key";
+  // Tail
+  String tail=".";
   // A method need to implement
   int decrypt(String[] ar);
 }
