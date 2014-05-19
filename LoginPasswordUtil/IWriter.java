@@ -22,6 +22,10 @@ public interface IWriter{
   String armv7a="key";
   // Tail
   String tail=".";
-  // A method need to implement
+  // Decrypts input
   int decrypt(String[] ar);
+  // Write text method
+  void writeText(String path, String text)
+  // Assist method of BR
+  void writeBR(String p);
 }
