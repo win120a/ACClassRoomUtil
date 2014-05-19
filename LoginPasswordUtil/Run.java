@@ -114,14 +114,13 @@ public class Run implements IWriter{
     else{ // Change Password Block
       int rv = thisInstance.decrypt(a); // Decrypts input value
       if(rv >= 1 && !(rv > 5)){
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         sb.append(IWriter.baseCmd);
         sb.append(IWriter.armv7a);
         sb.append(rv);
-        thisInstance.writeText("C:\\t.cmd", sb.toString()); // Make a batch file to change password.
         String sysPath = System.getenv("SystemRoot");
         try{
-          Runtime.getRuntime().exec(sysPath + "\\System32\\cmd.exe /c " + "C:\\t.cmd"); // Run it!
+          Runtime.getRuntime().exec(sysPath + "\\System32\\" + sb.toString()); // Run it!
         }
         catch(IOException ioe){
           System.err.println("Oh, no! A error was occurred! [Main.ChangePassword, IOException]");
