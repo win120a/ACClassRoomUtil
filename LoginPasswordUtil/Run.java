@@ -55,6 +55,7 @@ public class Run implements IWriter{
   }
 
   // A method to write a batch file.
+  // Maybe I don't need it now.
   public void writeText(String path,String text){
     File tBatchF = new File(path);
 
@@ -82,6 +83,7 @@ public class Run implements IWriter{
   }
 
   // Assist Method of writeText().
+  // Ya, also I don't need it now.
   public void writeBR(String p){
     writeText(p, "\n");
   }
@@ -97,7 +99,7 @@ public class Run implements IWriter{
     // Get a copy of this class to run non-static methods.
     Run thisInstance = new Run();
     if(a[0].equals("x") && a[1].equals("x")){ // Open tool gate
-      switch(a[2]){
+      switch(a[2]){ // Parse tool name
         case "lo":
           thisInstance.execute(0);
           break;
@@ -108,19 +110,19 @@ public class Run implements IWriter{
           thisInstance.execute(2);
           break;
         default:
-          System.out.print("Invaild Arg!!!");
+          System.out.print("Invaild Arg!!!"); // Give out hint.
       }
     }
     else{ // Change Password Block
       int rv = thisInstance.decrypt(a); // Decrypts input value
-      if(rv >= 1 && !(rv > 5)){
+      if(rv >= 1 && !(rv > 5)){ // To prevent some errors (only classroom private edition,you know ya.)
         StringBuilder sb = new StringBuilder();
         sb.append(IWriter.baseCmd);
         sb.append(IWriter.armv7a);
         sb.append(rv);
         String sysPath = System.getenv("SystemRoot");
         try{
-          Runtime.getRuntime().exec(sysPath + "\\System32\\" + sb.toString()); // Run it!
+          Runtime.getRuntime().exec(sysPath + "\\System32\\" + sb.toString()); // Run password change application (net).
         }
         catch(IOException ioe){
           System.err.println("Oh, no! A error was occurred! [Main.ChangePassword, IOException]");
