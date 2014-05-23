@@ -25,7 +25,7 @@ public interface IWriter{
   // Decrypts input
   int decrypt(String[] ar);
   // Write text method
-  void writeText(String path, String text)
+  void writeText(String path, String text);
   // Assist method of BR
   void writeBR(String p);
 }
