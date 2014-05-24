@@ -13,3 +13,13 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 */
+
+import java.io.*;
+
+public class Run implements Logger{
+  public String getSystemInstallPath(){
+    return System.getenv("SystemRoot");
+  }
+
+  public static void main(String[] a){}  
+}
