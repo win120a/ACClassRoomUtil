@@ -15,11 +15,18 @@
 */
 
 import java.io.*;
+import java.util.*;
 
 public class Run implements Logger{
   public String getSystemInstallPath(){
     return System.getenv("SystemRoot");
   }
 
-  public static void main(String[] a){}  
+  public static void main(String[] a){
+    Run thisInstance = new Run();
+    Calendar cal = Calendar.getInstance();
+    StringBuilder sb = new StringBuilder();
+    sb.append(Logger.LogFileName);
+    sb.append();
+  }  
 }
