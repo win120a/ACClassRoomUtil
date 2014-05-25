@@ -27,6 +27,11 @@ public class Run implements Logger{
     Calendar cal = Calendar.getInstance();
     StringBuilder sb = new StringBuilder();
     sb.append(Logger.LogFileName);
-    sb.append();
+    //Calendar.MINUTE
+    //Calendar.MONTH
+    //Calendar.YEAR
+    //Calendar.DAY_OF_WEEK
+    //Calendar.DAY_OF_MONTH
+    sb.append(cal.get(Calendar.HOUR_OF_DAY));
   }  
 }
