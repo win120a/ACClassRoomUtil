@@ -15,4 +15,8 @@
 */
 
 public class CalendarUtil implements ICalendarUtil{
+  Calendar obj;
+  public CalendarUtil(Calendar processObject){
+    obj = processObject;
+  }
 }
