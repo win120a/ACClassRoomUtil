@@ -27,4 +27,10 @@ public class CalendarUtil implements ICalendarUtil{
           Calendar.DAY_OF_MONTH
     **/
   }
+  int getYear(){}
+  int getMonth(){}
+  int getDay(){}
+  int getHour(){}
+  int getMinute(){}
+  int getSecond(){}
 }
