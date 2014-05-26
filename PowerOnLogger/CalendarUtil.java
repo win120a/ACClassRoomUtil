@@ -18,5 +18,13 @@ public class CalendarUtil implements ICalendarUtil{
   Calendar obj;
   public CalendarUtil(Calendar processObject){
     obj = processObject;
+    **/
+        Calendar Object get() returns use in code
+          Calendar.MINUTE
+          Calendar.MONTH + 1
+          Calendar.YEAR
+          Calendar.DAY_OF_WEEK // Sunday = 1
+          Calendar.DAY_OF_MONTH
+    /**
   }
 }
