@@ -18,12 +18,16 @@
 This is my first draft of this (C# version), it may not pass the build.
 */
 
+using System;
 using System.Diagnostics.Process;
 
 namespace ACLoginPasswordUtil{
   class Main{
-    int decrypt(String[] originalArgs){    // Finding parse methods.
-      return 0;
+    int decrypt(String[] originalArgs){
+      int first = Int32.Parse(originalArgs[0]);
+      int second = Int32.Parse(originalArgs[1]);
+      int result = first + second;
+      return result;
     }
   }
 }
