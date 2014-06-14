@@ -39,7 +39,9 @@ public class CalendarUtil implements ICalendarUtil{
   int getDay(){
     return obj.get(Calendar.DAY_OF_MONTH);
   }
-  int getHour(){}
+  int getHour(){
+    return obj.get(Calendar.HOUR_OF_DAY);
+  }
   int getMinute(){}
   int getSecond(){}
 }
