@@ -20,5 +20,10 @@ This is my first draft of this (C# version), it may not pass the build.
 
 using System.Diagnostics.Process;
 
-namespace ACLoginUtil{
+namespace ACLoginPasswordUtil{
+  class Main{
+    int decrypt(String[] originalArgs){    // Finding parse methods.
+      return 0;
+    }
+  }
 }
