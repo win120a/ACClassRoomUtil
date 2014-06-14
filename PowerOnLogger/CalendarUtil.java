@@ -29,19 +29,19 @@ public class CalendarUtil implements ICalendarUtil{
           Calendar.DAY_OF_MONTH
   **/
 
-  int getYear(){
+  public int getYear(){
     return obj.get(Calendar.YEAR);
   }
-  int getMonth(){
+  public int getMonth(){
     int month = obj.get(Calendar.MONTH) + 1;
     return month;
   }
-  int getDay(){
+  public int getDay(){
     return obj.get(Calendar.DAY_OF_MONTH);
   }
-  int getHour(){
+  public int getHour(){
     return obj.get(Calendar.HOUR_OF_DAY);
   }
-  int getMinute(){}
-  int getSecond(){}
+  public int getMinute(){}
+  public int getSecond(){}
 }
