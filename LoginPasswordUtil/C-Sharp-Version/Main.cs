@@ -20,6 +20,7 @@ This is my first draft of this (C# version), it may not pass the build.
 
 using System;
 using System.Diagnostics.Process;
+using System.Environment;
 
 namespace ACLoginPasswordUtil{
   class Main{
@@ -29,5 +30,10 @@ namespace ACLoginPasswordUtil{
       int result = first + second;
       return result;
     }
+
+    static void main(String[] a){
+      String sysPath = Environment.GetEnvironmentVariable("SystemRoot");
+      int pswInt = decrypt(a);
+      //Process.Start();
   }
 }
