@@ -25,7 +25,7 @@ These programs are licensed with changed Apache License, you can see it at <a hr
 Compiling
 =========
 
-These releases are wrote by Java + Batch.
+These releases are wrote by Java + Batch. (And some of release wrote by C#, I don't know how to do it.)
 
 ```Batchfile
 set path=%path%;C:\Path\to\Java\bin
