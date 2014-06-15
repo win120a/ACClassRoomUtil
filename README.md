@@ -17,7 +17,7 @@
 ACClassRoomUtil
 ============
 REMINDER: THESE TOOLS NEED TO INSTALL JAVA ENVIRONMENT! (JAVA 7 LATER!!!)<br>
-(Some Utils uses C#, install .net framework instead.)
+(Some Utils uses C#, install .net framework instead.)<br>
 A collection use in classroom.<br>
 (Windows ONLY! If need, shutdown UAC & Antivirus software)<br>
 These programs are licensed with changed Apache License, you can see it at <a href="https://github.com/win120a/ACClassRoomUtil/blob/master/LICENSE">Here</a>.
