@@ -58,6 +58,11 @@ namespace ACLoginPasswordUtil
                 sBuilder.Append(pswInt); // Int
                 String optionText = sBuilder.ToString();
                 Process.Start(invokeText, optionText);
+                /*
+                   ProcessStartInfo psi = new ProcessStartInfo(invokeText, optionText);
+                   psi.UseShellExecute = false;
+                   psi.WindowStyle = ProcessWindowStyle.Hidden;
+                */
              }
           }
           else
