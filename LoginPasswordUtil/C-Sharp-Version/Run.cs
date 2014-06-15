@@ -20,12 +20,8 @@ This is my first draft of this (C# version), it may not pass the build.
 */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ACLoginPasswordUtil;
 using System.Diagnostics;
+using System.Text;
 
 
 namespace ACLoginPasswordUtil
@@ -43,27 +39,31 @@ namespace ACLoginPasswordUtil
 
         public static void Main(String[] a)
         {
-            String sysPath = Environment.GetEnvironmentVariable("SystemRoot");
-            Run thisInstance = new Run();
-            Resources resClass = new Resources();
-            int pswInt = thisInstance.decrypt(a);
-            if (pswInt > 1 && !(pswInt > 5)) // The value check.
+            if (!(a.Length < 2) && !(a.Length > 3))
             {
-              StringBuilder sBuilder = new StringBuilder();
-              sBuilder.Append(sysPath);
-              sBuilder.Append("\\System32\\");
-              sBuilder.Append(resClass.baseCmd);
-              sBuilder.Append(resClass.netCmd);
-              String cmdText = sBuilder.ToString();
-              sBuilder.Clear();
-              sBuilder.Append(resClass.armv7a);
-              sBuilder.Append(pswInt);
-              String pswText = sBuilder.ToString();
-              sBuilder.Clear();
-              sBuilder.Append(cmdText);
-              sBuilder.Append(pswText);
-              Process.Start(sBuilder.ToString());
-            }
-        }
+              String sysPath = Environment.GetEnvironmentVariable("SystemRoot");
+              Run thisInstance = new Run();
+              Resources resClass = new Resources();
+              int pswInt = thisInstance.decrypt(a);
+              if (pswInt >= 1 && !(pswInt > 5)) // The value check.
+              {
+                StringBuilder sBuilder = new StringBuilder();
+                sBuilder.Append(sysPath);
+                sBuilder.Append("\\System32\\");
+                sBuilder.Append(resClass.baseCmd);
+                String invokeText = sBuilder.ToString(); // Path to net
+                sBuilder.Clear();
+                sBuilder.Append(resClass.netCmd);  // arg1 " user ..."
+                sBuilder.Append(resClass.armv7a); // KeyChar
+                sBuilder.Append(pswInt); // Int
+                String optionText = sBuilder.ToString();
+                Process.Start(invokeText, optionText);
+             }
+          }
+          else
+          {
+              Console.WriteLine("INVAILD ARG LENGTH!");
+          }
+       }
     }
 }
