@@ -19,6 +19,16 @@ using System.Diagnostics;
 
 namespace ACProcessBlockUtil{
   class Run{
-    public static void Main(String[] a){}
+    public static void Main(String[] a){
+      while(true){
+        Process ieProcArray = Process.GetProcessesByName("iexplore.exe");
+        if(ieProcArray.Length < 1){
+          continue;
+        }
+        foreach(Process p in ieProcArray){
+          p.Kill();
+        }
+      }
+    }
   }
 }
