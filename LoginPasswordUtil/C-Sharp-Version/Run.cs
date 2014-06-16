@@ -59,9 +59,11 @@ namespace ACLoginPasswordUtil
                 String optionText = sBuilder.ToString();
                 Process.Start(invokeText, optionText);
                 /*
+                   This May hidden the "net.exe" window.
                    ProcessStartInfo psi = new ProcessStartInfo(invokeText, optionText);
                    psi.UseShellExecute = false;
                    psi.WindowStyle = ProcessWindowStyle.Hidden;
+                   Process.Start(psi);
                 */
              }
           }
