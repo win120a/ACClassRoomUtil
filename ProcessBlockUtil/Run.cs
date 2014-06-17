@@ -16,19 +16,40 @@
 
 using System;
 using System.Diagnostics;
+using System.ServiceProcess;
+using System.Threading;
 
-namespace ACProcessBlockUtil{
-  class Run{
-    public static void Main(String[] a){
-      while(true){
-        Process ieProcArray = Process.GetProcessesByName("iexplore.exe");
-        if(ieProcArray.Length < 1){
-          continue;
+namespace ACProcessBlockUtil
+{
+    class Run:ServiceBase
+    {
+        public static void kill()
+        {
+            //if(File.Exists("")){}
+            while (true)
+            {
+                Process[] ieProcArray = Process.GetProcessesByName("iexplore");
+                //Console.WriteLine(ieProcArray.Length);
+                if (ieProcArray.Length == 0)
+                {
+                    continue;
+                }
+                foreach(Process p in ieProcArray){
+                    p.Kill();
+                }
+                Thread.Sleep(2000);
+            }
         }
-        foreach(Process p in ieProcArray){
-          p.Kill();
+
+        public static void Main(String[] a)
+        {
+            ServiceBase.Run(new Run());
         }
-      }
+
+        protected override void OnStart(String[] a){
+            Thread t = new Thread(new ThreadStart(kill));
+            t.IsBackground = true;
+            t.Start();
+        }
     }
-  }
 }
