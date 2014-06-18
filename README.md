@@ -17,7 +17,7 @@
 
 REMINDER of framework (Environment)
 ============
-THESE TOOLS NEED TO INSTALL JAVA ENVIRONMENT and some tools need to install .Net Framework! (.Net Framework 4, JAVA 7 or LATER!!!)<br>
+JAVA TOOLS NEED TO INSTALL JDK AND SOME C# TOOLS NEED TO INSTALL .Net Framework! (.Net Framework 4, JAVA 7 or LATER!!!)<br>
 
 About ACClassRoomUtil
 ============
