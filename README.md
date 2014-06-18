@@ -43,6 +43,18 @@ Use `javaw Run` if you want to hidden command window.
 System tools
 ========
 I used system tools to implement some functions, there is a list about this.
+
+LPU
 ```
-taskkill, hosts (File), net, tasklist
+net
+```
+
+PBU
+```
+The .Net API (Process.Kill())
+```
+
+POL (ON and OFF)
+```
+The Java API (Calendar, File)
 ```
