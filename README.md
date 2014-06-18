@@ -40,9 +40,9 @@ Use `java Run` to run these tools. (Switch to path of tools first, some tools ne
 <br><br>
 Use `javaw Run` if you want to hidden command window.
 
-System tools
+System tools and APIs
 ========
-I used system tools to implement some functions, there is a list about this.
+I used system tools to implement some functions, here is a list about this.
 
 LPU
 ```
