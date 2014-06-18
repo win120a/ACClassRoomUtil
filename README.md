@@ -41,8 +41,9 @@ Running
 ========
 For Java
 ```
-Use "java Run" (without quotes) to run these tools. (Switch to path of tools first, some tools need to enter another name to implement some functions)
-<br><br>
+Use "java Run" (without quotes) to run these tools.
+(Switch to path of tools first, some tools need to enter another name to implement some functions)
+
 Use "javaw Run" (without quotes) if you want to hidden command window.
 ```
 
