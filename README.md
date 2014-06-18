@@ -39,13 +39,23 @@ javac [File].java
 
 Running
 ========
-Use `java Run` to run these tools. (Switch to path of tools first, some tools need to enter another name to implement some functions)
+For Java
+```
+Use "java Run" (without quotes) to run these tools. (Switch to path of tools first, some tools need to enter another name to implement some functions)
 <br><br>
-Use `javaw Run` if you want to hidden command window.
+Use "javaw Run" (without quotes) if you want to hidden command window.
+```
+
+For C#
+```
+Just use your built .exe file.
+```
 
 System tools and APIs
 ========
 I used system tools to implement some functions, here is a list about this.
+
+(LPU = LoginPasswordUtil)
 
 LPU
 ```
