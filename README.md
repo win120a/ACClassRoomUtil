@@ -15,10 +15,9 @@
 -->
 
 
-REMINDER of framework
+REMINDER of framework (Environment)
 ============
-THESE TOOLS NEED TO INSTALL JAVA ENVIRONMENT! (JAVA 7 LATER!!!)<br>
-(Some Utils uses C#, install .net framework instead.)<br>
+THESE TOOLS NEED TO INSTALL JAVA ENVIRONMENT and some tools need to install .Net Framework! (.Net Framework 4, JAVA 7 or LATER!!!)<br>
 
 About ACClassRoomUtil
 ============
