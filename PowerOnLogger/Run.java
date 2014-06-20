@@ -34,5 +34,7 @@ public class Run implements Logger{
     sb.append(" ");
     sb.append(calu.getHour());
     sb.append(calu.getSecond());
-  }  
+    File fileObj = new File(sb.toString());
+    File.createNewFile();
+  }
 }
