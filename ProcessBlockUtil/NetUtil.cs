@@ -20,6 +20,13 @@ using System.IO;
 
 namespace ACProcessBlockUtil
 {
-    class NetUtil{
+    class NetUtil
+    {
+      public static String downloadAsString(String uri)
+      {
+        WebClient wc = new WebClient();
+        String downloadedString = wc.DownloadString(uri);
+        return downloadedString;
+      }
     }
 }
