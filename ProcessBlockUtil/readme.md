@@ -1,4 +1,5 @@
 This is a service object.
+And Each folder is a C# Project.
 
 Install
 =============
