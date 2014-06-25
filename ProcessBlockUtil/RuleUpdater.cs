@@ -29,9 +29,9 @@ namespace ACProcessBlockUtil
 			/*
 				Stop The Service.
 			*/
-			Process.Start(systemRoot + "\\System32\\sc.exe", "stop pbuService");
-			Thread.Sleep(2500);
-			
+			ServiceController pbuSC = new ServiceController("pbuService");
+			pbuSC.stop();
+
 			/*
 				Obtain some path.
 			*/
