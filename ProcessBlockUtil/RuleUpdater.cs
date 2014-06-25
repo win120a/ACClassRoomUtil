@@ -23,8 +23,8 @@ using NetUtil;
 
 namespace ACProcessBlockUtil
 {
-    class RuleUpdater
-    {
+	class RuleUpdater
+    	{
 		public static void Main(String[] a){
 			/*
 				Stop The Service.
@@ -55,5 +55,5 @@ namespace ACProcessBlockUtil
 			*/
 			Process.Start(systemRoot + "\\System32\\sc.exe", "start pbuService");
 		}
-    }
+	}
 }
