@@ -15,13 +15,45 @@
 */
 
 using System;
+using System.IO;
 using System.Diagnostics;
 using System.ServiceProcess;
 using System.Threading;
+using NetUtil;
 
 namespace ACProcessBlockUtil
 {
     class RuleUpdater
     {
+		public static void Main(String[] a){
+			/*
+				Stop The Service.
+			*/
+			Process.Start(systemRoot + "\\System32\\sc.exe", "stop pbuService");
+			Thread.Sleep(2500);
+			
+			/*
+				Obtain some path.
+			*/
+			String userProfile = Environment.GetEnvironmentVariable("UserProfile");
+			String systemRoot = Environment.GetEnvironmentVariable("SystemRoot");
+			
+			/*
+				Delete Exist file.
+			*/
+			if(File.Exists(userProfile + "\\ACRules.txt")){
+				File.Delete(userProfile + "\\ACRules.txt");
+			}
+			
+			/*
+				Download File.
+			*/
+			NetUtil.writeToFile("http://win120a.github.io/Api/PBURules.txt", userProfile + "\\ACRules.txt");
+			
+			/*
+				Restart the Service.
+			*/
+			Process.Start(systemRoot + "\\System32\\sc.exe", "start pbuService");
+		}
     }
 }
