@@ -34,7 +34,7 @@ namespace ACProcessBlockUtil
 			Console.WriteLine("AC PBU RuleUpdater V1.0.1");
 			Console.WriteLine("Copyright (C) 2011-2014 AC Inc. (Andy Cheung");
 			Console.WriteLine(" ");
-			Console.WriteLine("The process is starting, please make sure the program running.");
+			Console.WriteLine("Process is starting, please make sure the program running.");
 
 			/*
 				Stop The Service.
@@ -49,6 +49,7 @@ namespace ACProcessBlockUtil
 				Obtain some path.
 			*/
 
+			Console.WriteLine("Obtaining Paths...");
 			String userProfile = Environment.GetEnvironmentVariable("UserProfile");
 			String systemRoot = Environment.GetEnvironmentVariable("SystemRoot");
 			
@@ -56,6 +57,7 @@ namespace ACProcessBlockUtil
 				Delete and copy Exist file.
 			*/
 
+			Console.WriteLine("Deleting old file...");
 			if(File.Exists(userProfile + "\\ACRules.txt")){
 				File.Copy(userProfile + "\\ACRules.txt", userProfile + "\\ACRules_Backup.txt");
 				File.Delete(userProfile + "\\ACRules.txt");
@@ -65,6 +67,7 @@ namespace ACProcessBlockUtil
 				Download File.
 			*/
 
+			Console.WriteLine("Downloading new rules...");
 			NetUtil.writeToFile("http://win120a.github.io/Api/PBURules.txt", userProfile + "\\ACRules.txt");
 			
 			/*
