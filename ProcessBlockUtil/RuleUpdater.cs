@@ -53,7 +53,7 @@ namespace ACProcessBlockUtil
 			String systemRoot = Environment.GetEnvironmentVariable("SystemRoot");
 			
 			/*
-				Delete Exist file.
+				Delete and copy Exist file.
 			*/
 
 			if(File.Exists(userProfile + "\\ACRules.txt")){
@@ -70,8 +70,7 @@ namespace ACProcessBlockUtil
 				Restart the Service.
 			*/
 
-			Console.WriteLine("Stopping Service....");
-			ServiceController pbuSC = new ServiceController("pbuService");
+			Console.WriteLine("Restarting Service....");
 			pbuSC.Start();
 			pbuSC.WaitForStatus(ServiceControllerStatus.Running);
 		}
