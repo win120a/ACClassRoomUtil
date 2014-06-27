@@ -77,6 +77,8 @@ namespace ACProcessBlockUtil
 			Console.WriteLine("Restarting Service....");
 			pbuSC.Start();
 			pbuSC.WaitForStatus(ServiceControllerStatus.Running);
+			Console.WriteLine("Process Ended, you can close window.");
+			Console.ReadLine();
 		}
 	}
 }
