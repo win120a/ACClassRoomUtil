@@ -57,6 +57,7 @@ namespace ACProcessBlockUtil
 			*/
 
 			if(File.Exists(userProfile + "\\ACRules.txt")){
+				File.Copy(userProfile + "\\ACRules.txt", userProfile + "\\ACRules_Backup.txt");
 				File.Delete(userProfile + "\\ACRules.txt");
 			}
 			
