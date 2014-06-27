@@ -26,21 +26,36 @@ namespace ACProcessBlockUtil
 	class RuleUpdater
     	{
 		public static void Main(String[] a){
+
+			/*
+				Version message.
+			*/
+
+			Console.WriteLine("AC PBU RuleUpdater V1.0.1");
+			Console.WriteLine("Copyright (C) 2011-2014 AC Inc. (Andy Cheung");
+			Console.WriteLine(" ");
+			Console.WriteLine("The process is starting, please make sure the program running.");
+
 			/*
 				Stop The Service.
 			*/
+
+			Console.WriteLine("Stopping Service....");
 			ServiceController pbuSC = new ServiceController("pbuService");
-			pbuSC.stop();
+			pbuSC.Stop();
+			pbuSC.WaitForStatus(ServiceControllerStatus.Stopped);
 
 			/*
 				Obtain some path.
 			*/
+
 			String userProfile = Environment.GetEnvironmentVariable("UserProfile");
 			String systemRoot = Environment.GetEnvironmentVariable("SystemRoot");
 			
 			/*
 				Delete Exist file.
 			*/
+
 			if(File.Exists(userProfile + "\\ACRules.txt")){
 				File.Delete(userProfile + "\\ACRules.txt");
 			}
@@ -48,12 +63,17 @@ namespace ACProcessBlockUtil
 			/*
 				Download File.
 			*/
+
 			NetUtil.writeToFile("http://win120a.github.io/Api/PBURules.txt", userProfile + "\\ACRules.txt");
 			
 			/*
 				Restart the Service.
 			*/
-			Process.Start(systemRoot + "\\System32\\sc.exe", "start pbuService");
+
+			Console.WriteLine("Stopping Service....");
+			ServiceController pbuSC = new ServiceController("pbuService");
+			pbuSC.Start();
+			pbuSC.WaitForStatus(ServiceControllerStatus.Running);
 		}
 	}
 }
