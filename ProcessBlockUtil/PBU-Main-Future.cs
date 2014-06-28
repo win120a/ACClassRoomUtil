@@ -35,16 +35,18 @@ namespace ACProcessBlockUtil
         {
             while (true)
             {
-                Process[] ieProcArray = Process.GetProcessesByName("iexplore");
-                //Console.WriteLine(ieProcArray.Length);
-                if (ieProcArray.Length == 0)
-                {
-                    continue;
+                foreach(String s in list){
+                  Process[] thatProcArray = Process.GetProcessesByName(s);
+                  //Console.WriteLine(ieProcArray.Length);
+                  if (thatProcArray.Length == 0)
+                  {
+                      continue;
+                  }
+                  foreach(Process p in thatProcArray){
+                      p.Kill();
+                  }
+                  Thread.Sleep(2000);
                 }
-                foreach(Process p in ieProcArray){
-                    p.Kill();
-                }
-                Thread.Sleep(2000);
             }
         }
 
