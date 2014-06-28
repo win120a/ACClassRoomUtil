@@ -39,11 +39,13 @@ namespace ACProcessBlockUtil
 			/*
 				Stop The Service.
 			*/
-
-			Console.WriteLine("Stopping Service....");
 			ServiceController pbuSC = new ServiceController("pbuService");
-			pbuSC.Stop();
-			pbuSC.WaitForStatus(ServiceControllerStatus.Stopped);
+			if(pbuSC.Status.Equals(ServiceControllerStatus.Running))
+			{
+				Console.WriteLine("Stopping Service....");
+				pbuSC.Stop();
+				pbuSC.WaitForStatus(ServiceControllerStatus.Stopped);
+			}
 
 			/*
 				Obtain some path.
