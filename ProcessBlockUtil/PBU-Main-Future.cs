@@ -22,6 +22,7 @@ using System.Diagnostics;
 using System.ServiceProcess;
 using System.Threading;
 using System.Collections;
+using System.Text;
 
 namespace ACProcessBlockUtil
 {
@@ -55,7 +56,7 @@ namespace ACProcessBlockUtil
 			
 	    if(File.Exists(userProfile + "\\ACRules.txt")){
 		    ar = new ArrayList<String>();
-		    sr = new SteamReader(userProfile + "\\ACRules.txt");
+		    sr = new SteamReader(userProfile + "\\ACRules.txt", new ASCIIEncoding());
 		    while(true){
 			    String tempLine = sr.ReadLine();
 			    if(tempLine == null){
