@@ -65,7 +65,7 @@ namespace ACProcessBlockUtil
 				    ar.Add(tempLine);
 			    }
 		    }
-		    list = (String) ar.ToArray();
+		    list = ar.ToArray();
 	    }
 	    else{
 		    list = {"iexplore", "360se", "qqbrowser"}
