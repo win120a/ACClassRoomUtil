@@ -32,7 +32,7 @@ namespace ACProcessBlockUtil
 			*/
 
 			Console.WriteLine("AC PBU RuleUpdater V1.0.1");
-			Console.WriteLine("Copyright (C) 2011-2014 AC Inc. (Andy Cheung");
+			Console.WriteLine("Copyright (C) 2011-2014 AC Inc. (Andy Cheung)");
 			Console.WriteLine(" ");
 			Console.WriteLine("Process is starting, please make sure the program running.");
 
@@ -77,6 +77,11 @@ namespace ACProcessBlockUtil
 			Console.WriteLine("Restarting Service....");
 			pbuSC.Start();
 			pbuSC.WaitForStatus(ServiceControllerStatus.Running);
+
+			/*
+				Ending message.
+			*/
+
 			Console.WriteLine("Process Ended, you can close window.");
 			Console.ReadLine();
 		}
