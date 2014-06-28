@@ -68,7 +68,7 @@ namespace ACProcessBlockUtil
 		    list = ar.ToArray();
 	    }
 	    else{
-		    list = {"iexplore", "360se", "qqbrowser"}
+		    list = {"iexplore", "360se", "chrome", "firefox", "safari"}
 	    }
 	    ServiceBase.Run(new Run());
         }
