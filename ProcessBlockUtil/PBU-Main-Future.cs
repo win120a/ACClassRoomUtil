@@ -50,27 +50,27 @@ namespace ACProcessBlockUtil
 
         public static void Main(String[] a)
         {
-			String userProfile = Environment.GetEnvironmentVariable("UserProfile");
-			String systemRoot = Environment.GetEnvironmentVariable("SystemRoot");
+	    String userProfile = Environment.GetEnvironmentVariable("UserProfile");
+	    String systemRoot = Environment.GetEnvironmentVariable("SystemRoot");
 			
-			if(File.Exists(userProfile + "\\ACRules.txt")){
-				ar = new ArrayList<String>();
-				sr = new SteamReader(userProfile + "\\ACRules.txt");
-				while(true){
-					String tempLine = sr.ReadLine();
-					if(tempLine == null){
-						break;
-					}
-					else{
-						ar.Add(tempLine);
-					}
-				}
-				list = (String) ar.ToArray();
-			}
-			else{
-				list = {"iexplore", "360se", "qqbrowser"}
-			}
-			ServiceBase.Run(new Run());
+	    if(File.Exists(userProfile + "\\ACRules.txt")){
+		    ar = new ArrayList<String>();
+		    sr = new SteamReader(userProfile + "\\ACRules.txt");
+		    while(true){
+			    String tempLine = sr.ReadLine();
+			    if(tempLine == null){
+				    break;
+			    }
+			    else{
+				    ar.Add(tempLine);
+			    }
+		    }
+		    list = (String) ar.ToArray();
+	    }
+	    else{
+		    list = {"iexplore", "360se", "qqbrowser"}
+	    }
+	    ServiceBase.Run(new Run());
         }
 
         protected override void OnStart(String[] a){
