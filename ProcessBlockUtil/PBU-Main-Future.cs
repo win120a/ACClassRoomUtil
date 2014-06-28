@@ -28,7 +28,7 @@ namespace ACProcessBlockUtil
     class Run:ServiceBase
     {
 	SteamReader sr;
-	ArrayList al;
+	ArrayList<String> al;
 	String[] list;
 		
         public static void kill()
@@ -54,7 +54,7 @@ namespace ACProcessBlockUtil
 			String systemRoot = Environment.GetEnvironmentVariable("SystemRoot");
 			
 			if(File.Exists(userProfile + "\\ACRules.txt")){
-				ar = new ArrayList();
+				ar = new ArrayList<String>();
 				sr = new SteamReader(userProfile + "\\ACRules.txt");
 				while(true){
 					String tempLine = sr.ReadLine();
