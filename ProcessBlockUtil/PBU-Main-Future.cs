@@ -37,12 +37,12 @@ namespace ACProcessBlockUtil
             {
                 foreach(String s in list){
                   Process[] thatProcArray = Process.GetProcessesByName(s);
-                  //Console.WriteLine(ieProcArray.Length);
                   if (thatProcArray.Length == 0)
                   {
                       continue;
                   }
-                  foreach(Process p in thatProcArray){
+                  foreach(Process p in thatProcArray)
+                  {
                       p.Kill();
                   }
                   Thread.Sleep(2000);
