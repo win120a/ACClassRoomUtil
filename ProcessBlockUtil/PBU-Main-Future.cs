@@ -67,6 +67,7 @@ namespace ACProcessBlockUtil
 				    ar.Add(tempLine);
 			    }
 		    }
+                    sr.Close();
 		    list = ar.ToArray();
 	    }
 	    else{
