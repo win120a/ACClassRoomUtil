@@ -31,7 +31,7 @@ namespace ACProcessBlockUtil
 	ArrayList<String> al;
 	String[] list;
 		
-        public static void kill()
+        public void kill()
         {
             while (true)
             {
