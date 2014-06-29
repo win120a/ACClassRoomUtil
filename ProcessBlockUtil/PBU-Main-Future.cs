@@ -27,15 +27,15 @@ namespace ACProcessBlockUtil
 {
     class Run:ServiceBase
     {
-	SteamReader sr;
-	ArrayList<String> al;
-	String[] list;
+	static SteamReader sr;
+	static ArrayList<String> al;
+	static String[] list;
 		
-        public void kill()
+        public static void kill()
         {
             while (true)
             {
-                foreach(String s in list){
+                foreach(String s in Run.list){
                   Process[] thatProcArray = Process.GetProcessesByName(s);
                   if (thatProcArray.Length == 0)
                   {
@@ -57,22 +57,22 @@ namespace ACProcessBlockUtil
 	    String systemRoot = Environment.GetEnvironmentVariable("SystemRoot");
 			
 	    if(File.Exists(userProfile + "\\ACRules.txt")){
-		    thisInstance.ar = new ArrayList<String>();
-		    thisInstance.sr = new SteamReader(userProfile + "\\ACRules.txt");
+		    Run.ar = new ArrayList<String>();
+		    Run.sr = new SteamReader(userProfile + "\\ACRules.txt");
 		    while(true){
-			    String tempLine = sr.ReadLine();
+			    String tempLine = Run.sr.ReadLine();
 			    if(tempLine == null){
 				    break;
 			    }
 			    else{
-				    ar.Add(tempLine);
+				    Run.ar.Add(tempLine);
 			    }
 		    }
-                    sr.Close();
-		    thisInstace.list = ar.ToArray();
+                    Run.sr.Close();
+		    Run.list = Run.ar.ToArray();
 	    }
 	    else{
-		    thisInstance.list = {"iexplore", "360se", "chrome", "firefox", "safari"}
+		    Run.list = {"iexplore", "360se", "chrome", "firefox", "safari"}
 	    }
 	    ServiceBase.Run(thisInstance);
         }
