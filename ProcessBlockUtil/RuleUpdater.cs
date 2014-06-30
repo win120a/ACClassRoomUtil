@@ -61,7 +61,7 @@ namespace ACProcessBlockUtil
 
 			Console.WriteLine("Deleting old file...");
 			if(File.Exists(userProfile + "\\ACRules.txt")){
-				File.Copy(userProfile + "\\ACRules.txt", userProfile + "\\ACRules_Backup.txt");
+				File.Copy(userProfile + "\\ACRules.txt", userProfile + "\\ACRules_Backup.txt", true);
 				File.Delete(userProfile + "\\ACRules.txt");
 			}
 			
