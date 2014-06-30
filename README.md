@@ -28,13 +28,21 @@ These programs are licensed with Apache License, you can see it at <a href="http
 Compiling
 =========
 
-These releases are wrote by Java + Batch. (And some of release wrote by C#, I don't know how to do it.)
+For Java:
 
 ```Batchfile
 set path=%path%;C:\Path\to\Java\bin
 Rem If you added Java to PATH, skip this.
 cd /d C:\Path\to\Utils\[ToolPath]
 javac [File].java
+```
+
+For C#:
+
+```Batchfile
+set path=%path%;%SystemRoot%\Microsoft.NET\framework\v4.xxx.xxx.xxx
+cd C:\Path\to\Source
+csc -target:exe (library) -reference:xxx.dll file.cs
 ```
 
 Running
