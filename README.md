@@ -32,17 +32,16 @@ For Java:
 
 ```Batchfile
 set path=%path%;C:\Path\to\Java\bin
-Rem If you added Java to PATH, skip this.
 cd /d C:\Path\to\Utils\[ToolPath]
 javac [File].java
 ```
 
-For C#:
+For C#: (Replace it by yourself)
 
 ```Batchfile
 set path=%path%;%SystemRoot%\Microsoft.NET\framework\v4.xxx.xxx.xxx
 cd C:\Path\to\Source
-csc -target:exe (library) -reference:xxx.dll file.cs
+csc -target:exe (library) (-reference:(Namespace=)xxx.dll) file.cs
 ```
 
 Running
