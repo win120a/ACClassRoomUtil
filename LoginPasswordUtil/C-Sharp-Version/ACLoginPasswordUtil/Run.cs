@@ -1,25 +1,4 @@
-/*
-   Copyright (C) 2011-2014 AC Inc. (Andy Cheung)
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
-*/
-
-/*
--> ACLoginPasswordUtil.exe
-This is my first draft of this (C# version), it may not pass the build.
-*/
-
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Text;
 
@@ -57,14 +36,15 @@ namespace ACLoginPasswordUtil
                 sBuilder.Append(resClass.armv7a); // KeyChar
                 sBuilder.Append(pswInt); // Int
                 String optionText = sBuilder.ToString();
-                Process.Start(invokeText, optionText);
-                /*
-                   This May hidden the "net.exe" window.
-                   ProcessStartInfo psi = new ProcessStartInfo(invokeText, optionText);
-                   psi.UseShellExecute = false;
-                   psi.WindowStyle = ProcessWindowStyle.Hidden;
-                   Process.Start(psi);
-                */
+                ProcessStartInfo psi = new ProcessStartInfo(invokeText, optionText);
+                psi.UseShellExecute = false;
+                psi.WindowStyle = ProcessWindowStyle.Hidden;
+                Process.Start(psi);
+                //Process.Start(invokeText, optionText);
+             }
+             else
+             {
+                 Console.WriteLine("INVAILD DAY OF Week Settings (Monday to Friday only for this Edition), If there is some reasons of this, please change it manually.");
              }
           }
           else
