@@ -29,6 +29,7 @@ public class CalendarUtil implements ICalendarUtil{
           Calendar.YEAR
           Calendar.DAY_OF_WEEK // Sunday = 1
           Calendar.DAY_OF_MONTH
+          Calendar.SECOND;
   **/
 
   public int getYear(){
@@ -44,6 +45,10 @@ public class CalendarUtil implements ICalendarUtil{
   public int getHour(){
     return obj.get(Calendar.HOUR_OF_DAY);
   }
-  public int getMinute(){}
-  public int getSecond(){}
+  public int getMinute(){
+    return obj.get(Calendar.MINUTE);
+  }
+  public int getSecond(){
+    return obj.get(Calendar.SECOND);
+  }
 }
