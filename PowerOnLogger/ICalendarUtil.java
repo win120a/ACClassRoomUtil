@@ -21,4 +21,5 @@ public interface ICalendarUtil{
   int getHour();
   int getMinute();
   int getSecond();
+  String getDayOfWeek();
 }
