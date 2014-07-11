@@ -33,7 +33,9 @@ public class Run implements Logger{
     sb.append(calu.getDay());
     sb.append(" ");
     sb.append(calu.getHour());
+    sb.append(calu.getMinute());
     sb.append(calu.getSecond());
+    sb.append(calu.getDayOfWeek());
     File fileObj = new File(sb.toString());
     File.createNewFile();
   }
