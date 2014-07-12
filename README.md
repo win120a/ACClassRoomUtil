@@ -41,7 +41,7 @@ For C#: (Replace it by yourself)
 ```Batchfile
 set path=%path%;%SystemRoot%\Microsoft.NET\framework\v4.xxx.xxx.xxx
 cd C:\Path\to\Source
-csc -target:exe (library) (-reference:(Namespace=)xxx.dll) file.cs
+csc -target:exe (library) (-reference:xxx.dll) file.cs
 ```
 
 Running
