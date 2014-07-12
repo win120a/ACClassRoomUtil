@@ -61,7 +61,7 @@ Just use your built .exe file.
 
 System tools and APIs
 ========
-I used system tools to implement some functions, here is a list about this.
+I used system tools to implement some functions, here is a list about this (major function only).
 
 (LPU = LoginPasswordUtil)
 
