@@ -27,7 +27,7 @@ public class Run implements Logger{
     Calendar cal = Calendar.getInstance();
     CalendarUtil calu = new CalendarUtil(cal);
     StringBuilder sb = new StringBuilder();
-    sb.append(getSystemInstallPath());
+    sb.append(thisInstance.getSystemInstallPath());
     sb.append(Logger.HalfLogPath);
     sb.append(Logger.LogFileName);
     sb.append(calu.getYear());
