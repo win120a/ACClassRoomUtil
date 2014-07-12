@@ -76,7 +76,7 @@ public class CalendarUtil implements ICalendarUtil{
         return "Friday";
         break;
       case 7:
-        return "Saturday"
+        return "Saturday";
         break;
       default:
         return null;
