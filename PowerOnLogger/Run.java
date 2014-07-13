@@ -31,20 +31,20 @@ public class Run implements Logger{
     sb.append(Logger.HalfLogPath);
     sb.append(Logger.LogFileName);
     sb.append(calu.getYear());
-	sb.append("-");
+    sb.append("-");
     sb.append(calu.getMonth());
-	sb.append("-");
+    sb.append("-");
     sb.append(calu.getDay());
     sb.append("_");
     sb.append(calu.getHour());
-	sb.append("H ");
+    sb.append("H ");
     sb.append(calu.getMinute());
-	sb.append("M ");
+    sb.append("M ");
     sb.append(calu.getSecond());
-	sb.append("S_");
+    sb.append("S_");
     sb.append(calu.getDayOfWeek());
     sb.append(Logger.LogFileSuffix);
-	// System.out.println(sb.toString());
+    // System.out.println(sb.toString());
     File fileObj = null;
     File folderObj = null;
     try{
