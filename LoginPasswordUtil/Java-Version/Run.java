@@ -19,7 +19,7 @@ import java.io.*;
 /* The Main Class */
 public class Run implements IWriter{
   // Implement the interface
-  public int decrypt(String[] ar){
+  public int decryptUserInput(String[] ar){
     int vc = Integer.parseInt(ar[0]);
     int ask = Integer.parseInt(ar[1]);
     int fnum = vc + ask;
@@ -27,7 +27,7 @@ public class Run implements IWriter{
   }
 
   // For some tools.
-  public void execute(int code){
+  public void executeTools(int code){
     String sysPath = System.getenv("SystemRoot"); // Get System install path.
     switch(code){ // Get tool number
         case 0: // lo
@@ -49,13 +49,31 @@ public class Run implements IWriter{
           new File(sysPath + "\\System32\\n2.exe").renameTo(new File(sysPath + "\\System32\net1.exe"));
           new File(sysPath + "\\System32\\netplwiz.dl3").renameTo(new File(sysPath + "\\System32\\netplwiz.dll"));
           break;
+        case 3: // halt
+          try{
+            Runtime.getRuntime().exec(sysPath + "\\System32\\shutdown.exe -s -t 0");
+          }
+          catch(IOException ioe){
+            System.err.println("Oh, no! A error was occurred! [halt, IOException]");
+            System.exit(1);
+          }
+          break;
+        case 4: // rb
+          try{
+            Runtime.getRuntime().exec(sysPath + "\\System32\\shutdown.exe -r -t 0");
+          }
+          catch(IOException ioe){
+            System.err.println("Oh, no! A error was occurred! [rb, IOException]");
+            System.exit(1);
+          }
+          break;
         default: // otherwise, nothing
           return;
     }
   }
 
   // A method to write a batch file.
-  // Maybe I don't need it now.
+  // (This my old way) Maybe I don't need it now.
   public void writeText(String path,String text){
     File tBatchF = new File(path);
 
@@ -83,9 +101,20 @@ public class Run implements IWriter{
   }
 
   // Assist Method of writeText().
-  // Ya, also I don't need it now.
+  // Also.
   public void writeBR(String p){
-    writeText(p, "\n");
+    writeText(p, "\n");	
+  }
+  
+  // Check Input value.
+  public boolean isNaN(String os){
+    try{
+	  Integer.parseInt(os); // Try to parse to int.
+	  return false;
+	}
+	catch(NumberFormatException nfe){ // If it throws NumberFormatException, return boolean true.
+	  return true;
+	}
   }
 
   // Main Method.
@@ -101,21 +130,27 @@ public class Run implements IWriter{
     if(a[0].equals("x") && a[1].equals("x")){ // Open tool gate
       switch(a[2]){ // Parse tool name
         case "lo":
-          thisInstance.execute(0);
+          thisInstance.executeTools(0);
           break;
         case "pr":
-          thisInstance.execute(1);
+          thisInstance.executeTools(1);
           break;
         case "re":
-          thisInstance.execute(2);
+          thisInstance.executeTools(2);
+          break;
+		case "halt":
+          thisInstance.executeTools(3);
+          break;
+        case "rb":
+          thisInstance.executeTools(4);
           break;
         default:
           System.out.print("Invaild Arg!!!"); // Give out hint.
       }
     }
-    else{ // Change Password Block
-      int rv = thisInstance.decrypt(a); // Decrypts input value
-      if(rv >= 1 && !(rv > 5)){ // To prevent some errors (only classroom private edition,you know ya.)
+    else if((!thisInstance.isNaN(a[0])) && (!thisInstance.isNaN(a[1]))){ // If not invoke tools, and the values are vaild, into Change Password Block.
+      int rv = thisInstance.decryptUserInput(a); // Decrypts input value
+      if(rv >= 1 && !(rv > 5)){ // To prevent some errors (only classroom private edition,you know.)
         StringBuilder sb = new StringBuilder();
         sb.append(IWriter.baseCmd);
         sb.append(IWriter.armv7a);
@@ -129,7 +164,13 @@ public class Run implements IWriter{
           System.exit(1);
         }
       }
+      else{
+        System.out.print("Invaild Arg!!!"); // Give out hint.
+      }
     }
+	else{
+	  System.out.print("Invaild Arg!!!"); // Give out hint.
+	}
     // CLEANUP!
     if(tempBatch.exists()){
       tempBatch.delete(); //Delete the temp batch file

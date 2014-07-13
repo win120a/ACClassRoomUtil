@@ -23,7 +23,7 @@ public interface IWriter{
   // Tail
   String tail=".";
   // Decrypts input
-  int decrypt(String[] ar);
+  int decryptUserInput(String[] ar);
   // Write text method
   void writeText(String path, String text);
   // Assist method of BR
