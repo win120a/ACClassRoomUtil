@@ -31,15 +31,33 @@ public class Run implements Logger{
     sb.append(Logger.HalfLogPath);
     sb.append(Logger.LogFileName);
     sb.append(calu.getYear());
+	sb.append("-");
     sb.append(calu.getMonth());
+	sb.append("-");
     sb.append(calu.getDay());
-    sb.append(" ");
+    sb.append("_");
     sb.append(calu.getHour());
+	sb.append("H ");
     sb.append(calu.getMinute());
+	sb.append("M ");
     sb.append(calu.getSecond());
+	sb.append("S_");
     sb.append(calu.getDayOfWeek());
     sb.append(Logger.LogFileSuffix);
-    File fileObj = new File(sb.toString());
-    File.createNewFile();
+	// System.out.println(sb.toString());
+    File fileObj = null;
+    File folderObj = null;
+    try{
+      fileObj = new File(sb.toString());
+      folderObj = new File(thisInstance.getSystemInstallPath() + "\\System32\\AC-Engine\\PowerOnLogger");
+      if(!(folderObj.exists())){
+        folderObj.mkdirs();
+      }
+      fileObj.createNewFile();
+    }
+    catch(IOException ioe){
+      ioe.printStackTrace();
+      System.exit(1);
+    }
   }
 }
