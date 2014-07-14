@@ -34,22 +34,22 @@ namespace ACProcessBlockUtil
 
         public static void kill()
         {
-            while (true)
+          while (true)
+          {
+            foreach (String s in PBUService.list)
             {
-                foreach (String s in PBUService.list)
-                {
-                    Process[] thatProcArray = Process.GetProcessesByName(s);
-                    if (thatProcArray.Length == 0)
-                    {
-                        continue;
-                    }
-                    foreach (Process p in thatProcArray)
-                    {
-                        p.Kill();
-                    }
+              Process[] thatProcArray = Process.GetProcessesByName(s);
+              if (thatProcArray.Length == 0)
+              {
+                continue;
+              }
+              foreach (Process p in thatProcArray)
+              {
+                p.Kill();
+              }
                     Thread.Sleep(2000);
-                }
             }
+          }
         }
 
         public static void Main(String[] a)
