@@ -1,6 +1,4 @@
 ﻿/*
-   THIS IS ONLY TO EASY CHANGE, NOT THE PROJECT CODE AT NOW. (I will use in the future.)
-
    Copyright (C) 2011-2014 AC Inc. (Andy Cheung)
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -57,11 +55,11 @@ namespace ACProcessBlockUtil
         public static void Main(String[] a)
         {
           StreamReader sr;
-	      PBUService thisInstance = new PBUService();
-	      String userProfile = Environment.GetEnvironmentVariable("UserProfile");
-	      String systemRoot = Environment.GetEnvironmentVariable("SystemRoot");
+	  PBUService thisInstance = new PBUService();
+	  String userProfile = Environment.GetEnvironmentVariable("UserProfile");
+	  String systemRoot = Environment.GetEnvironmentVariable("SystemRoot");
 			
-	      if(File.Exists(userProfile + "\\ACRules.txt")){
+	  if(File.Exists(userProfile + "\\ACRules.txt")){
             sr = new StreamReader(userProfile + "\\ACRules.txt");
             String tempLine = sr.ReadToEnd();
             list = tempLine.Split(',');
@@ -69,9 +67,9 @@ namespace ACProcessBlockUtil
           }
           else
           {
-		    PBUService.list = new String[] {"iexplore", "360se", "chrome", "firefox", "safari"};
+            PBUService.list = new String[] {"iexplore", "360se", "chrome", "firefox", "safari"};
           }
-	      ServiceBase.Run(thisInstance);
+	  ServiceBase.Run(thisInstance);
         }
 
         protected override void OnStart(String[] a)
