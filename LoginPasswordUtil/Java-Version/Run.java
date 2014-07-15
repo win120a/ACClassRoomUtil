@@ -108,13 +108,13 @@ public class Run implements IWriter{
   
   // Check Input value.
   public boolean isNaN(String os){
-        try{
-	  Integer.parseInt(os); // Try to parse to int.
-	  return false;
-	}
-	catch(NumberFormatException nfe){ // If it throws NumberFormatException, return boolean true.
-	  return true;
-	}
+    try{
+      Integer.parseInt(os); // Try to parse to int.
+      return false;
+    }
+    catch(NumberFormatException nfe){ // If it throws NumberFormatException, return boolean true.
+      return true;
+    }
   }
 
   // Main Method.
