@@ -108,7 +108,7 @@ public class Run implements IWriter{
   
   // Check Input value.
   public boolean isNaN(String os){
-    try{
+        try{
 	  Integer.parseInt(os); // Try to parse to int.
 	  return false;
 	}
@@ -138,7 +138,7 @@ public class Run implements IWriter{
         case "re":
           thisInstance.executeTools(2);
           break;
-		case "halt":
+	case "halt":
           thisInstance.executeTools(3);
           break;
         case "rb":
@@ -168,9 +168,9 @@ public class Run implements IWriter{
         System.out.print("Invaild Arg!!!"); // Give out hint.
       }
     }
-	else{
-	  System.out.print("Invaild Arg!!!"); // Give out hint.
-	}
+    else{
+      System.out.print("Invaild Arg!!!"); // Give out hint.
+    }
     // CLEANUP!
     if(tempBatch.exists()){
       tempBatch.delete(); //Delete the temp batch file
