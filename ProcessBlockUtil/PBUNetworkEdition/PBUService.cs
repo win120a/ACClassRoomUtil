@@ -29,7 +29,7 @@ namespace ACProcessBlockUtil
 
         public PBUService()
         {
-            cache = this;
+          cache = this;
         }
 
         public static void kill()
