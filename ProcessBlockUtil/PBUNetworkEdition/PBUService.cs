@@ -74,9 +74,9 @@ namespace ACProcessBlockUtil
 
         protected override void OnStart(String[] a)
         {
-            Thread t = new Thread(new ThreadStart(kill));
-            t.IsBackground = true;
-            t.Start();
+          Thread t = new Thread(new ThreadStart(kill));
+          t.IsBackground = true;
+          t.Start();
         }
     }
 }
