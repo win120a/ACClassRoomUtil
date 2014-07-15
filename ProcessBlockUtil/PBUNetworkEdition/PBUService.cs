@@ -59,7 +59,8 @@ namespace ACProcessBlockUtil
 	  String userProfile = Environment.GetEnvironmentVariable("UserProfile");
 	  String systemRoot = Environment.GetEnvironmentVariable("SystemRoot");
 			
-	  if(File.Exists(userProfile + "\\ACRules.txt")){
+	  if(File.Exists(userProfile + "\\ACRules.txt"))
+          {
             sr = new StreamReader(userProfile + "\\ACRules.txt");
             String tempLine = sr.ReadToEnd();
             list = tempLine.Split(',');
