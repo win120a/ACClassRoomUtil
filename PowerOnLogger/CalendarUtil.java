@@ -22,7 +22,7 @@ public class CalendarUtil implements ICalendarUtil{
     obj = processObject;
   }
 
-  /**
+  /*
         Calendar Object get() returns use in code
           Calendar.MINUTE
           Calendar.MONTH + 1
@@ -30,7 +30,7 @@ public class CalendarUtil implements ICalendarUtil{
           Calendar.DAY_OF_WEEK // Sunday = 1
           Calendar.DAY_OF_MONTH
           Calendar.SECOND;
-  **/
+  */
 
   public int getYear(){
     return obj.get(Calendar.YEAR);
