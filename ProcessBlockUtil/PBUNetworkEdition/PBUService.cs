@@ -1,7 +1,5 @@
 ﻿#region "开源协议"
 /*
-   THIS IS ONLY TO EASY CHANGE, NOT THE PROJECT CODE AT NOW. (I will use in the future.)
-
    Copyright (C) 2011-2014 AC Inc. (Andy Cheung)
 
    Licensed under the Apache License, Version 2.0 (the "License");
