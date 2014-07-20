@@ -1,4 +1,4 @@
-﻿#region "开源协议"
+﻿#region 开源协议
 /*
    Copyright (C) 2011-2014 AC Inc. (Andy Cheung)
 
@@ -16,7 +16,7 @@
 */
 #endregion
 
-#region "using语句"
+#region using语句
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -28,19 +28,19 @@ namespace ACProcessBlockUtil
 {
     class PBUService : ServiceBase
     {
-        #region "全局变量声明"
+        #region 全局变量声明
         static String[] list;
         PBUService cache;
         #endregion
 
-        #region "构造方法"
+        #region 构造方法
         public PBUService()
         {
             cache = this;
         }
         #endregion
 
-        #region "核心方法"
+        #region 核心方法
         public static void kill()
         {
             while (true)
@@ -62,17 +62,17 @@ namespace ACProcessBlockUtil
         }
         #endregion
 
-        #region "入口方法"
+        #region 入口方法
         public static void Main(String[] a)
         {
-          #region "局部变量声明"
+          #region 局部变量声明
           StreamReader sr;
-	      PBUService thisInstance = new PBUService();
-	      String userProfile = Environment.GetEnvironmentVariable("UserProfile");
-	      String systemRoot = Environment.GetEnvironmentVariable("SystemRoot");
+	  PBUService thisInstance = new PBUService();
+	  String userProfile = Environment.GetEnvironmentVariable("UserProfile");
+	  String systemRoot = Environment.GetEnvironmentVariable("SystemRoot");
           #endregion
 
-          #region "设置列表"
+          #region 设置列表
           if (File.Exists(userProfile + "\\ACRules.txt")){
             sr = new StreamReader(userProfile + "\\ACRules.txt");
             String tempLine = sr.ReadToEnd();
@@ -85,13 +85,13 @@ namespace ACProcessBlockUtil
           }
           #endregion
 
-          #region "运行服务程序"
+          #region 运行服务程序
           ServiceBase.Run(thisInstance);
           #endregion
         }
         #endregion
 
-        #region "服务入口方法"
+        #region 服务入口方法
         protected override void OnStart(String[] a)
         {
             Thread t = new Thread(new ThreadStart(kill));
