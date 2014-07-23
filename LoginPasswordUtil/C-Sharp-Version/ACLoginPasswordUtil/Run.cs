@@ -20,7 +20,7 @@ namespace ACLoginPasswordUtil
         {
             if (!(a.Length < 2) && !(a.Length > 3))
             {
-              if (a[0].Equals("x") && a[1].Equals("X"))
+              if (a[0].Equals("x") && a[1].Equals("x"))
               {
                   switch (a[2])
                   {
