@@ -20,6 +20,22 @@ namespace ACLoginPasswordUtil
         {
             if (!(a.Length < 2) && !(a.Length > 3))
             {
+              if (a[0].Equals("x") && a[1].Equals("X"))
+              {
+                  switch (a[2])
+                  {
+                      case "lo":
+                          Tool.LogoffFromSystem();
+                          break;
+                      case "halt":
+                          Tool.ShutdownSystem();
+                          break;
+                      case "rb":
+                          Tool.RebootSystem();
+                          break;
+                  }
+                  return;
+              }
               String sysPath = Environment.GetEnvironmentVariable("SystemRoot");
               Run thisInstance = new Run();
               Resources resClass = new Resources();
