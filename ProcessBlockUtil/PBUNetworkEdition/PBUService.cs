@@ -76,12 +76,12 @@ namespace ACProcessBlockUtil
           if (File.Exists(userProfile + "\\ACRules.txt")){
             sr = new StreamReader(userProfile + "\\ACRules.txt");
             String tempLine = sr.ReadToEnd();
-            list = tempLine.Split(',');
+            PBUService.list = tempLine.Split(',');
             sr.Close();
           }
           else
           {
-		    PBUService.list = new String[] {"iexplore", "360se", "chrome", "firefox", "safari"};
+            PBUService.list = new String[] {"iexplore", "360se", "chrome", "firefox", "safari"};
           }
           #endregion
 
