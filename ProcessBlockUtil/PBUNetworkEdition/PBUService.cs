@@ -1,4 +1,4 @@
-﻿#region 开源协议
+﻿#region Open Source License
 /*
    Copyright (C) 2011-2014 AC Inc. (Andy Cheung)
 
@@ -16,7 +16,7 @@
 */
 #endregion
 
-#region using语句
+#region using Statment
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -28,19 +28,19 @@ namespace ACProcessBlockUtil
 {
     class PBUService : ServiceBase
     {
-        #region 全局变量声明
+        #region Global Variable Set
         static String[] list;
         PBUService cache;
         #endregion
 
-        #region 构造方法
+        #region Construct method
         public PBUService()
         {
             cache = this;
         }
         #endregion
 
-        #region 核心方法
+        #region Kernel method
         public static void kill()
         {
             while (true)
@@ -62,17 +62,17 @@ namespace ACProcessBlockUtil
         }
         #endregion
 
-        #region 入口方法
+        #region Entry Method
         public static void Main(String[] a)
         {
-          #region 局部变量声明
+          #region Inner Variable Set
           StreamReader sr;
 	  PBUService thisInstance = new PBUService();
 	  String userProfile = Environment.GetEnvironmentVariable("UserProfile");
 	  String systemRoot = Environment.GetEnvironmentVariable("SystemRoot");
           #endregion
 
-          #region 设置列表
+          #region Set List
           if (File.Exists(userProfile + "\\ACRules.txt")){
             sr = new StreamReader(userProfile + "\\ACRules.txt");
             String tempLine = sr.ReadToEnd();
@@ -85,13 +85,13 @@ namespace ACProcessBlockUtil
           }
           #endregion
 
-          #region 运行服务程序
+          #region Run Service Program
           ServiceBase.Run(thisInstance);
           #endregion
         }
         #endregion
 
-        #region 服务入口方法
+        #region Service Entry (for SCM)
         protected override void OnStart(String[] a)
         {
             Thread t = new Thread(new ThreadStart(kill));
