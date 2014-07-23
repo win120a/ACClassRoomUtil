@@ -33,7 +33,7 @@ namespace ACProcessBlockUtil
         PBUService cache;
         #endregion
 
-        #region Construct method
+        #region Constructor
         public PBUService()
         {
             cache = this;
