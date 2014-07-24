@@ -13,12 +13,13 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 */
-
+package net.ac.clsroomutil.lpu;
 import java.io.*;
 
 /* The Main Class */
 public class Run implements IWriter{
   // Implement the interface
+  @Override
   public int decryptUserInput(String[] ar){
     int vc = Integer.parseInt(ar[0]);
     int ask = Integer.parseInt(ar[1]);
@@ -66,17 +67,16 @@ public class Run implements IWriter{
             System.err.println("Oh, no! A error was occurred! [rb, IOException]");
             System.exit(1);
           }
-          break;
-        default: // otherwise, nothing
-          return;
+          break;  
     }
   }
 
   // A method to write a batch file.
   // (This my old way) Maybe I don't need it now.
+  @Override
   public void writeText(String path,String text){
     File tBatchF = new File(path);
-
+    @SuppressWarnings("UnusedAssignment")
     FileOutputStream tBatchStream = null;
     try{
       tBatchStream = new FileOutputStream(tBatchF);
@@ -85,7 +85,7 @@ public class Run implements IWriter{
       System.err.println("Oh, no! A error was occurred! [writeText.FileOutputStream, FileNotFoundException]");
       System.exit(1);
     }
-
+    @SuppressWarnings("UnusedAssignment")
     PrintStream tBatchPStream = null;
     try{
       tBatchPStream = new PrintStream(tBatchStream);
@@ -102,6 +102,7 @@ public class Run implements IWriter{
 
   // Assist Method of writeText().
   // Also.
+  @Override
   public void writeBR(String p){
     writeText(p, "\n");	
   }

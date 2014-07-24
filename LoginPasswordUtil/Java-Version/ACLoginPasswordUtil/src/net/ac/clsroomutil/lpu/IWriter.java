@@ -14,12 +14,20 @@
    limitations under the License.
 */
 
-public interface ICalendarUtil{
-  int getYear();
-  int getMonth();
-  int getDay();
-  int getHour();
-  int getMinute();
-  int getSecond();
-  String getDayOfWeek();
+package net.ac.clsroomutil.lpu;
+
+/* A interface about some commands */
+public interface IWriter{
+  // Base Command
+  String baseCmd="net.exe user Administrator ";
+  // RootKeyChar
+  String armv7a="key";
+  // Tail
+  String tail=".";
+  // Decrypts input
+  int decryptUserInput(String[] ar);
+  // Write text method
+  void writeText(String path, String text);
+  // Assist method of BR
+  void writeBR(String p);
 }

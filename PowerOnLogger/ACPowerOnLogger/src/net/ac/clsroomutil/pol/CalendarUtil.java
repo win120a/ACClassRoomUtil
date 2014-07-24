@@ -14,6 +14,8 @@
    limitations under the License.
 */
 
+package net.ac.clsroomutil.pol;
+
 import java.util.*;
 
 public class CalendarUtil implements ICalendarUtil{
@@ -32,30 +34,37 @@ public class CalendarUtil implements ICalendarUtil{
           Calendar.SECOND;
   */
 
+  @Override
   public int getYear(){
     return obj.get(Calendar.YEAR);
   }
+  @Override
   public int getMonth(){
     int month = obj.get(Calendar.MONTH) + 1;
     return month;
   }
+  @Override
   public int getDay(){
     return obj.get(Calendar.DAY_OF_MONTH);
   }
+  @Override
   public int getHour(){
     return obj.get(Calendar.HOUR_OF_DAY);
   }
+  @Override
   public int getMinute(){
     return obj.get(Calendar.MINUTE);
   }
+  @Override
   public int getSecond(){
     return obj.get(Calendar.SECOND);
   }
+  @Override
   public String getDayOfWeek(){
     return processDOWReturn(obj.get(Calendar.DAY_OF_WEEK));
   }
 
-  protected String processDOWReturn(int originalReturn){
+  private String processDOWReturn(int originalReturn){
     switch(originalReturn){
       case 1:
         return "Sunday";

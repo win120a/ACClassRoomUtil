@@ -13,21 +13,21 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 */
+package net.ac.clsroomutil.pol;
 
 import java.io.*;
 import java.util.*;
 
 public class Run implements Logger{
+  @Override
   public String getSystemInstallPath(){
     return System.getenv("SystemRoot");
   }
 
-  public static void main(String[] a){
-    Run thisInstance = new Run();
-    Calendar cal = Calendar.getInstance();
-    CalendarUtil calu = new CalendarUtil(cal);
+  @Override
+  public StringBuilder construct(Run instance, CalendarUtil calu){
     StringBuilder sb = new StringBuilder();
-    sb.append(thisInstance.getSystemInstallPath());
+    sb.append(instance.getSystemInstallPath());
     sb.append(Logger.HalfLogPath);
     sb.append(Logger.LogFileName);
     sb.append(calu.getYear());
@@ -44,20 +44,36 @@ public class Run implements Logger{
     sb.append("S_");
     sb.append(calu.getDayOfWeek());
     sb.append(Logger.LogFileSuffix);
-    // System.out.println(sb.toString());
+    return sb;
+  }
+  
+  @Override
+  public void log(StringBuilder builder, Run instance){
+    @SuppressWarnings("UnusedAssignment")
     File fileObj = null;
+    @SuppressWarnings("UnusedAssignment")
     File folderObj = null;
     try{
-      fileObj = new File(sb.toString());
-      folderObj = new File(thisInstance.getSystemInstallPath() + "\\System32\\AC-Engine\\PowerOnLogger");
+      fileObj = new File(builder.toString());
+      folderObj = new File(instance.getSystemInstallPath() + 
+                           "\\System32\\AC-Engine\\PowerOnLogger");
       if(!(folderObj.exists())){
         folderObj.mkdirs();
       }
       fileObj.createNewFile();
     }
     catch(IOException ioe){
-      ioe.printStackTrace();
+      System.out.println("Something wrong! Message is " + ioe.getMessage());
       System.exit(1);
-    }
+    } 
+  }
+  
+  public static void main(String[] a){
+    Run thisInstance = new Run();
+    Calendar cal = Calendar.getInstance();
+    CalendarUtil calu = new CalendarUtil(cal);
+    StringBuilder sb = thisInstance.construct(thisInstance, calu);
+    // System.out.println(sb.toString());
+    thisInstance.log(sb, thisInstance);
   }
 }

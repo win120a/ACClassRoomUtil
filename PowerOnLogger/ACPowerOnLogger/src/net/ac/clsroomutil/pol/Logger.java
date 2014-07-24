@@ -14,8 +14,13 @@
    limitations under the License.
 */
 
+package net.ac.clsroomutil.pol;
+
 public interface Logger{
   String getSystemInstallPath();
+  StringBuilder construct(Run instance, CalendarUtil calu);
+  void log(StringBuilder builder, Run instance);
+  
   String HalfLogPath = "\\System32\\AC-Engine\\PowerOnLogger\\";
   String LogFileName = "ACPOL_";
   String LogFileSuffix = ".aclog";
