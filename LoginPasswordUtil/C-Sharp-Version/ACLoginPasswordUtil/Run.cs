@@ -34,7 +34,6 @@ namespace ACLoginPasswordUtil
               int pswInt = pt.DecryptUserInput(a);
               if (pswInt >= 1 && !(pswInt > 5)) // The value check.
               {
-
                 StringBuilder sBuilder = pt.ConstructCommandText(sysPath, resClass);
                 String commandText = sBuilder.ToString(); // Path to net
                 StringBuilder argBuilder = pt.ConstructArgText(new StringBuilder(), resClass, pswInt);
