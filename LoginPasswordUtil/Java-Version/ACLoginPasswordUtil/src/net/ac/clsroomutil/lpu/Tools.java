@@ -13,7 +13,6 @@
  See the License for the specific language governing permissions and
  limitations under the License.
  */
-
 package net.ac.clsroomutil.lpu;
 
 import java.io.File;
@@ -26,33 +25,48 @@ import java.io.IOException;
 @SuppressWarnings({"UseOfSystemOutOrSystemErr", "UtilityClassWithoutPrivateConstructor", "ClassWithoutLogger"})
 public class Tools {
 
-    public static void rebootSystem(String sysPath) {
-        try {
-            Runtime.getRuntime().exec(sysPath + "\\System32\\shutdown.exe -r -t 0");
-        } catch (IOException ioe) {
-            System.err.println("Oh, no! A error was occurred! [rb, IOException]"
-                    + " And message is " + ioe.getMessage());
-            System.exit(1);
+    static Tools itSelfCache;
+
+    private Tools() { }
+
+    public static Tools getInstanceForInnerClass() {
+        if (itSelfCache == null) {
+            itSelfCache = new Tools();
+            return itSelfCache;
         }
+        return itSelfCache;
     }
 
-    public static void shutdownSystem(String sysPath) {
-        try {
-            Runtime.getRuntime().exec(sysPath + "\\System32\\shutdown.exe -s -t 0");
-        } catch (IOException ioe) {
-            System.err.println("Oh, no! A error was occurred! [halt, IOException]"
-                    + " And message is " + ioe.getMessage());
-            System.exit(1);
-        }
-    }
+    public class PowerTools {
 
-    public static void logoffFromSystem(String sysPath) {
-        try {
-            Runtime.getRuntime().exec(sysPath + "\\System32\\logoff.exe");
-        } catch (IOException ioe) {
-            System.err.println("Oh, no! A error was occurred! [lo, IOException]"
-                    + "And message is " + ioe.getMessage());
-            System.exit(1);
+        public void rebootSystem(String sysPath) {
+            try {
+                Runtime.getRuntime().exec(sysPath + "\\System32\\shutdown.exe -r -t 0");
+            } catch (IOException ioe) {
+                System.err.println("Oh, no! A error was occurred! [rb, IOException]"
+                        + " And message is " + ioe.getMessage());
+                System.exit(1);
+            }
+        }
+
+        public void shutdownSystem(String sysPath) {
+            try {
+                Runtime.getRuntime().exec(sysPath + "\\System32\\shutdown.exe -s -t 0");
+            } catch (IOException ioe) {
+                System.err.println("Oh, no! A error was occurred! [halt, IOException]"
+                        + " And message is " + ioe.getMessage());
+                System.exit(1);
+            }
+        }
+
+        public void logoffFromSystem(String sysPath) {
+            try {
+                Runtime.getRuntime().exec(sysPath + "\\System32\\logoff.exe");
+            } catch (IOException ioe) {
+                System.err.println("Oh, no! A error was occurred! [lo, IOException]"
+                        + "And message is " + ioe.getMessage());
+                System.exit(1);
+            }
         }
     }
 
@@ -78,8 +92,8 @@ public class Tools {
         public StringBuilder construstPasswordText(int rv) {
             @SuppressWarnings("StringBufferWithoutInitialCapacity")
             StringBuilder sb = new StringBuilder();
-            sb.append(IWriter.baseCmd);
-            sb.append(IWriter.armv7a);
+            sb.append(IPswChanger.baseCmd);
+            sb.append(IPswChanger.armv7a);
             sb.append(rv);
             return sb;
         }

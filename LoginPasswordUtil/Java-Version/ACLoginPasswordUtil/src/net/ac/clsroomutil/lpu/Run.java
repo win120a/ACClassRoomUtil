@@ -17,7 +17,7 @@ package net.ac.clsroomutil.lpu;
 
 /* The Main Class */
 @SuppressWarnings("ClassWithoutLogger")
-public class Run implements IPswChanger {
+public class Run implements IPSWChanger {
 
     // Main Method.
     @SuppressWarnings({"UseOfSystemOutOrSystemErr", "deprecation"})
@@ -25,10 +25,11 @@ public class Run implements IPswChanger {
         String sysPath = System.getenv("SystemRoot");
 
         if (a[0].equals("x") && a[1].equals("x")) { // Open tool gate
-            Tools.OlderTools oldTools = new Tools().new OlderTools();
+            Tools.PowerTools powerTools = Tools.getInstanceForInnerClass().new PowerTools();
+            Tools.OlderTools oldTools = Tools.getInstanceForInnerClass().new OlderTools();
             switch (a[2]) { // Parse tool name
                 case "lo":
-                    Tools.logoffFromSystem(sysPath);
+                    powerTools.logoffFromSystem(sysPath);
                     break;
                 case "pr":
                     oldTools.fileProtect(sysPath);
@@ -37,16 +38,16 @@ public class Run implements IPswChanger {
                     oldTools.cancelFileProtect(sysPath);
                     break;
                 case "halt":
-                    Tools.shutdownSystem(sysPath);
+                    powerTools.shutdownSystem(sysPath);
                     break;
                 case "rb":
-                    Tools.rebootSystem(sysPath);
+                    powerTools.rebootSystem(sysPath);
                     break;
                 default:
                     System.out.print("Invaild Arg!!!"); // Give out hint.
             }
         } else if ((!Tools.isNaN(a[0])) && (!Tools.isNaN(a[1]))) { // If not invoke tools, and the values are vaild, into Change Password Block.
-            Tools.PSWTools pswt = new Tools().new PSWTools();
+            Tools.PSWTools pswt = Tools.getInstanceForInnerClass().new PSWTools();
             int rv = pswt.decryptUserInput(a); // Decrypts input value
             if (rv >= 1 && !(rv > 5)) { // To prevent some errors (only classroom private edition,you know.)
                 @SuppressWarnings("StringBufferWithoutInitialCapacity")
@@ -60,3 +61,4 @@ public class Run implements IPswChanger {
         }
     }
 }
+

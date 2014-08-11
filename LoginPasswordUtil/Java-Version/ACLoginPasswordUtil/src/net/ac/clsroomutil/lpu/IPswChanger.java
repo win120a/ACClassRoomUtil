@@ -16,7 +16,7 @@
 package net.ac.clsroomutil.lpu;
 
 /* A interface about some commands */
-public interface IPswChanger {
+public interface IPSWChanger {
 
     // Base Command
 
@@ -26,3 +26,4 @@ public interface IPswChanger {
     // Tail
     String tail = ".";
 }
+
