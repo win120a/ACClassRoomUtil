@@ -16,7 +16,7 @@
 package net.ac.clsroomutil.lpu;
 
 /* A interface about some commands */
-public interface IPSWChanger {
+public interface IPswChanger {
 
     // Base Command
 

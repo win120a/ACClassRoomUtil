@@ -27,7 +27,8 @@ public class Tools {
 
     static Tools itSelfCache;
 
-    private Tools() { }
+    private Tools() {
+    }
 
     public static Tools getInstanceForInnerClass() {
         if (itSelfCache == null) {
@@ -37,6 +38,31 @@ public class Tools {
         return itSelfCache;
     }
 
+    public static void chooseTool(String toolID, String sysPath) {
+        Tools.PowerTools powerTools = Tools.getInstanceForInnerClass().new PowerTools();
+        Tools.OlderTools oldTools = Tools.getInstanceForInnerClass().new OlderTools();
+        switch (toolID) { // Parse tool name
+            case "lo":
+                powerTools.logoffFromSystem(sysPath);
+                break;
+            case "pr":
+                oldTools.fileProtect(sysPath);
+                break;
+            case "re":
+                oldTools.cancelFileProtect(sysPath);
+                break;
+            case "halt":
+                powerTools.shutdownSystem(sysPath);
+                break;
+            case "rb":
+                powerTools.rebootSystem(sysPath);
+                break;
+            default:
+                System.out.print("Invaild Arg!!!"); // Give out hint.
+            }
+    }
+
+    @SuppressWarnings("PublicInnerClass")
     public class PowerTools {
 
         public void rebootSystem(String sysPath) {
@@ -79,8 +105,8 @@ public class Tools {
         }
     }
 
-    @SuppressWarnings("PackageVisibleInnerClass")
-    class PSWTools {
+    @SuppressWarnings("PublicInnerClass")
+    public class PSWTools {
 
         public int decryptUserInput(String[] ar) {
             int vc = Integer.parseInt(ar[0]);
@@ -113,8 +139,8 @@ public class Tools {
      *
      * @deprecated
      */
-    @SuppressWarnings("PackageVisibleInnerClass")
-    class OlderTools {
+    @SuppressWarnings("PublicInnerClass")
+    public class OlderTools {
 
         @Deprecated
         public void fileProtect(String sysPath) {

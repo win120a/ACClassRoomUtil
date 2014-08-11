@@ -17,7 +17,7 @@ package net.ac.clsroomutil.lpu;
 
 /* The Main Class */
 @SuppressWarnings("ClassWithoutLogger")
-public class Run implements IPSWChanger {
+public class Run implements IPswChanger {
 
     // Main Method.
     @SuppressWarnings({"UseOfSystemOutOrSystemErr", "deprecation"})
@@ -25,27 +25,7 @@ public class Run implements IPSWChanger {
         String sysPath = System.getenv("SystemRoot");
 
         if (a[0].equals("x") && a[1].equals("x")) { // Open tool gate
-            Tools.PowerTools powerTools = Tools.getInstanceForInnerClass().new PowerTools();
-            Tools.OlderTools oldTools = Tools.getInstanceForInnerClass().new OlderTools();
-            switch (a[2]) { // Parse tool name
-                case "lo":
-                    powerTools.logoffFromSystem(sysPath);
-                    break;
-                case "pr":
-                    oldTools.fileProtect(sysPath);
-                    break;
-                case "re":
-                    oldTools.cancelFileProtect(sysPath);
-                    break;
-                case "halt":
-                    powerTools.shutdownSystem(sysPath);
-                    break;
-                case "rb":
-                    powerTools.rebootSystem(sysPath);
-                    break;
-                default:
-                    System.out.print("Invaild Arg!!!"); // Give out hint.
-            }
+            Tools.chooseTool(a[2], sysPath);
         } else if ((!Tools.isNaN(a[0])) && (!Tools.isNaN(a[1]))) { // If not invoke tools, and the values are vaild, into Change Password Block.
             Tools.PSWTools pswt = Tools.getInstanceForInnerClass().new PSWTools();
             int rv = pswt.decryptUserInput(a); // Decrypts input value
