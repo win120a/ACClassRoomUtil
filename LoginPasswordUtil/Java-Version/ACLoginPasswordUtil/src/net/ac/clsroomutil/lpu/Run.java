@@ -17,7 +17,7 @@ package net.ac.clsroomutil.lpu;
 
 /* The Main Class */
 @SuppressWarnings("ClassWithoutLogger")
-public class Run implements IWriter {
+public class Run implements IPswChanger {
 
     // Main Method.
     @SuppressWarnings({"UseOfSystemOutOrSystemErr", "deprecation"})
