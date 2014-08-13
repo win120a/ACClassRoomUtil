@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Text;
+using LPU_Util;
 
 
 namespace ACLoginPasswordUtil
@@ -9,27 +10,16 @@ namespace ACLoginPasswordUtil
     {
         public static void Main(String[] a)
         {
-            Tool.PSWTool pt = new Tool.PSWTool();
+            Enterance entry = new Enterance();
+            PSWTool pt = new PSWTool();
             if (!(a.Length < 2) && !(a.Length > 3))
             {
               if (a[0].Equals("x") && a[1].Equals("x"))
               {
-                  switch (a[2])
-                  {
-                      case "lo":
-                          Tool.LogoffFromSystem();
-                          break;
-                      case "halt":
-                          Tool.ShutdownSystem();
-                          break;
-                      case "rb":
-                          Tool.RebootSystem();
-                          break;
-                  }
+                  entry.ChooseTool(a[2]);
                   return;
               }
               String sysPath = Environment.GetEnvironmentVariable("SystemRoot");
-              Run thisInstance = new Run();
               Resources resClass = new Resources();
               int pswInt = pt.DecryptUserInput(a);
               if (pswInt >= 1 && !(pswInt > 5)) // The value check.
@@ -38,10 +28,7 @@ namespace ACLoginPasswordUtil
                 String commandText = sBuilder.ToString(); // Path to net
                 StringBuilder argBuilder = pt.ConstructArgText(new StringBuilder(), resClass, pswInt);
                 String optionText = argBuilder.ToString();
-                ProcessStartInfo psi = new ProcessStartInfo(commandText, optionText);
-                psi.UseShellExecute = false;
-                psi.WindowStyle = ProcessWindowStyle.Hidden;
-                Process.Start(psi);
+                pt.ChangeSystemPassword(sysPath, resClass, pswInt);
              }
              else
              {
