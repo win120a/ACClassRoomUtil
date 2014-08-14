@@ -19,17 +19,25 @@ import java.io.File;
 import java.io.IOException;
 
 /**
+ * Functional class for LPU.
  *
- * @author User
+ * @author Andy Cheung
  */
-@SuppressWarnings({"UseOfSystemOutOrSystemErr", "UtilityClassWithoutPrivateConstructor", "ClassWithoutLogger"})
+@SuppressWarnings({"UseOfSystemOutOrSystemErr", "ClassWithoutLogger"})
 public class Tools {
 
-    static Tools itSelfCache;
+    /**
+     * Single Instance cache.
+     *
+     * @since 2.0
+     */
+    private static Tools itSelfCache;
 
-    private Tools() {
-    }
-
+    /**
+     * The single instance constructor of this.
+     *
+     * @return The cache of this object
+     */
     public static Tools getInstanceForInnerClass() {
         if (itSelfCache == null) {
             itSelfCache = new Tools();
@@ -38,6 +46,12 @@ public class Tools {
         return itSelfCache;
     }
 
+    /**
+     * The wrap method of original choose tool process in main().
+     *
+     * @param toolID
+     * @param sysPath
+     */
     public static void chooseTool(String toolID, String sysPath) {
         Tools.PowerTools powerTools = Tools.getInstanceForInnerClass().new PowerTools();
         Tools.OlderTools oldTools = Tools.getInstanceForInnerClass().new OlderTools();
@@ -59,12 +73,41 @@ public class Tools {
                 break;
             default:
                 System.out.print("Invaild Arg!!!"); // Give out hint.
-            }
+                System.exit(2);  // And exit with error code 2. (Input Invaild.)
+        }
     }
 
+    /**
+     * Test a number is a integer (Only int range) like JavaScript.
+     * @param os
+     * @return The result.
+     */
+    public static boolean isNaN(String os) {
+        try {
+            Integer.parseInt(os); // Try to parse to int.
+            return false;
+        } catch (NumberFormatException nfe) { // If it throws NumberFormatException, return boolean true.
+            return true;
+        }
+    }
+
+    /**
+     * Hide Constructor.
+     */
+    private Tools() {
+    }
+    
+    /**
+     * Some functions about power.
+     * @since 2.0
+     * @author Andy Cheung
+     */
     @SuppressWarnings("PublicInnerClass")
     public class PowerTools {
-
+        /**
+         * Reboot System using System tool.
+         * @param sysPath 
+         */
         public void rebootSystem(String sysPath) {
             try {
                 Runtime.getRuntime().exec(sysPath + "\\System32\\shutdown.exe -r -t 0");
@@ -74,7 +117,11 @@ public class Tools {
                 System.exit(1);
             }
         }
-
+        
+        /**
+         * Shutdown System using System tool.
+         * @param sysPath 
+         */
         public void shutdownSystem(String sysPath) {
             try {
                 Runtime.getRuntime().exec(sysPath + "\\System32\\shutdown.exe -s -t 0");
@@ -84,7 +131,11 @@ public class Tools {
                 System.exit(1);
             }
         }
-
+     
+        /**
+         * Logoff from System using System tool.
+         * @param sysPath 
+         */
         public void logoffFromSystem(String sysPath) {
             try {
                 Runtime.getRuntime().exec(sysPath + "\\System32\\logoff.exe");
@@ -95,19 +146,20 @@ public class Tools {
             }
         }
     }
-
-    public static boolean isNaN(String os) {
-        try {
-            Integer.parseInt(os); // Try to parse to int.
-            return false;
-        } catch (NumberFormatException nfe) { // If it throws NumberFormatException, return boolean true.
-            return true;
-        }
-    }
-
+    
+    /**
+     * The Kernel tools in this util.
+     * @since 2.0
+     * @author Andy Cheung
+     */
     @SuppressWarnings("PublicInnerClass")
     public class PSWTools {
 
+        /**
+         * Parse Input.
+         * @param ar
+         * @return
+         */
         public int decryptUserInput(String[] ar) {
             int vc = Integer.parseInt(ar[0]);
             int ask = Integer.parseInt(ar[1]);
@@ -115,6 +167,11 @@ public class Tools {
             return fnum;
         }
 
+        /**
+         * Construst psw text.
+         * @param rv
+         * @return
+         */
         public StringBuilder construstPasswordText(int rv) {
             @SuppressWarnings("StringBufferWithoutInitialCapacity")
             StringBuilder sb = new StringBuilder();
@@ -124,11 +181,18 @@ public class Tools {
             return sb;
         }
 
+        /**
+         * Kernel method.
+         * @param sysPath
+         * @param sb
+         */
         public void changeSystemPassword(String sysPath, StringBuilder sb) {
             try {
                 Runtime.getRuntime().exec(sysPath + "\\System32\\" + sb.toString()); // Run password change application (net).
             } catch (IOException ioe) {
-                System.err.println("Oh, no! A error was occurred! [Main.ChangePassword, IOException]");
+                System.err.println("Oh, no! A error was occurred! "
+                        + "[ChangePassword, IOException]"
+                        + "And message is: " + ioe.getMessage());
                 System.exit(1);
             }
         }
@@ -139,9 +203,14 @@ public class Tools {
      *
      * @deprecated
      */
-    @SuppressWarnings("PublicInnerClass")
+    @SuppressWarnings(value = "PublicInnerClass")
     public class OlderTools {
 
+        /**
+         * Enable System File Protect. (Disable SFC first.)
+         * @param sysPath
+         * @deprecated
+         */
         @Deprecated
         public void fileProtect(String sysPath) {
             new File(sysPath + "\\System32\\net.exe").renameTo(new File(sysPath + "\\System32\n1.exe"));
@@ -149,6 +218,11 @@ public class Tools {
             new File(sysPath + "\\System32\\netplwiz.dll").renameTo(new File(sysPath + "\\System32\\netplwiz.dl3"));
         }
 
+        /**
+         * Disable System File Protect. (Disable SFC first.)
+         * @param sysPath
+         * @deprecated
+         */
         @Deprecated
         public void cancelFileProtect(String sysPath) {
             new File(sysPath + "\\System32\\n1.exe").renameTo(new File(sysPath + "\\System32\net.exe"));
