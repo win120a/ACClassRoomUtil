@@ -22,17 +22,21 @@ namespace PowerOnLoggerManagmentTool
 #if DEBUG
             MessageBox.Show(Properties.Settings.Default.User);
             MessageBox.Show(Properties.Settings.Default.Pass);
-#endif
+            this.Hide();
+            GC.Collect();
+            new Main().Show();
+#else
             if ((p.Text.Equals(Properties.Settings.Default.Pass)) && (u.Text.Equals(Properties.Settings.Default.User)))
             {
-                MessageBox.Show("OK", "OK");
                 this.Hide();
+                GC.Collect();
                 new Main().Show();
             }
             else
             {
                 MessageBox.Show("User/Password Wrong!", "Fail");
             }
+#endif
         }
 
         private void cc_Click(object sender, EventArgs e)

@@ -29,15 +29,21 @@ namespace PowerOnLoggerManagmentTool
 
         private void pc_Click(object sender, EventArgs e)
         {
+            if (op.Text.Equals("") || np.Text.Equals("") || npc.Text.Equals(""))
+            {
+                MessageBox.Show("All fields CANNOT be empty!", "Fail");
+                return;
+            }
+
             if (op.Text.Equals(Properties.Settings.Default.Pass))
             {
                 if (np.Text.Equals(npc.Text))
                 {
                     Properties.Settings.Default.Pass = np.Text;
                     Properties.Settings.Default.Save();
-                    MessageBox.Show("Change Password Successful.", "OK");
+                    MessageBox.Show("Change Password Successful.\n Please Re-login.", "OK");
                     this.Hide();
-                    new Main().Show();
+                    new Verify().Show();
                 }
                 else
                 {
@@ -52,13 +58,18 @@ namespace PowerOnLoggerManagmentTool
 
         private void uc_Click(object sender, EventArgs e)
         {
+            if (nu.Text.Equals("") || nuc.Text.Equals(""))
+            {
+                MessageBox.Show("All Fields CANNOT be empty!", "Fail");
+                return;
+            }
             if (nu.Text.Equals(nuc.Text))
             {
                 Properties.Settings.Default.User = nu.Text;
                 Properties.Settings.Default.Save();
-                MessageBox.Show("Change Username Successful.", "OK");
+                MessageBox.Show("Change Username Successful.\n Please Re-login.", "OK");
                 this.Hide();
-                new Main().Show();
+                new Verify().Show();
             }
             else
             {

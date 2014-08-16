@@ -62,7 +62,7 @@
             // exit
             // 
             this.exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.exit.Location = new System.Drawing.Point(303, 260);
+            this.exit.Location = new System.Drawing.Point(292, 260);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(28, 24);
             this.exit.TabIndex = 7;
@@ -180,6 +180,7 @@
             // 
             this.op.Location = new System.Drawing.Point(76, 14);
             this.op.Name = "op";
+            this.op.PasswordChar = '#';
             this.op.Size = new System.Drawing.Size(218, 21);
             this.op.TabIndex = 16;
             // 
@@ -187,6 +188,7 @@
             // 
             this.np.Location = new System.Drawing.Point(76, 41);
             this.np.Name = "np";
+            this.np.PasswordChar = '#';
             this.np.Size = new System.Drawing.Size(218, 21);
             this.np.TabIndex = 17;
             // 
@@ -194,6 +196,7 @@
             // 
             this.npc.Location = new System.Drawing.Point(76, 68);
             this.npc.Name = "npc";
+            this.npc.PasswordChar = '#';
             this.npc.Size = new System.Drawing.Size(218, 21);
             this.npc.TabIndex = 18;
             // 
@@ -212,12 +215,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.exit;
-            this.ClientSize = new System.Drawing.Size(343, 296);
+            this.ClientSize = new System.Drawing.Size(332, 296);
             this.Controls.Add(this.uc);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.pc);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Account";
