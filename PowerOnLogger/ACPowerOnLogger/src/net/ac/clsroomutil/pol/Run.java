@@ -86,9 +86,9 @@ public class Run implements Logger{
   @Override
   public void log(StringBuilder builder, Run instance){
       @SuppressWarnings("UnusedAssignment")
-              File fileObj = null;
+      File fileObj = null;
       @SuppressWarnings("UnusedAssignment")
-              File folderObj = null;
+      File folderObj = null;
       try{
           fileObj = new File(builder.toString());
           folderObj = new File(instance.getSystemInstallPath() +
