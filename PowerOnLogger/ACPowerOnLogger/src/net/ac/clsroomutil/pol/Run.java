@@ -48,10 +48,25 @@ public class Run implements Logger{
       sb.append("-");
       sb.append(calu.getDay());
       sb.append("_");
+
+      if (!(isBiggerThanTen(calu.getHour())){
+          sb.append("0");
+      }
+
       sb.append(calu.getHour());
       sb.append("H ");
+
+      if (!(isBiggerThanTen(calu.getMinute())){
+          sb.append("0");
+      }
+
       sb.append(calu.getMinute());
       sb.append("M ");
+
+      if (!(isBiggerThanTen(calu.getSecond())){
+          sb.append("0");
+      }
+
       sb.append(calu.getSecond());
       sb.append("S_");
       sb.append(calu.getDayOfWeek());
@@ -59,6 +74,15 @@ public class Run implements Logger{
       return sb;
   }
   
+  public boolean isBiggerThanTen(int value){
+      if (value >= 10){
+          return true;
+      }
+      else{
+          return false;
+      }
+  }
+
   @Override
   public void log(StringBuilder builder, Run instance){
       @SuppressWarnings("UnusedAssignment")
