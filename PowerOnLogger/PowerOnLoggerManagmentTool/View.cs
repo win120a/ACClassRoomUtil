@@ -21,6 +21,7 @@ namespace PowerOnLoggerManagmentTool
         private void View_Load(object sender, EventArgs e)
         {
             listBox1.Hide();
+
             String path = Environment.GetEnvironmentVariable("SystemRoot") + "\\System32\\AC-Engine\\PowerOnLogger";
             IEnumerable enu0 = Directory.EnumerateFiles(path);
 
