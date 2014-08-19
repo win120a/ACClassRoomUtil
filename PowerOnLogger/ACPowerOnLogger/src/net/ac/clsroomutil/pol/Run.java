@@ -49,21 +49,21 @@ public class Run implements Logger{
       sb.append(calu.getDay());
       sb.append("_");
 
-      if (!(isBiggerThanTen(calu.getHour())){
+      if (!(isBiggerThanOrEqualsTen(calu.getHour())){
           sb.append("0");
       }
 
       sb.append(calu.getHour());
       sb.append("H ");
 
-      if (!(isBiggerThanTen(calu.getMinute())){
+      if (!(isBiggerThanOrEqualsTen(calu.getMinute())){
           sb.append("0");
       }
 
       sb.append(calu.getMinute());
       sb.append("M ");
 
-      if (!(isBiggerThanTen(calu.getSecond())){
+      if (!(isBiggerThanOrEqualsTen(calu.getSecond())){
           sb.append("0");
       }
 
@@ -74,7 +74,7 @@ public class Run implements Logger{
       return sb;
   }
   
-  public boolean isBiggerThanTen(int value){
+  private boolean isBiggerThanOrEqualsTen(int value){
       if (value >= 10){
           return true;
       }
