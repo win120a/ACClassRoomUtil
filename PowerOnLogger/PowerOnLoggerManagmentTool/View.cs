@@ -20,15 +20,16 @@ namespace PowerOnLoggerManagmentTool
 
         private void View_Load(object sender, EventArgs e)
         {
+            if (!(Directory.Exists(Environment.GetEnvironmentVariable("SystemRoot") + "\\System32\\AC-Engine\\PowerOnLogger")))
+            {
+                listBox1.Items.Add("You didn't install POL.");
+                return;
+            }
             listBox1.Hide();
-
             String path = Environment.GetEnvironmentVariable("SystemRoot") + "\\System32\\AC-Engine\\PowerOnLogger";
             IEnumerable enu0 = Directory.EnumerateFiles(path);
-
             listBox1.BeginUpdate();
-
-            foreach (string s in enu0)
-            {
+            foreach(string s in enu0){
                 string first = s.Replace(path + "\\", " ");
                 string second = first.Replace("ACPOL_", " ");
                 string third = second.Replace("_", " ");
@@ -37,9 +38,7 @@ namespace PowerOnLoggerManagmentTool
                 string final = fifth.Replace(".aclog", " ");
                 listBox1.Items.Add(final);
             }
-
             listBox1.EndUpdate();
-
             listBox1.Show();
         }
 
