@@ -16,19 +16,15 @@
 
 package net.ac.clsroomutil.pol;
 
-public interface ICalendarUtil {
+public interface ILogger {
 
-    int getYear();
+    String getSystemInstallPath();
 
-    int getMonth();
+    StringBuilder construct(CalendarUtil calu);
 
-    int getDay();
+    void log(StringBuilder builder);
 
-    int getHour();
-
-    int getMinute();
-
-    int getSecond();
-
-    String getDayOfWeek();
+    String HalfLogPath = "\\System32\\AC-Engine\\PowerOnLogger\\";
+    String LogFileName = "ACPOL_";
+    String LogFileSuffix = ".aclog";
 }
