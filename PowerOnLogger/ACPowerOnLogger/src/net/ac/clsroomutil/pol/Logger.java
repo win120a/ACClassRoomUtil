@@ -86,7 +86,7 @@ public class Logger implements ILogger {
                 folderObj.mkdirs();
             }
             fileObj.createNewFile();
-            LOG.log(Level.INFO, "System Powered On: {0}", folderObj.getAbsolutePath());
+            LOG.log(Level.INFO, "System Powered On (filename): {0}", builder.toString());
         } catch (IOException ioe) {
             System.out.println("Something wrong! Message is " + ioe.getMessage());
             System.exit(1);
