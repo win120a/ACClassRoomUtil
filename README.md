@@ -70,12 +70,12 @@ LPU
 net
 ```
 
-PBU
+PBU WTBU
 ```
 The .Net API (Process.Kill())
 ```
 
-POL (ON and OFF)
+POL
 ```
 The Java API (Calendar, File)
 ```
