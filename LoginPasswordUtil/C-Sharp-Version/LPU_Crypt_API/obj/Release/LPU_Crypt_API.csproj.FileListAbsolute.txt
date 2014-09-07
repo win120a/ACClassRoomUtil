@@ -1,4 +1,0 @@
-E:\VSProj\ACClassRoomUtil\LPU_Crypt_API\bin\Release\LPU_Crypt_API.dll
-E:\VSProj\ACClassRoomUtil\LPU_Crypt_API\bin\Release\LPU_Crypt_API.pdb
-E:\VSProj\ACClassRoomUtil\LPU_Crypt_API\obj\Release\LPU_Crypt_API.dll
-E:\VSProj\ACClassRoomUtil\LPU_Crypt_API\obj\Release\LPU_Crypt_API.pdb
