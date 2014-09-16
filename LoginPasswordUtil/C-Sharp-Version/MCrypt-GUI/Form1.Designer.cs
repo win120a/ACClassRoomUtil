@@ -37,6 +37,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.clear = new System.Windows.Forms.Button();
             this.tm = new System.Windows.Forms.CheckBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // result
@@ -92,7 +94,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 61);
+            this.label1.Location = new System.Drawing.Point(6, 83);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 12);
             this.label1.TabIndex = 5;
@@ -101,7 +103,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(0, 273);
+            this.label2.Location = new System.Drawing.Point(6, 273);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 6;
@@ -120,7 +122,7 @@
             // tm
             // 
             this.tm.AutoSize = true;
-            this.tm.Location = new System.Drawing.Point(623, 395);
+            this.tm.Location = new System.Drawing.Point(638, 383);
             this.tm.Name = "tm";
             this.tm.Size = new System.Drawing.Size(66, 16);
             this.tm.TabIndex = 7;
@@ -128,11 +130,33 @@
             this.tm.UseVisualStyleBackColor = true;
             this.tm.CheckedChanged += new System.EventHandler(this.tm_CheckedChanged);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(661, 83);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(43, 38);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "Paste";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(661, 260);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(43, 38);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "Copy";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(690, 428);
+            this.ClientSize = new System.Drawing.Size(716, 428);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.tm);
             this.Controls.Add(this.clear);
             this.Controls.Add(this.label2);
@@ -163,6 +187,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button clear;
         private System.Windows.Forms.CheckBox tm;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 

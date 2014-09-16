@@ -69,7 +69,11 @@ namespace PowerOnLoggerManagmentTool
             }
             else
             {
-                if (remainChance == 1 || remainChance == 0)
+                if (remainChance == 0)
+                {
+                    MessageBox.Show("Password Wrong! You have no chance.", "Fail");
+                }
+                if (remainChance == 1)
                 {
                     MessageBox.Show("Password Wrong! You only have " + remainChance + " chance.", "Fail");
                 }
