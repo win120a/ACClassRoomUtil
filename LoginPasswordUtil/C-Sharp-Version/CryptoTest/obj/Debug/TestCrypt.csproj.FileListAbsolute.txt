@@ -1,8 +1,0 @@
-E:\VSProj\ACClassRoomUtil\TestCrypt\bin\Debug\TestCrypt.exe.config
-E:\VSProj\ACClassRoomUtil\TestCrypt\bin\Debug\TestCrypt.exe
-E:\VSProj\ACClassRoomUtil\TestCrypt\bin\Debug\TestCrypt.pdb
-E:\VSProj\ACClassRoomUtil\TestCrypt\bin\Debug\LPU_Crypt_API.dll
-E:\VSProj\ACClassRoomUtil\TestCrypt\bin\Debug\LPU_Crypt_API.pdb
-E:\VSProj\ACClassRoomUtil\TestCrypt\obj\Debug\TestCrypt.exe
-E:\VSProj\ACClassRoomUtil\TestCrypt\obj\Debug\TestCrypt.pdb
-E:\VSProj\ACClassRoomUtil\TestCrypt\obj\Debug\TestCrypt.csprojResolveAssemblyReference.cache

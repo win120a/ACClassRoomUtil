@@ -14,9 +14,12 @@
    limitations under the License.
 */
 
+using System;
 using System.Diagnostics;
 using System.ServiceProcess;
+using System.Text;
 using System.Threading;
+using System.Collections.Generic;
 
 namespace ACWindowTitleBlockUtil
 {
@@ -24,26 +27,48 @@ namespace ACWindowTitleBlockUtil
     {
         static void Main(string[] args)
         {
-            ServiceBase.Run(new Program());
+            new Program().findTitle();
+            // ServiceBase.Run(new Program());
         }
 
         public void findTitle()
         {
+            string[] blockTitles = new string[] { "nba", "minecraft", "craftbukkit" };
+            List<string> finalBlocks = new List<string>();
+
+            foreach (string temp in blockTitles)
+            {
+                finalBlocks.Add(temp);
+                finalBlocks.Add(temp.ToUpper());
+                StringBuilder sb = new StringBuilder();
+                sb.Append(temp.Substring(0, 1).ToUpper());
+                sb.Append(temp.Substring(1));
+                Console.WriteLine(sb.ToString());
+                finalBlocks.Add(sb.ToString());
+                sb.Clear();
+            }
+
             while (true)
             {
                 Process[] processes = Process.GetProcesses();
                 foreach (Process p in processes)
                 {
-                    // p.WaitForInputIdle();
-                    if (p.MainWindowTitle.Contains("nba"))
+                    foreach (string want in finalBlocks)
                     {
-                       p.Kill();
+                        if (p.MainWindowTitle.Contains(want))
+                        {
+                            if (p.ProcessName.Equals("explorer.exe") || p.ProcessName.Equals("Explorer.exe") || p.ProcessName.Equals("EXPLORER.exe"))
+                            {
+                                continue;
+                            }
+                            p.Kill();
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                        Thread.Sleep(2000); // It may contain bugs.
                     }
-                    else
-                    {
-                        continue;
-                    }
-                    Thread.Sleep(2000);
                 }
             }
 
@@ -55,7 +80,6 @@ namespace ACWindowTitleBlockUtil
             t.IsBackground = true;
             t.Name = "Find Thread";
             t.Start();
-            // TODO
         }
     }
 }

@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过以下
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("TestCrypt")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("AC MixCrypt GUI Application")]
+[assembly: AssemblyDescription("Crypt String Generate Application")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("TestCrypt")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2014")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany("AC Inc.")]
+[assembly: AssemblyProduct("ACClassRoomUtil (KeyGen)")]
+[assembly: AssemblyCopyright("Copyright © AC Inc.")]
+[assembly: AssemblyTrademark("ACClassRoomUtil")]
 [assembly: AssemblyCulture("")]
 
 // 将 ComVisible 设置为 false 使此程序集中的类型
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("c5f8eafa-d5fc-4491-a2b3-e5ce23f45383")]
+[assembly: Guid("2c183149-31d8-44b0-894e-b4ba05b9f313")]
 
 // 程序集的版本信息由下面四个值组成: 
 //
