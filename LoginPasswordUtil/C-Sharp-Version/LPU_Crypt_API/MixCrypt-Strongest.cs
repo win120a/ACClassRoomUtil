@@ -19,17 +19,30 @@
  * Copyright (C) Microsoft Corporation
  * 
  */
+
 using System;
 
 namespace LPU_Crypt_API
 {
-    public class MixCrypt
+    public class MixCrypt_Strongest
     {
         public String encrypt(String plainText, String password)
         {
+            // 3Rijndael
+            RijndaelProvider rp = new RijndaelProvider();
+            string rp1 = rp.EncryptString(plainText, password);
+            string rp2 = rp.EncryptString(rp1, password);
+            string rp3 = rp.EncryptString(rp2, password);
+
+            // 3RC2
+            RC2Provider rc2 = new RC2Provider();
+            string rc2_1 = rc2.EncryptString(rp3, password);
+            string rc2_2 = rc2.EncryptString(rc2_1, password);
+            string rc2_3 = rc2.EncryptString(rc2_2, password);
+
             // 3DES
             DESProvider des = new DESProvider();
-            string des1 = des.EncryptString(plainText, password);
+            string des1 = des.EncryptString(rc2_3, password);
             string des2 = des.EncryptString(des1, password);
             string des3 = des.EncryptString(des2, password);
 
@@ -40,8 +53,6 @@ namespace LPU_Crypt_API
             string aes3 = aes.EncryptString(aes2, password);
 
             return aes3;
-
-            // Use Casts: aes(aes(aes(des(des(des($content))))));
         }
 
         public String decrypt(String Source, String password)
@@ -60,7 +71,19 @@ namespace LPU_Crypt_API
             string des2 = des.DecryptString(des1, password);
             string des3 = des.DecryptString(des2, password);
 
-            return des3;
+            // 3RC2
+            RC2Provider rc2 = new RC2Provider();
+            string rc2_1 = rc2.DecryptString(des3, password);
+            string rc2_2 = rc2.DecryptString(rc2_1, password);
+            string rc2_3 = rc2.DecryptString(rc2_2, password);
+
+            // 3Rijndael
+            RijndaelProvider rp = new RijndaelProvider();
+            string rp1 = rp.DecryptString(rc2_3, password);
+            string rp2 = rp.DecryptString(rp1, password);
+            string rp3 = rp.DecryptString(rp2, password);
+
+            return rp3;
         }
     }
 }

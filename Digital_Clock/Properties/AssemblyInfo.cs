@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过以下
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Digital_Clock_WindowsForm")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("Digital_Clock_WindowsForm")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2014")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTitle("Digital Clock")]
+[assembly: AssemblyDescription("A simple digital clock.")]
+[assembly: AssemblyConfiguration("Release")]
+[assembly: AssemblyCompany("AC Inc.")]
+[assembly: AssemblyProduct("ACClassroomUtil")]
+[assembly: AssemblyCopyright("Copyright © AC Inc.")]
+[assembly: AssemblyTrademark("ACClassroomUtil")]
 [assembly: AssemblyCulture("")]
 
 // 将 ComVisible 设置为 false 使此程序集中的类型

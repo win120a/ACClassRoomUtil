@@ -21,22 +21,24 @@
  */
 
 using System;
-using System.IO;
-using System.Security.Cryptography;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Security.Cryptography;
+using System.IO;
 
 namespace LPU_Crypt_API
 {
-    public class DESProvider
+    public class RC2Provider
     {
-        static TripleDES CreateDES(string key)
+        static RC2 CreateRC2(string key)
         {
             MD5 md5 = new MD5CryptoServiceProvider();
-            TripleDES des = new TripleDESCryptoServiceProvider();
-            des.Key = md5.ComputeHash(Encoding.Unicode.GetBytes(key));
-            des.IV = new byte[des.BlockSize / 8];
-            return des;
-        } 
+            RC2 rc2 = new RC2CryptoServiceProvider();
+            rc2.Key = md5.ComputeHash(Encoding.Unicode.GetBytes(key));
+            rc2.IV = new byte[rc2.BlockSize / 8];
+            return rc2;
+        }
 
 
         public string EncryptString(string plainText, string password)
@@ -48,10 +50,10 @@ namespace LPU_Crypt_API
             MemoryStream myStream = new MemoryStream();
 
             // create the key and initialization vector using the password
-            TripleDES des = CreateDES(password);
+            RC2 rc2 = CreateRC2(password);
 
             // create the encoder that will write to the memory stream
-            CryptoStream cryptStream = new CryptoStream(myStream, des.CreateEncryptor(), CryptoStreamMode.Write);
+            CryptoStream cryptStream = new CryptoStream(myStream, rc2.CreateEncryptor(), CryptoStreamMode.Write);
 
             // we now use the crypto stream to write our byte array to the memory stream
             cryptStream.Write(plainTextBytes, 0, plainTextBytes.Length);
@@ -70,10 +72,10 @@ namespace LPU_Crypt_API
             MemoryStream myStream = new MemoryStream();
 
             // create the key and initialization vector using the password
-            TripleDES des = CreateDES(password);
+            RC2 rc2 = CreateRC2(password);
 
             // create our decoder to write to the stream
-            CryptoStream decryptStream = new CryptoStream(myStream, des.CreateDecryptor(), CryptoStreamMode.Write);
+            CryptoStream decryptStream = new CryptoStream(myStream, rc2.CreateDecryptor(), CryptoStreamMode.Write);
 
             // we now use the crypto stream to the byte array
             decryptStream.Write(encryptedTextBytes, 0, encryptedTextBytes.Length);

@@ -15,7 +15,7 @@
 */
 
 /*
- * Some part of code uses MVA's 20 C# Question Explained.
+ * Some part of code come from MVA's 20 C# Question Explained.
  * Copyright (C) Microsoft Corporation
  * 
  */
@@ -51,10 +51,10 @@ namespace LPU_Crypt_API
             MemoryStream myStream = new MemoryStream();
 
             // create the key and initialization vector using the password
-            Aes des = CreateAES(password);
+            Aes aes = CreateAES(password);
 
             // create the encoder that will write to the memory stream
-            CryptoStream cryptStream = new CryptoStream(myStream, des.CreateEncryptor(), CryptoStreamMode.Write);
+            CryptoStream cryptStream = new CryptoStream(myStream, aes.CreateEncryptor(), CryptoStreamMode.Write);
 
             // we now use the crypto stream to write our byte array to the memory stream
             cryptStream.Write(plainTextBytes, 0, plainTextBytes.Length);
@@ -73,10 +73,10 @@ namespace LPU_Crypt_API
             MemoryStream myStream = new MemoryStream();
 
             // create the key and initialization vector using the password
-            Aes des = CreateAES(password);
+            Aes aes = CreateAES(password);
 
             // create our decoder to write to the stream
-            CryptoStream decryptStream = new CryptoStream(myStream, des.CreateDecryptor(), CryptoStreamMode.Write);
+            CryptoStream decryptStream = new CryptoStream(myStream, aes.CreateDecryptor(), CryptoStreamMode.Write);
 
             // we now use the crypto stream to the byte array
             decryptStream.Write(encryptedTextBytes, 0, encryptedTextBytes.Length);

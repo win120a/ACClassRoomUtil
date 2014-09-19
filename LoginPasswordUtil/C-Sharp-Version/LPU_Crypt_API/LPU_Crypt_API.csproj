@@ -43,8 +43,13 @@
   <ItemGroup>
     <Compile Include="AESProvider.cs" />
     <Compile Include="DESProvider.cs" />
+    <Compile Include="MixCrypt-Stronger.cs" />
+    <Compile Include="MixCrypt-Strongest.cs" />
+    <Compile Include="MixCrypt-Weaker.cs" />
     <Compile Include="MixCrypt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RC2Provider.cs" />
+    <Compile Include="RijndaelProvider.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

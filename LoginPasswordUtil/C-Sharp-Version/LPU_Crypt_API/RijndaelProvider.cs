@@ -27,16 +27,18 @@ using System.Text;
 
 namespace LPU_Crypt_API
 {
-    public class DESProvider
+    public class RijndaelProvider
     {
-        static TripleDES CreateDES(string key)
+        //Rijndael
+
+        static Rijndael CreateRijndael(string key)
         {
             MD5 md5 = new MD5CryptoServiceProvider();
-            TripleDES des = new TripleDESCryptoServiceProvider();
-            des.Key = md5.ComputeHash(Encoding.Unicode.GetBytes(key));
-            des.IV = new byte[des.BlockSize / 8];
-            return des;
-        } 
+            RijndaelManaged rm = new RijndaelManaged();
+            rm.Key = md5.ComputeHash(Encoding.Unicode.GetBytes(key));
+            rm.IV = new byte[rm.BlockSize / 8];
+            return rm;
+        }
 
 
         public string EncryptString(string plainText, string password)
@@ -48,10 +50,10 @@ namespace LPU_Crypt_API
             MemoryStream myStream = new MemoryStream();
 
             // create the key and initialization vector using the password
-            TripleDES des = CreateDES(password);
+            Rijndael rm = CreateRijndael(password);
 
             // create the encoder that will write to the memory stream
-            CryptoStream cryptStream = new CryptoStream(myStream, des.CreateEncryptor(), CryptoStreamMode.Write);
+            CryptoStream cryptStream = new CryptoStream(myStream, rm.CreateEncryptor(), CryptoStreamMode.Write);
 
             // we now use the crypto stream to write our byte array to the memory stream
             cryptStream.Write(plainTextBytes, 0, plainTextBytes.Length);
@@ -70,10 +72,10 @@ namespace LPU_Crypt_API
             MemoryStream myStream = new MemoryStream();
 
             // create the key and initialization vector using the password
-            TripleDES des = CreateDES(password);
+            Rijndael rm = CreateRijndael(password);
 
             // create our decoder to write to the stream
-            CryptoStream decryptStream = new CryptoStream(myStream, des.CreateDecryptor(), CryptoStreamMode.Write);
+            CryptoStream decryptStream = new CryptoStream(myStream, rm.CreateDecryptor(), CryptoStreamMode.Write);
 
             // we now use the crypto stream to the byte array
             decryptStream.Write(encryptedTextBytes, 0, encryptedTextBytes.Length);

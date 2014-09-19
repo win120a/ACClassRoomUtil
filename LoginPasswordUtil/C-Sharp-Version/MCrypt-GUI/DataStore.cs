@@ -20,6 +20,7 @@ namespace MCrypt_GUI
     class DataStore
     {
         public static string Key;
+        public static string finalResult;
         public static bool exit;
     }
 }

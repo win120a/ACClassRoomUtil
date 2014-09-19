@@ -19,29 +19,26 @@
  * Copyright (C) Microsoft Corporation
  * 
  */
+
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace LPU_Crypt_API
 {
-    public class MixCrypt
+    public class MixCrypt_Weaker
     {
         public String encrypt(String plainText, String password)
         {
-            // 3DES
-            DESProvider des = new DESProvider();
-            string des1 = des.EncryptString(plainText, password);
-            string des2 = des.EncryptString(des1, password);
-            string des3 = des.EncryptString(des2, password);
-
             // 3AES
             AESProvider aes = new AESProvider();
-            string aes1 = aes.EncryptString(des3, password);
+            string aes1 = aes.EncryptString(plainText, password);
             string aes2 = aes.EncryptString(aes1, password);
             string aes3 = aes.EncryptString(aes2, password);
-
             return aes3;
 
-            // Use Casts: aes(aes(aes(des(des(des($content))))));
+            // Use Casts: aes(aes(aes($content)));
         }
 
         public String decrypt(String Source, String password)
@@ -53,14 +50,7 @@ namespace LPU_Crypt_API
             string aes1 = aes.DecryptString(Source, password);
             string aes2 = aes.DecryptString(aes1, password);
             string aes3 = aes.DecryptString(aes2, password);
-
-            // 3DES
-            DESProvider des = new DESProvider();
-            string des1 = des.DecryptString(aes3, password);
-            string des2 = des.DecryptString(des1, password);
-            string des3 = des.DecryptString(des2, password);
-
-            return des3;
+            return aes3;
         }
     }
 }
