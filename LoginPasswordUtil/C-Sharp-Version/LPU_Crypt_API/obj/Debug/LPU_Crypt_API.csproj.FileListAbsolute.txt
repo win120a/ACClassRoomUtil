@@ -1,5 +1,0 @@
-E:\VSProj\ACClassRoomUtil\LPU_Crypt_API\bin\Debug\LPU_Crypt_API.dll
-E:\VSProj\ACClassRoomUtil\LPU_Crypt_API\bin\Debug\LPU_Crypt_API.pdb
-E:\VSProj\ACClassRoomUtil\LPU_Crypt_API\obj\Debug\LPU_Crypt_API.dll
-E:\VSProj\ACClassRoomUtil\LPU_Crypt_API\obj\Debug\LPU_Crypt_API.pdb
-E:\VSProj\ACClassRoomUtil\LPU_Crypt_API\obj\Debug\LPU_Crypt_API.csprojResolveAssemblyReference.cache
