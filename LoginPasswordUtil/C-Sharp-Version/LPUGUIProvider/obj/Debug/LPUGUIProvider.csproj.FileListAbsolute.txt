@@ -1,0 +1,15 @@
+E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\LPUGUIProvider.dll
+E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\LPUGUIProvider.pdb
+E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\LPU_Crypt_API.dll
+E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\LPU_Encrypted_Res.dll
+E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\LPU_Crypt_API.pdb
+E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\LPU_Encrypted_Res.pdb
+E:\VSProj\ACClassRoomUtil\LPUGUIProvider\obj\Debug\LPUGUIProvider.DecryptPass.resources
+E:\VSProj\ACClassRoomUtil\LPUGUIProvider\obj\Debug\LPUGUIProvider.NormalPasswordChange.resources
+E:\VSProj\ACClassRoomUtil\LPUGUIProvider\obj\Debug\LPUGUIProvider.csproj.GenerateResource.Cache
+E:\VSProj\ACClassRoomUtil\LPUGUIProvider\obj\Debug\LPUGUIProvider.dll
+E:\VSProj\ACClassRoomUtil\LPUGUIProvider\obj\Debug\LPUGUIProvider.pdb
+E:\VSProj\ACClassRoomUtil\LPUGUIProvider\obj\Debug\LPUGUIProvider.csprojResolveAssemblyReference.cache
+E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\LPU_Util_Encypted.dll
+E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\LPU_Util_Encypted.pdb
+E:\VSProj\ACClassRoomUtil\LPUGUIProvider\obj\Debug\LPUGUIProvider.AnotherPasswordChangeMode.resources
