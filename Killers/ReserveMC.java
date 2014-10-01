@@ -19,9 +19,6 @@ import java.io.*;
 
 public class ReserveMC{
   public static void main(String[] a){
-    System.out.println("Craftbukkit Port Preserve Util");
-    System.out.println("(C) 2011-2014 AC Inc.");
-    System.out.println();
     new Thread(new PortReserveThread(25565)).start();
     new Thread(new PortReserveThread(1139)).start();
   }
