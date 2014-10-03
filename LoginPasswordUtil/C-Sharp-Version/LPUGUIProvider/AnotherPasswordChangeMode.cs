@@ -43,28 +43,43 @@ namespace LPUGUIProvider
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void sat_Click(object sender, EventArgs e)
         {
             num = 6;
-            button1.Enabled = true;
-            button3.Enabled = false;
-            button4.Enabled = true;
+
+            mon.Enabled = true;
+            tue.Enabled = true;
+            wed.Enabled = true;
+            thu.Enabled = true;
+            fri.Enabled = true;
+            sat.Enabled = false;
+            sun.Enabled = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void sun_Click(object sender, EventArgs e)
         {
             num = 7;
-            button1.Enabled = false;
-            button3.Enabled = true;
-            button4.Enabled = true;
+
+            mon.Enabled = true;
+            tue.Enabled = true;
+            wed.Enabled = true;
+            thu.Enabled = true;
+            fri.Enabled = true;
+            sat.Enabled = true;
+            sun.Enabled = false;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void mon_Click(object sender, EventArgs e)
         {
             num = 1;
-            button1.Enabled = true;
-            button3.Enabled = true;
-            button4.Enabled = false;
+
+            mon.Enabled = false;
+            tue.Enabled = true;
+            wed.Enabled = true;
+            thu.Enabled = true;
+            fri.Enabled = true;
+            sat.Enabled = true;
+            sun.Enabled = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -87,6 +102,58 @@ namespace LPUGUIProvider
                 MessageBox.Show("密码错误", "异常");
                 return;
             }
+        }
+
+        private void wed_Click(object sender, EventArgs e)
+        {
+            num = 3;
+
+            mon.Enabled = true;
+            tue.Enabled = true;
+            wed.Enabled = false;
+            thu.Enabled = true;
+            fri.Enabled = true;
+            sat.Enabled = true;
+            sun.Enabled = true;
+        }
+
+        private void tue_Click(object sender, EventArgs e)
+        {
+            num = 2;
+
+            mon.Enabled = true;
+            tue.Enabled = false;
+            wed.Enabled = true;
+            thu.Enabled = true;
+            fri.Enabled = true;
+            sat.Enabled = true;
+            sun.Enabled = true;
+        }
+
+        private void thu_Click(object sender, EventArgs e)
+        {
+            num = 4;
+
+            mon.Enabled = true;
+            tue.Enabled = true;
+            wed.Enabled = true;
+            thu.Enabled = false;
+            fri.Enabled = true;
+            sat.Enabled = true;
+            sun.Enabled = true;
+        }
+
+        private void fri_Click(object sender, EventArgs e)
+        {
+            num = 5;
+
+            mon.Enabled = true;
+            tue.Enabled = true;
+            wed.Enabled = true;
+            thu.Enabled = true;
+            fri.Enabled = false;
+            sat.Enabled = true;
+            sun.Enabled = true;
         }
     }
 }

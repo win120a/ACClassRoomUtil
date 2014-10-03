@@ -30,17 +30,21 @@
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.cancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.sun = new System.Windows.Forms.Button();
+            this.sat = new System.Windows.Forms.Button();
+            this.mon = new System.Windows.Forms.Button();
             this.ok = new System.Windows.Forms.Button();
+            this.tue = new System.Windows.Forms.Button();
+            this.wed = new System.Windows.Forms.Button();
+            this.thu = new System.Windows.Forms.Button();
+            this.fri = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(24, 126);
+            this.textBox1.Location = new System.Drawing.Point(24, 166);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(478, 21);
             this.textBox1.TabIndex = 11;
@@ -49,22 +53,22 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 99);
+            this.label3.Location = new System.Drawing.Point(22, 139);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(137, 12);
             this.label3.TabIndex = 10;
             this.label3.Text = "请输入密码根进行确认：";
             // 
-            // button2
+            // cancel
             // 
-            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(425, 61);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(57, 26);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "取消";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancel.Location = new System.Drawing.Point(524, 162);
+            this.cancel.Name = "cancel";
+            this.cancel.Size = new System.Drawing.Size(57, 26);
+            this.cancel.TabIndex = 9;
+            this.cancel.Text = "取消";
+            this.cancel.UseVisualStyleBackColor = true;
+            this.cancel.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -75,43 +79,43 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "今天星期几";
             // 
-            // button1
+            // sun
             // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.Location = new System.Drawing.Point(171, 61);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(57, 26);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "周日";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.sun.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.sun.Location = new System.Drawing.Point(375, 93);
+            this.sun.Name = "sun";
+            this.sun.Size = new System.Drawing.Size(57, 26);
+            this.sun.TabIndex = 12;
+            this.sun.Text = "周日";
+            this.sun.UseVisualStyleBackColor = true;
+            this.sun.Click += new System.EventHandler(this.sun_Click);
             // 
-            // button3
+            // sat
             // 
-            this.button3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button3.Location = new System.Drawing.Point(45, 61);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(57, 26);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "周六";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.sat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.sat.Location = new System.Drawing.Point(148, 93);
+            this.sat.Name = "sat";
+            this.sat.Size = new System.Drawing.Size(57, 26);
+            this.sat.TabIndex = 13;
+            this.sat.Text = "周六";
+            this.sat.UseVisualStyleBackColor = true;
+            this.sat.Click += new System.EventHandler(this.sat_Click);
             // 
-            // button4
+            // mon
             // 
-            this.button4.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button4.Location = new System.Drawing.Point(302, 61);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(57, 26);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "周一";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.mon.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.mon.Location = new System.Drawing.Point(43, 61);
+            this.mon.Name = "mon";
+            this.mon.Size = new System.Drawing.Size(57, 26);
+            this.mon.TabIndex = 14;
+            this.mon.Text = "周一";
+            this.mon.UseVisualStyleBackColor = true;
+            this.mon.Click += new System.EventHandler(this.mon_Click);
             // 
             // ok
             // 
             this.ok.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ok.Location = new System.Drawing.Point(425, 22);
+            this.ok.Location = new System.Drawing.Point(524, 132);
             this.ok.Name = "ok";
             this.ok.Size = new System.Drawing.Size(57, 26);
             this.ok.TabIndex = 15;
@@ -119,18 +123,66 @@
             this.ok.UseVisualStyleBackColor = true;
             this.ok.Click += new System.EventHandler(this.ok_Click);
             // 
+            // tue
+            // 
+            this.tue.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.tue.Location = new System.Drawing.Point(148, 61);
+            this.tue.Name = "tue";
+            this.tue.Size = new System.Drawing.Size(57, 26);
+            this.tue.TabIndex = 16;
+            this.tue.Text = "周二";
+            this.tue.UseVisualStyleBackColor = true;
+            this.tue.Click += new System.EventHandler(this.tue_Click);
+            // 
+            // wed
+            // 
+            this.wed.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.wed.Location = new System.Drawing.Point(260, 61);
+            this.wed.Name = "wed";
+            this.wed.Size = new System.Drawing.Size(57, 26);
+            this.wed.TabIndex = 17;
+            this.wed.Text = "周三";
+            this.wed.UseVisualStyleBackColor = true;
+            this.wed.Click += new System.EventHandler(this.wed_Click);
+            // 
+            // thu
+            // 
+            this.thu.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.thu.Location = new System.Drawing.Point(375, 61);
+            this.thu.Name = "thu";
+            this.thu.Size = new System.Drawing.Size(57, 26);
+            this.thu.TabIndex = 18;
+            this.thu.Text = "周四";
+            this.thu.UseVisualStyleBackColor = true;
+            this.thu.Click += new System.EventHandler(this.thu_Click);
+            // 
+            // fri
+            // 
+            this.fri.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.fri.Location = new System.Drawing.Point(483, 61);
+            this.fri.Name = "fri";
+            this.fri.Size = new System.Drawing.Size(57, 26);
+            this.fri.TabIndex = 19;
+            this.fri.Text = "周五";
+            this.fri.UseVisualStyleBackColor = true;
+            this.fri.Click += new System.EventHandler(this.fri_Click);
+            // 
             // AnotherPasswordChangeMode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 163);
+            this.ClientSize = new System.Drawing.Size(593, 207);
+            this.Controls.Add(this.fri);
+            this.Controls.Add(this.thu);
+            this.Controls.Add(this.wed);
+            this.Controls.Add(this.tue);
             this.Controls.Add(this.ok);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.mon);
+            this.Controls.Add(this.sat);
+            this.Controls.Add(this.sun);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.cancel);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -148,11 +200,15 @@
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button cancel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button sun;
+        private System.Windows.Forms.Button sat;
+        private System.Windows.Forms.Button mon;
         private System.Windows.Forms.Button ok;
+        private System.Windows.Forms.Button tue;
+        private System.Windows.Forms.Button wed;
+        private System.Windows.Forms.Button thu;
+        private System.Windows.Forms.Button fri;
     }
 }

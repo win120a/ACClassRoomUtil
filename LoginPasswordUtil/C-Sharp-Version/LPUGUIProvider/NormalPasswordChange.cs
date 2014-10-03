@@ -159,14 +159,14 @@ namespace LPUGUIProvider
                             num = 6;
                             break;
                         case "Sunday":
-                            num = 7;
+                            num = 0;
                             break;
                     }
 
                     new PSWTool().ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"),
                                                        DataStorage.key,
                                                        new Resources(),
-                                                       num);
+                                                       num + 1);
                     Application.Exit();
                 }
                 else
