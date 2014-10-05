@@ -30,6 +30,7 @@
         {
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.Refresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -45,13 +46,25 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(242, 429);
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button1.Location = new System.Drawing.Point(381, 429);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(73, 36);
             this.button1.TabIndex = 1;
             this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Refresh
+            // 
+            this.Refresh.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.Refresh.Location = new System.Drawing.Point(126, 429);
+            this.Refresh.Name = "Refresh";
+            this.Refresh.Size = new System.Drawing.Size(73, 36);
+            this.Refresh.TabIndex = 2;
+            this.Refresh.Text = "Refresh";
+            this.Refresh.UseVisualStyleBackColor = true;
+            this.Refresh.Click += new System.EventHandler(this.Refresh_Click);
             // 
             // View
             // 
@@ -60,6 +73,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.button1;
             this.ClientSize = new System.Drawing.Size(576, 477);
+            this.Controls.Add(this.Refresh);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -76,5 +90,6 @@
 
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Refresh;
     }
 }

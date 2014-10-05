@@ -34,7 +34,7 @@ namespace PowerOnLoggerManagmentTool
             InitializeComponent();
         }
 
-        private void View_Load(object sender, EventArgs e)
+        private void LoadLogs()
         {
             if (!(Directory.Exists(Environment.GetEnvironmentVariable("SystemRoot") + "\\System32\\AC-Engine\\PowerOnLogger")))
             {
@@ -45,7 +45,8 @@ namespace PowerOnLoggerManagmentTool
             String path = Environment.GetEnvironmentVariable("SystemRoot") + "\\System32\\AC-Engine\\PowerOnLogger";
             IEnumerable enu0 = Directory.EnumerateFiles(path);
             listBox1.BeginUpdate();
-            foreach(string s in enu0){
+            foreach (string s in enu0)
+            {
                 string first = s.Replace(path + "\\", " ");
                 string second = first.Replace("ACPOL_", " ");
                 string third = second.Replace("_", " ");
@@ -58,11 +59,21 @@ namespace PowerOnLoggerManagmentTool
             listBox1.Show();
         }
 
+        private void View_Load(object sender, EventArgs e)
+        {
+            LoadLogs();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
             GC.Collect();
             new Main().Show();
+        }
+
+        private void Refresh_Click(object sender, EventArgs e)
+        {
+            LoadLogs();
         }
     }
 }

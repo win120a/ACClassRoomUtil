@@ -1,4 +1,20 @@
-﻿using ACLoginPasswordUtil;
+﻿/*
+   Copyright (C) 2011-2014 AC Inc. (Andy Cheung)
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+*/
+
+using ACLoginPasswordUtil;
 using LPU_Util;
 using System;
 using System.Windows.Forms;
@@ -16,70 +32,28 @@ namespace LPUGUIProvider
 
         private void AnotherPasswordChangeMode_Load(object sender, EventArgs e)
         {
-            DayOfWeek dow = DateTime.Now.DayOfWeek;
-            switch (dow.ToString())
-            {
-                case "Monday":
-                    label1.Text = "今天星期一";
-                    break;
-                case "Tuesday":
-                    label1.Text = "今天星期二";
-                    break;
-                case "Wednesday":
-                    label1.Text = "今天星期三";
-                    break;
-                case "Thursday":
-                    label1.Text = "今天星期四";
-                    break;
-                case "Friday":
-                    label1.Text = "今天星期五";
-                    break;
-                case "Saturday":
-                    label1.Text = "今天星期六";
-                    break;
-                case "Sunday":
-                    label1.Text = "今天星期天";
-                    break;
-            }
+            Tools.ReturnTodayInChinese(label1);
         }
 
         private void sat_Click(object sender, EventArgs e)
         {
             num = 6;
 
-            mon.Enabled = true;
-            tue.Enabled = true;
-            wed.Enabled = true;
-            thu.Enabled = true;
-            fri.Enabled = true;
-            sat.Enabled = false;
-            sun.Enabled = true;
+            EnableButtonsWithout(6);
         }
 
         private void sun_Click(object sender, EventArgs e)
         {
             num = 7;
 
-            mon.Enabled = true;
-            tue.Enabled = true;
-            wed.Enabled = true;
-            thu.Enabled = true;
-            fri.Enabled = true;
-            sat.Enabled = true;
-            sun.Enabled = false;
+            EnableButtonsWithout(7);
         }
 
         private void mon_Click(object sender, EventArgs e)
         {
             num = 1;
 
-            mon.Enabled = false;
-            tue.Enabled = true;
-            wed.Enabled = true;
-            thu.Enabled = true;
-            fri.Enabled = true;
-            sat.Enabled = true;
-            sun.Enabled = true;
+            EnableButtonsWithout(1);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -108,52 +82,64 @@ namespace LPUGUIProvider
         {
             num = 3;
 
-            mon.Enabled = true;
-            tue.Enabled = true;
-            wed.Enabled = false;
-            thu.Enabled = true;
-            fri.Enabled = true;
-            sat.Enabled = true;
-            sun.Enabled = true;
+            EnableButtonsWithout(3);
         }
 
         private void tue_Click(object sender, EventArgs e)
         {
             num = 2;
 
-            mon.Enabled = true;
-            tue.Enabled = false;
-            wed.Enabled = true;
-            thu.Enabled = true;
-            fri.Enabled = true;
-            sat.Enabled = true;
-            sun.Enabled = true;
+            EnableButtonsWithout(2);
         }
 
         private void thu_Click(object sender, EventArgs e)
         {
             num = 4;
 
-            mon.Enabled = true;
-            tue.Enabled = true;
-            wed.Enabled = true;
-            thu.Enabled = false;
-            fri.Enabled = true;
-            sat.Enabled = true;
-            sun.Enabled = true;
+            EnableButtonsWithout(4);
         }
 
         private void fri_Click(object sender, EventArgs e)
         {
             num = 5;
 
+            EnableButtonsWithout(5);
+        }
+
+        private void EnableButtonsWithout(int whichbutt)
+        {
             mon.Enabled = true;
             tue.Enabled = true;
             wed.Enabled = true;
             thu.Enabled = true;
-            fri.Enabled = false;
+            fri.Enabled = true;
             sat.Enabled = true;
             sun.Enabled = true;
+
+            switch (whichbutt)
+            {
+                case 1:
+                    mon.Enabled = false;
+                    break;
+                case 2:
+                    tue.Enabled = false;
+                    break;
+                case 3:
+                    wed.Enabled = false;
+                    break;
+                case 4:
+                    thu.Enabled = false;
+                    break;
+                case 5:
+                    fri.Enabled = false;
+                    break;
+                case 6:
+                    sat.Enabled = false;
+                    break;
+                case 7:
+                    sun.Enabled = false;
+                    break;
+            }
         }
     }
 }

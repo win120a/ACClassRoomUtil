@@ -1,4 +1,20 @@
-﻿using ACLoginPasswordUtil;
+﻿/*
+   Copyright (C) 2011-2014 AC Inc. (Andy Cheung)
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+*/
+
+using ACLoginPasswordUtil;
 using LPU_Crypt_API;
 using LPU_Util;
 using System;
@@ -23,57 +39,9 @@ namespace LPUGUIProvider
 
         private void NormalPasswordChange_Load(object sender, EventArgs e)
         {
-            DayOfWeek dow = DateTime.Now.DayOfWeek;
-            switch (dow.ToString())
-            {
-                case "Monday":
-                    label1.Text = "今天星期一";
-                    break;
-                case "Tuesday":
-                    label1.Text = "今天星期二";
-                    break;
-                case "Wednesday":
-                    label1.Text = "今天星期三";
-                    break;
-                case "Thursday":
-                    label1.Text = "今天星期四";
-                    break;
-                case "Friday":
-                    label1.Text = "今天星期五";
-                    break;
-                case "Saturday":
-                    label1.Text = "今天星期六";
-                    break;
-                case "Sunday":
-                    label1.Text = "今天星期天";
-                    break;
-            }
+            DayOfWeek dow = Tools.ReturnTodayInChinese(label1);
 
-            int num = 0;
-            switch (dow.ToString())
-            {
-                case "Monday":
-                    num = 2;
-                    break;
-                case "Tuesday":
-                    num = 3;
-                    break;
-                case "Wednesday":
-                    num = 4;
-                    break;
-                case "Thursday":
-                    num = 5;
-                    break;
-                case "Friday":
-                    num = 6;
-                    break;
-                case "Saturday":
-                    num = 7;
-                    break;
-                case "Sunday":
-                    num = 1;
-                    break;
-            }
+            int num = Tools.GenerateDateOfWeekNumber();
 
             switch (num)
             {
@@ -137,36 +105,13 @@ namespace LPUGUIProvider
                 if (textBox1.Text.Equals(new LPU_Crypt_API.MixCrypt().decrypt(new Resources().armv7a, DataStorage.key)))
                 {
                     int num = 0;
-                    DayOfWeek dow = DateTime.Now.DayOfWeek;
-                    switch (dow.ToString())
-                    {
-                        case "Monday":
-                            num = 1;
-                            break;
-                        case "Tuesday":
-                            num = 2;
-                            break;
-                        case "Wednesday":
-                            num = 3;
-                            break;
-                        case "Thursday":
-                            num = 4;
-                            break;
-                        case "Friday":
-                            num = 5;
-                            break;
-                        case "Saturday":
-                            num = 6;
-                            break;
-                        case "Sunday":
-                            num = 0;
-                            break;
-                    }
+
+                    Tools.GenerateDateOfWeekNumber();
 
                     new PSWTool().ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"),
                                                        DataStorage.key,
                                                        new Resources(),
-                                                       num + 1);
+                                                       num);
                     Application.Exit();
                 }
                 else
