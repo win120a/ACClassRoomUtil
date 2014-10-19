@@ -70,7 +70,7 @@ namespace LPUGUIProvider
 
             if (dow.Equals(DayOfWeek.Friday) || dow.Equals(DayOfWeek.Saturday))
             {
-                label2.Text = "为确保安全考虑，周六日密码修改已禁用。";
+                label2.Text = "为安全考虑，在周六日修改密码已禁用。";
                 textBox1.Enabled = false;
             }
             
@@ -106,12 +106,20 @@ namespace LPUGUIProvider
                 {
                     int num = 0;
 
-                    Tools.GenerateDateOfWeekNumber();
+                    num = Tools.GenerateDateOfWeekNumber();
+
+                    //MessageBox.Show("Application is in debugging mode.\n" + 
+                    //                "The key varable is: " + 
+                    //                num, 
+                    //                "Debbuging mode");
 
                     new PSWTool().ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"),
                                                        DataStorage.key,
                                                        new Resources(),
                                                        num);
+
+                    MessageBox.Show("执行完毕！", "完成");
+
                     Application.Exit();
                 }
                 else

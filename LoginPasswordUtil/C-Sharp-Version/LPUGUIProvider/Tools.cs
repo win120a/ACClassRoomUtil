@@ -19,7 +19,7 @@ using System.Windows.Forms;
 
 namespace LPUGUIProvider
 {
-    class Tools
+    public class Tools
     {
         public static int GenerateDateOfWeekNumber()
         {

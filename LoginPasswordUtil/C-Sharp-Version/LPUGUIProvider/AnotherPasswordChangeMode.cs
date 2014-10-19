@@ -63,6 +63,11 @@ namespace LPUGUIProvider
 
         private void ok_Click(object sender, EventArgs e)
         {
+            if (CheckAllButtonsEnabled())
+            {
+                MessageBox.Show("请选择正确按钮", "异常");
+                return;
+            }
             if (textBox1.Text.Equals(new LPU_Crypt_API.MixCrypt().decrypt(new Resources().armv7a, DataStorage.key)))
             {
                 new PSWTool().ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"),
@@ -104,6 +109,11 @@ namespace LPUGUIProvider
             num = 5;
 
             EnableButtonsWithout(5);
+        }
+
+        private bool CheckAllButtonsEnabled()
+        {
+            return mon.Enabled & tue.Enabled & wed.Enabled & thu.Enabled & fri.Enabled & sat.Enabled & sun.Enabled;
         }
 
         private void EnableButtonsWithout(int whichbutt)
