@@ -226,7 +226,7 @@
             this.MinimizeBox = false;
             this.Name = "Account";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Account Manage";
+            this.Text = "Account Manager";
             this.Load += new System.EventHandler(this.Account_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

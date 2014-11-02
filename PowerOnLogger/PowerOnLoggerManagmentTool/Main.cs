@@ -81,5 +81,13 @@ namespace PowerOnLoggerManagmentTool
             GC.Collect();
             new Verify().Show();
         }
+
+        private void export_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Dispose();
+            GC.Collect();
+            new ExportBackup().Show();
+        }
     }
 }
