@@ -25,57 +25,7 @@ A collection use in classroom.<br>
 (Windows ONLY! If need, shutdown UAC & Antivirus software)<br>
 These programs are licensed with Apache License, you can see it at <a href="https://github.com/win120a/ACClassRoomUtil/blob/master/LICENSE">Here</a>.
 
-Compiling
+Compiling Engine
 =========
-
-For Java:
-
-```Batchfile
-set path=%path%;C:\Path\to\Java\bin
-cd /d C:\Path\to\Utils\[ToolPath]
-javac [File].java
-```
-
-For C#: (Replace it by yourself)
-
-```Batchfile
-set path=%path%;%SystemRoot%\Microsoft.NET\framework\v4.xxx.xxx.xxx
-cd C:\Path\to\Source
-csc -target:exe (library) (-reference:xxx.dll) file.cs
-```
-
-Running
-========
-For Java
-```
-Use "java Run" (without quotes) to run these tools.
-(Switch to path of tools first, some tools need to enter another name to implement some functions)
-
-Use "javaw Run" (without quotes) if you want to hidden command window.
-```
-
-For C#
-```
-Just use your built .exe file.
-```
-
-System tools and APIs
-========
-I used system tools to implement some functions, here is a list about this (major function only).
-
-(LPU = LoginPasswordUtil)
-
-LPU
-```
-net
-```
-
-PBU WTBU
-```
-The .Net API (Process.Kill())
-```
-
-POL
-```
-The Java API (Calendar, File)
-```
+Java Project uses Apache Ant 1.8 to build.
+C# Project uses MSBuild 12.0.21005.1 (Visual Studio 2013).

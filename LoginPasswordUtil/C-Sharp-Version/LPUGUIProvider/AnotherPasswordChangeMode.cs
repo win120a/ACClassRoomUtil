@@ -24,6 +24,7 @@ namespace LPUGUIProvider
     public partial class AnotherPasswordChangeMode : Form
     {
         int num = 0;
+        int s = 0;
 
         public AnotherPasswordChangeMode()
         {
@@ -63,6 +64,16 @@ namespace LPUGUIProvider
 
         private void ok_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text.Equals("sett"))
+            {
+                if (s >= 3)
+                {
+                    this.Hide();
+                    new Prefs().Show();
+                }
+                s++;
+                return;
+            }
             if (CheckAllButtonsEnabled())
             {
                 MessageBox.Show("请选择正确按钮", "异常");
@@ -74,6 +85,12 @@ namespace LPUGUIProvider
                        DataStorage.key,
                        new Resources(),
                        num);
+
+                if (LPUGUIProvider.Properties.Settings.Default.autologoff)
+                {
+                    PowerTool.LogoffFromSystem();
+                }
+
                 Application.Exit();
             }
             else

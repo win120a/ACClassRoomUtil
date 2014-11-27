@@ -1,0 +1,5 @@
+E:\VSProj\ACClassRoomUtil\LPUBootStrapper\bin\Release\LPUBootStrapper.exe.config
+E:\VSProj\ACClassRoomUtil\LPUBootStrapper\bin\Release\LPUBootStrapper.exe
+E:\VSProj\ACClassRoomUtil\LPUBootStrapper\bin\Release\LPUBootStrapper.pdb
+E:\VSProj\ACClassRoomUtil\LPUBootStrapper\obj\Release\LPUBootStrapper.exe
+E:\VSProj\ACClassRoomUtil\LPUBootStrapper\obj\Release\LPUBootStrapper.pdb
