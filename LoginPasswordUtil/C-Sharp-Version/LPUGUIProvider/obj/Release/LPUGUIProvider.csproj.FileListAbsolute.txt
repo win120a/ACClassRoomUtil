@@ -15,3 +15,4 @@ E:\VSProj\ACClassRoomUtil\LPUGUIProvider\obj\Release\LPUGUIProvider.pdb
 E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Release\LPUGUIProvider.dll.config
 E:\VSProj\ACClassRoomUtil\LPUGUIProvider\obj\Release\LPUGUIProvider.Prefs.resources
 E:\VSProj\ACClassRoomUtil\LPUGUIProvider\obj\Release\LPUGUIProvider.DatePasswordChangeMode.resources
+E:\VSProj\ACClassRoomUtil\LPUGUIProvider\obj\Release\LPUGUIProvider.csprojResolveAssemblyReference.cache

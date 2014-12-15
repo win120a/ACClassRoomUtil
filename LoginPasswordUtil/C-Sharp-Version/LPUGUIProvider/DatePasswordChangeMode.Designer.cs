@@ -41,7 +41,7 @@
             // 
             this.picker.Location = new System.Drawing.Point(12, 28);
             this.picker.Name = "picker";
-            this.picker.Size = new System.Drawing.Size(259, 21);
+            this.picker.Size = new System.Drawing.Size(181, 21);
             this.picker.TabIndex = 0;
             // 
             // label1
@@ -55,7 +55,7 @@
             // 
             // ok
             // 
-            this.ok.Location = new System.Drawing.Point(15, 126);
+            this.ok.Location = new System.Drawing.Point(12, 98);
             this.ok.Name = "ok";
             this.ok.Size = new System.Drawing.Size(75, 23);
             this.ok.TabIndex = 2;
@@ -65,7 +65,8 @@
             // 
             // cancel
             // 
-            this.cancel.Location = new System.Drawing.Point(197, 126);
+            this.cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancel.Location = new System.Drawing.Point(118, 98);
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(75, 23);
             this.cancel.TabIndex = 3;
@@ -76,7 +77,7 @@
             // lockBox
             // 
             this.lockBox.AutoSize = true;
-            this.lockBox.Location = new System.Drawing.Point(15, 66);
+            this.lockBox.Location = new System.Drawing.Point(12, 55);
             this.lockBox.Name = "lockBox";
             this.lockBox.Size = new System.Drawing.Size(48, 16);
             this.lockBox.TabIndex = 4;
@@ -85,16 +86,16 @@
             // 
             // rkc
             // 
-            this.rkc.Location = new System.Drawing.Point(62, 100);
+            this.rkc.Location = new System.Drawing.Point(60, 71);
             this.rkc.Name = "rkc";
-            this.rkc.Size = new System.Drawing.Size(214, 21);
+            this.rkc.Size = new System.Drawing.Size(131, 21);
             this.rkc.TabIndex = 5;
             this.rkc.UseSystemPasswordChar = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 103);
+            this.label2.Location = new System.Drawing.Point(13, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 6;
@@ -106,7 +107,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancel;
-            this.ClientSize = new System.Drawing.Size(284, 161);
+            this.ClientSize = new System.Drawing.Size(211, 133);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.rkc);
             this.Controls.Add(this.lockBox);

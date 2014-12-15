@@ -18,11 +18,13 @@ using ACLoginPasswordUtil;
 using LPU_Util;
 using System;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace LPUGUIProvider
 {
     public partial class AnotherPasswordChangeMode : Form
     {
+        Dictionary<string, int> SelectBoxData = new Dictionary<string,int>();
         int num = 0;
         int s = 0;
 
@@ -33,28 +35,24 @@ namespace LPUGUIProvider
 
         private void AnotherPasswordChangeMode_Load(object sender, EventArgs e)
         {
+            SelectBoxData.Add("Monday", 1);
+            SelectBoxData.Add("Tuesday", 2);
+            SelectBoxData.Add("Wednesday", 3);
+            SelectBoxData.Add("Thursday", 4);
+            SelectBoxData.Add("Friday", 5);
+            SelectBoxData.Add("Saturday", 6);
+            SelectBoxData.Add("Sunday", 7);
+
+            Dictionary<string, int>.KeyCollection boxText = SelectBoxData.Keys;
+
+            foreach (string s in boxText)
+            {
+                sBox.Items.Add(s);
+            }
+
+            // SelectBoxData.Keys
+
             Tools.ReturnTodayInChinese(label1);
-        }
-
-        private void sat_Click(object sender, EventArgs e)
-        {
-            num = 6;
-
-            EnableButtonsWithout(6);
-        }
-
-        private void sun_Click(object sender, EventArgs e)
-        {
-            num = 7;
-
-            EnableButtonsWithout(7);
-        }
-
-        private void mon_Click(object sender, EventArgs e)
-        {
-            num = 1;
-
-            EnableButtonsWithout(1);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -62,7 +60,7 @@ namespace LPUGUIProvider
             Application.Exit();
         }
 
-        private void ok_Click(object sender, EventArgs e)
+        private void OK2_Click(object sender, EventArgs e)
         {
             if (textBox1.Text.Equals("sett"))
             {
@@ -74,13 +72,28 @@ namespace LPUGUIProvider
                 s++;
                 return;
             }
-            if (CheckAllButtonsEnabled())
+            if (sBox.Text == "")
             {
-                MessageBox.Show("请选择正确按钮", "异常");
+                MessageBox.Show("请选择星期几！", "异常");
                 return;
             }
             if (textBox1.Text.Equals(new LPU_Crypt_API.MixCrypt().decrypt(new Resources().armv7a, DataStorage.key)))
             {
+                Dictionary<string, int>.KeyCollection textCollection = SelectBoxData.Keys;
+                Dictionary<string, int>.ValueCollection numCollection = SelectBoxData.Values;
+                int num = 0;
+
+                foreach (int n in numCollection)
+                {
+                    if (SelectBoxData[sBox.Text] == n)
+                    {
+                        num = n;
+                        break;
+                    }
+                }
+
+                //MessageBox.Show("You selected " + num + ".");
+
                 new PSWTool().ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"),
                        DataStorage.key,
                        new Resources(),
@@ -97,75 +110,6 @@ namespace LPUGUIProvider
             {
                 MessageBox.Show("密码错误", "异常");
                 return;
-            }
-        }
-
-        private void wed_Click(object sender, EventArgs e)
-        {
-            num = 3;
-
-            EnableButtonsWithout(3);
-        }
-
-        private void tue_Click(object sender, EventArgs e)
-        {
-            num = 2;
-
-            EnableButtonsWithout(2);
-        }
-
-        private void thu_Click(object sender, EventArgs e)
-        {
-            num = 4;
-
-            EnableButtonsWithout(4);
-        }
-
-        private void fri_Click(object sender, EventArgs e)
-        {
-            num = 5;
-
-            EnableButtonsWithout(5);
-        }
-
-        private bool CheckAllButtonsEnabled()
-        {
-            return mon.Enabled & tue.Enabled & wed.Enabled & thu.Enabled & fri.Enabled & sat.Enabled & sun.Enabled;
-        }
-
-        private void EnableButtonsWithout(int whichbutt)
-        {
-            mon.Enabled = true;
-            tue.Enabled = true;
-            wed.Enabled = true;
-            thu.Enabled = true;
-            fri.Enabled = true;
-            sat.Enabled = true;
-            sun.Enabled = true;
-
-            switch (whichbutt)
-            {
-                case 1:
-                    mon.Enabled = false;
-                    break;
-                case 2:
-                    tue.Enabled = false;
-                    break;
-                case 3:
-                    wed.Enabled = false;
-                    break;
-                case 4:
-                    thu.Enabled = false;
-                    break;
-                case 5:
-                    fri.Enabled = false;
-                    break;
-                case 6:
-                    sat.Enabled = false;
-                    break;
-                case 7:
-                    sun.Enabled = false;
-                    break;
             }
         }
     }

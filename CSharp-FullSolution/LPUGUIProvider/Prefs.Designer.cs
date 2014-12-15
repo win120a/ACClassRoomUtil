@@ -38,9 +38,9 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(13, 13);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(180, 16);
+            this.checkBox1.Size = new System.Drawing.Size(156, 16);
             this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "在修改完密码后自动注销吗？";
+            this.checkBox1.Text = "在修改完密码后自动注销";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 

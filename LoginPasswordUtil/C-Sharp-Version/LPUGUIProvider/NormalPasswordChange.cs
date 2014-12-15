@@ -25,8 +25,6 @@ namespace LPUGUIProvider
 {
     public partial class NormalPasswordChange : Form
     {
-        int switchVar = 0;
-
         public NormalPasswordChange()
         {
             InitializeComponent();
@@ -70,68 +68,59 @@ namespace LPUGUIProvider
 
             if (dow.Equals(DayOfWeek.Friday) || dow.Equals(DayOfWeek.Saturday))
             {
-                label2.Text = "为安全考虑，在周六日修改密码已禁用。";
-                textBox1.Enabled = false;
+                label2.Text = "为安全考虑，不允许修改为节假日密码。";
+                label3.Visible = false;
+                textBox1.Visible = false;
+                button1.Enabled = false;
+                System.Drawing.Size s = this.Size;
+                s.Height = 150;
+                this.Size = s;
             }
             
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (switchVar >= 3)
+            StringBuilder sb = new StringBuilder();
+            try
             {
-                this.Hide();
-                GC.Collect();
-                new AnotherPasswordChangeMode().Show();
-                this.Dispose();
+                sb.Append(new MixCrypt().decrypt(new Resources().armv7a, DataStorage.key));
             }
-            if (textBox1.Text.Equals(""))
+            catch (System.Security.Cryptography.CryptographicException)
             {
-                switchVar++;
+                MessageBox.Show("出现异常", "异常");
+                return;
+            }
+
+            if (textBox1.Text.Equals(new LPU_Crypt_API.MixCrypt().decrypt(new Resources().armv7a, DataStorage.key)))
+            {
+                int num = 0;
+
+                num = Tools.GenerateDateOfWeekNumber();
+
+                //MessageBox.Show("Application is in debugging mode.\n" + 
+                //                "The key varable is: " + 
+                //                num, 
+                //                "Debbuging mode");
+
+                new PSWTool().ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"),
+                                                   DataStorage.key,
+                                                   new Resources(),
+                                                   num);
+
+                MessageBox.Show("执行完毕！", "完成");
+
+                if (LPUGUIProvider.Properties.Settings.Default.autologoff)
+                {
+                    PowerTool.LogoffFromSystem();
+                }
+
+                Application.Exit();
             }
             else
             {
-                StringBuilder sb = new StringBuilder();
-                try
-                {
-                    sb.Append(new MixCrypt().decrypt(new Resources().armv7a, DataStorage.key));
-                }
-                catch (System.Security.Cryptography.CryptographicException)
-                {
-                    MessageBox.Show("出现异常", "异常");
-                    return;
-                }
-
-                if (textBox1.Text.Equals(new LPU_Crypt_API.MixCrypt().decrypt(new Resources().armv7a, DataStorage.key)))
-                {
-                    int num = 0;
-
-                    num = Tools.GenerateDateOfWeekNumber();
-
-                    //MessageBox.Show("Application is in debugging mode.\n" + 
-                    //                "The key varable is: " + 
-                    //                num, 
-                    //                "Debbuging mode");
-
-                    new PSWTool().ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"),
-                                                       DataStorage.key,
-                                                       new Resources(),
-                                                       num);
-
-                    MessageBox.Show("执行完毕！", "完成");
-
-                    if (LPUGUIProvider.Properties.Settings.Default.autologoff)
-                    {
-                        PowerTool.LogoffFromSystem();
-                    }
-
-                    Application.Exit();
-                }
-                else
-                {
-                    MessageBox.Show("密码错误", "异常");
-                    return;
-                }
+                MessageBox.Show("密码错误", "异常");
+                return;
             }
         }
 
@@ -140,6 +129,14 @@ namespace LPUGUIProvider
             this.Hide();
             GC.Collect();
             new DatePasswordChangeMode().Show();
+            this.Dispose();
+        }
+
+        private void week_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GC.Collect();
+            new AnotherPasswordChangeMode().Show();
             this.Dispose();
         }
     }

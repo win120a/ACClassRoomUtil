@@ -58,11 +58,9 @@ namespace LPUGUIProvider
             }
 
             DateTime savedDate = Properties.Settings.Default.dueDate;
-            if (savedDate.Year > DateTime.Now.Year || savedDate.Month > DateTime.Now.Month || savedDate.Day > DateTime.Now.Day)
+            if (savedDate > DateTime.Now)
             {
-                MessageBox.Show("程序现在被锁，如需帮助，请在" + savedDate.Year + "/" + savedDate.Month + "/" + 
-                                savedDate.Day + "后再来问系统管理员。",
-                                "已锁定");
+                MessageBox.Show("程序现在被锁！", "已锁定");
                 Application.Exit();
                 return;
             }

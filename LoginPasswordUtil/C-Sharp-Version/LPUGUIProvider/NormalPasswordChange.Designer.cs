@@ -35,6 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.sdate = new System.Windows.Forms.Button();
+            this.week = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -57,7 +58,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(439, 13);
+            this.button1.Location = new System.Drawing.Point(242, 45);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(57, 26);
             this.button1.TabIndex = 2;
@@ -68,7 +69,7 @@
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(439, 59);
+            this.button2.Location = new System.Drawing.Point(242, 83);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(57, 26);
             this.button2.TabIndex = 3;
@@ -89,13 +90,13 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(17, 124);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(478, 21);
+            this.textBox1.Size = new System.Drawing.Size(285, 21);
             this.textBox1.TabIndex = 5;
             this.textBox1.UseSystemPasswordChar = true;
             // 
             // sdate
             // 
-            this.sdate.Location = new System.Drawing.Point(326, 61);
+            this.sdate.Location = new System.Drawing.Point(206, 12);
             this.sdate.Name = "sdate";
             this.sdate.Size = new System.Drawing.Size(96, 23);
             this.sdate.TabIndex = 6;
@@ -103,13 +104,24 @@
             this.sdate.UseVisualStyleBackColor = true;
             this.sdate.Click += new System.EventHandler(this.sdate_Click);
             // 
+            // week
+            // 
+            this.week.Location = new System.Drawing.Point(104, 12);
+            this.week.Name = "week";
+            this.week.Size = new System.Drawing.Size(96, 23);
+            this.week.TabIndex = 7;
+            this.week.Text = "指定星期...";
+            this.week.UseVisualStyleBackColor = true;
+            this.week.Click += new System.EventHandler(this.week_Click);
+            // 
             // NormalPasswordChange
             // 
             this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.button2;
-            this.ClientSize = new System.Drawing.Size(524, 163);
+            this.ClientSize = new System.Drawing.Size(311, 163);
+            this.Controls.Add(this.week);
             this.Controls.Add(this.sdate);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
@@ -122,7 +134,7 @@
             this.MinimizeBox = false;
             this.Name = "NormalPasswordChange";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "密码修改（正常模式）";
+            this.Text = "快速修改今天模式";
             this.Load += new System.EventHandler(this.NormalPasswordChange_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -138,5 +150,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button sdate;
+        private System.Windows.Forms.Button week;
     }
 }
