@@ -20,11 +20,15 @@ Framework Reqired
 At least Java 7 for Java Projects. (Please downgrade the Java version in Netbeans.)<br>
 At least .net framework 4 for C# projects.
 
-About ACClassRoomUtil
+Platform
 ============
-A collection use in classroom.<br>
-(Windows ONLY! If need, shutdown UAC & Antivirus software)<br>
-These programs are licensed with Apache License, you can see it at <a href="https://github.com/win120a/ACClassRoomUtil/blob/master/LICENSE">Here</a>.
+Known support platform: Windows XP, Windows 7<br>
+These applications does NOT support any other platforms (such as Linux).<br>
+
+License
+============
+These programs are licensed with Apache License.<br>
+You can read it at <a href="https://github.com/win120a/ACClassRoomUtil/blob/master/LICENSE">here</a>.
 
 Compiling Engine
 =========
