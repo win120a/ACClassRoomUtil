@@ -15,9 +15,10 @@
 -->
 
 
-REMINDER of framework (Environment)
+Framework Reqired
 ============
-JAVA TOOLS NEED TO INSTALL JDK AND SOME C# TOOLS NEED TO INSTALL .Net Framework! (.Net Framework 4, JAVA 7 or LATER!!!)<br>
+At least Java 7 for Java Projects. (Please downgrade the Java version in Netbeans.)<br>
+At least .net framework 4 for C# projects.
 
 About ACClassRoomUtil
 ============
@@ -27,5 +28,5 @@ These programs are licensed with Apache License, you can see it at <a href="http
 
 Compiling Engine
 =========
-Java Project uses Apache Ant 1.8 to build.
-C# Project uses MSBuild 12.0.21005.1 (Visual Studio 2013).
+Java Project uses Apache Ant 1.8 to build.<br>
+C# Project uses MSBuild 12.0.21005.1 (Visual Studio 2013 Express for Windows Desktop).
