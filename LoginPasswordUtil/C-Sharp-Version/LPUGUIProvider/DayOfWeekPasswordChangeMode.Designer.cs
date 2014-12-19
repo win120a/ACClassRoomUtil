@@ -1,6 +1,6 @@
 ﻿namespace LPUGUIProvider
 {
-    partial class AnotherPasswordChangeMode
+    partial class DayOfWeekPasswordChangeMode
     {
         /// <summary>
         /// Required designer variable.

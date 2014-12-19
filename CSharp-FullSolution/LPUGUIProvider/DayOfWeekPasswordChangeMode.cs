@@ -22,13 +22,13 @@ using System.Collections.Generic;
 
 namespace LPUGUIProvider
 {
-    public partial class AnotherPasswordChangeMode : Form
+    public partial class DayOfWeekPasswordChangeMode : Form
     {
         Dictionary<string, int> SelectBoxData = new Dictionary<string,int>();
         int num = 0;
         int s = 0;
 
-        public AnotherPasswordChangeMode()
+        public DayOfWeekPasswordChangeMode()
         {
             InitializeComponent();
         }

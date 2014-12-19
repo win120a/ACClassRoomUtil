@@ -136,7 +136,7 @@ namespace LPUGUIProvider
         {
             this.Hide();
             GC.Collect();
-            new AnotherPasswordChangeMode().Show();
+            new DayOfWeekPasswordChangeMode().Show();
             this.Dispose();
         }
     }

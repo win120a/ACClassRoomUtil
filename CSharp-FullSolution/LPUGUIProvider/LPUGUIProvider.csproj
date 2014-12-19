@@ -51,11 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnotherPasswordChangeMode.cs">
+    <Compile Include="DayOfWeekPasswordChangeMode.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AnotherPasswordChangeMode.Designer.cs">
-      <DependentUpon>AnotherPasswordChangeMode.cs</DependentUpon>
+    <Compile Include="DayOfWeekPasswordChangeMode.Designer.cs">
+      <DependentUpon>DayOfWeekPasswordChangeMode.cs</DependentUpon>
     </Compile>
     <Compile Include="DataStorage.cs" />
     <Compile Include="DatePasswordChangeMode.cs">
@@ -92,8 +92,8 @@
     <Compile Include="Tools.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AnotherPasswordChangeMode.resx">
-      <DependentUpon>AnotherPasswordChangeMode.cs</DependentUpon>
+    <EmbeddedResource Include="DayOfWeekPasswordChangeMode.resx">
+      <DependentUpon>DayOfWeekPasswordChangeMode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DatePasswordChangeMode.resx">
       <DependentUpon>DatePasswordChangeMode.cs</DependentUpon>

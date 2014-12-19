@@ -5,15 +5,9 @@ namespace LPUGUIProvider
 {
     public partial class Prefs : Form
     {
-        bool auto_logoff = false;
         public Prefs()
         {
             InitializeComponent();
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            auto_logoff = checkBox1.Checked;
         }
 
         private void button1_Click(object sender, EventArgs e) // ok
