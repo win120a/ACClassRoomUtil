@@ -14,8 +14,8 @@
    limitations under the License.
 */
 
+using ACLibrary.Crypto.MixCryptSeries;
 using ACLoginPasswordUtil;
-using LPU_Crypt_API;
 using LPU_Util;
 using System;
 using System.Windows.Forms;
@@ -24,31 +24,45 @@ namespace LPUGUIProvider
 {
     public partial class DatePasswordChangeMode : Form
     {
+        /// <summary>
+        ///  The Constructor.
+        /// </summary>
         public DatePasswordChangeMode()
         {
             InitializeComponent();
         }
 
+        #region Handlers
+
+        /// <summary>
+        /// The OK button Event Handler.
+        /// </summary>
+        /// <param name="sender">Event Sender.</param>
+        /// <param name="e">Event Args.</param>
         private void ok_Click(object sender, EventArgs e)
         {
-            if (!rkc.Text.Equals(new MixCrypt().decrypt(new Resources().armv7a, DataStorage.key)))
+            // Check Key.
+            if (!rkc.Text.Equals(new Mid().DecryptString(new Resources().armv7a, DataStorage.key))) // Decrypts key and check it.
             {
                 MessageBox.Show("密码错误！", "异常");
                 return;
             }
 
-            Properties.Settings.Default.isLock = lockBox.Checked;
+            #region Date Process zone
+            Properties.Settings.Default.isLock = lockBox.Checked;  // Turn on (or not) lock switch.
 
-            DateTime dt = DateTime.Parse(picker.Text);
+            DateTime dt = DateTime.Parse(picker.Text); // Parse text to object.
 
-            Properties.Settings.Default.dueDate = dt;
+            Properties.Settings.Default.dueDate = dt; // Save it.
+            
+            Properties.Settings.Default.Save(); // Save to settings zone.
+            #endregion
 
-            Properties.Settings.Default.Save();
-
-            DayOfWeek dow = dt.DayOfWeek;
+            #region Parse day of week zone
+            DayOfWeek dow = dt.DayOfWeek;  // Extract Day of week.
             int dow_int = 0;
 
-            switch (dow)
+            switch (dow) // Obj -> int
             {
                 case DayOfWeek.Monday:
                     dow_int = 1;
@@ -74,23 +88,28 @@ namespace LPUGUIProvider
                 default:
                     throw new SystemException();
             }
+            #endregion
 
+            #region Change PSW and after process zone
             new PSWTool().ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"),
                                                DataStorage.key,
                                                new Resources(),
-                                               dow_int);
+                                               dow_int); // Change psw.
 
-            if (LPUGUIProvider.Properties.Settings.Default.autologoff)
+            if (LPUGUIProvider.Properties.Settings.Default.autologoff) // Logoff.
             {
                 PowerTool.LogoffFromSystem();
             }
 
             Application.Exit();
+            #endregion
         }
 
         private void cancel_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
+        #endregion
     }
 }

@@ -1,10 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
+using LPUGUIProvider.Properties;
+using ACLibrary.Collection;
 
 namespace LPUGUIProvider
 {
     public partial class Prefs : Form
     {
+        ACDictionary<string, int> SelectBoxData = new ACDictionary<string, int>();
+
         public Prefs()
         {
             InitializeComponent();
@@ -24,7 +29,27 @@ namespace LPUGUIProvider
 
         private void Prefs_Load(object sender, EventArgs e)
         {
-            checkBox1.Checked = Properties.Settings.Default.autologoff;
+            SelectBoxData.Add("不操作", 0);
+            SelectBoxData.Add("关  机", 1);
+            SelectBoxData.Add("重  启", 2);
+            SelectBoxData.Add("注  销", 3);
+
+            // comboBox1.Text = SelectBoxData.GetKeyByValue(Settings.Default.operateID);
+
+            foreach (string s in SelectBoxData.KeyList())
+            {
+                comboBox1.Items.Add(s);
+            }
+
+            checkBox1.Checked = Settings.Default.autologoff;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Settings.Default.operateID = SelectBoxData[comboBox1.Text];
+            Settings.Default.autologoff = checkBox1.Checked;
+            Settings.Default.Save();
+            Application.Exit();
         }
     }
 }

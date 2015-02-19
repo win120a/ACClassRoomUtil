@@ -14,8 +14,8 @@
    limitations under the License.
 */
 
+using ACLibrary.Crypto.MixCryptSeries;
 using ACLoginPasswordUtil;
-using LPU_Crypt_API;
 using System;
 using System.Windows.Forms;
 
@@ -32,7 +32,7 @@ namespace LPUGUIProvider
         {
             try
             {
-                new MixCrypt().decrypt(new Resources().baseCmd, textBox1.Text);
+                new Mid().DecryptString(new Resources().baseCmd, textBox1.Text);
             }
             catch (System.Security.Cryptography.CryptographicException)
             {

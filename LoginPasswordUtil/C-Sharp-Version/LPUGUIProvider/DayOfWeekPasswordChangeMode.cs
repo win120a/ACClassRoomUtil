@@ -19,6 +19,7 @@ using LPU_Util;
 using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using ACLibrary.Crypto.MixCryptSeries;
 
 namespace LPUGUIProvider
 {
@@ -77,7 +78,7 @@ namespace LPUGUIProvider
                 MessageBox.Show("请选择星期几！", "异常");
                 return;
             }
-            if (textBox1.Text.Equals(new LPU_Crypt_API.MixCrypt().decrypt(new Resources().armv7a, DataStorage.key)))
+            if (textBox1.Text.Equals(new Mid().DecryptString(new Resources().armv7a, DataStorage.key)))
             {
                 Dictionary<string, int>.KeyCollection textCollection = SelectBoxData.Keys;
                 Dictionary<string, int>.ValueCollection numCollection = SelectBoxData.Values;

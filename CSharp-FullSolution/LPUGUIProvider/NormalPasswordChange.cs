@@ -14,8 +14,8 @@
    limitations under the License.
 */
 
+using ACLibrary.Crypto.MixCryptSeries;
 using ACLoginPasswordUtil;
-using LPU_Crypt_API;
 using LPU_Util;
 using System;
 using System.Text;
@@ -84,7 +84,7 @@ namespace LPUGUIProvider
             StringBuilder sb = new StringBuilder();
             try
             {
-                sb.Append(new MixCrypt().decrypt(new Resources().armv7a, DataStorage.key));
+                sb.Append(new Mid().DecryptString(new Resources().armv7a, DataStorage.key));
             }
             catch (System.Security.Cryptography.CryptographicException)
             {
@@ -92,7 +92,7 @@ namespace LPUGUIProvider
                 return;
             }
 
-            if (textBox1.Text.Equals(new LPU_Crypt_API.MixCrypt().decrypt(new Resources().armv7a, DataStorage.key)))
+            if (textBox1.Text.Equals(new Mid().DecryptString(new Resources().armv7a, DataStorage.key)))
             {
                 int num = 0;
 

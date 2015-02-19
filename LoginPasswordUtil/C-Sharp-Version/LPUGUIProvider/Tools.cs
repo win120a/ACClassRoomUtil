@@ -16,11 +16,32 @@
 
 using System;
 using System.Windows.Forms;
+using LPU_Util;
 
 namespace LPUGUIProvider
 {
     public class Tools
     {
+        public static void ExecuteOperationByID(int operationID)
+        {
+            switch (operationID)
+            {
+                case 1:
+                    PowerTool.ShutdownSystem();
+                    break;
+                case 2:
+                    PowerTool.RebootSystem();
+                    break;
+                case 3:
+                    PowerTool.LogoffFromSystem();
+                    break;
+                case 0:
+                    break;
+                default:
+                    break;
+            }
+        }
+
         public static int GenerateDateOfWeekNumber()
         {
             int num = 0;
