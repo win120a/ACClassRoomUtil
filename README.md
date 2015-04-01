@@ -23,7 +23,7 @@ At least .net framework 4 for C# projects.
 Platform
 ============
 Known support platform: Windows XP, Windows 7<br>
-These applications does NOT support any other platforms (such as Linux).<br>
+These applications do NOT support any other platforms (such as Linux).<br>
 
 License
 ============
