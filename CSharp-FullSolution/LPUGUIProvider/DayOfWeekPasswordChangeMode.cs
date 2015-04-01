@@ -100,10 +100,7 @@ namespace LPUGUIProvider
                        new Resources(),
                        num);
 
-                if (LPUGUIProvider.Properties.Settings.Default.autologoff)
-                {
-                    PowerTool.LogoffFromSystem();
-                }
+                Cases.ExecuteCases();
 
                 Application.Exit();
             }

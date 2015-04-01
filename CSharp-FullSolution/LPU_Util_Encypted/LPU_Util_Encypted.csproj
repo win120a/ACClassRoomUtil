@@ -31,8 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LPU_Crypt_API">
-      <HintPath>..\LPU_Crypt_API\bin\Debug\LPU_Crypt_API.dll</HintPath>
+    <Reference Include="AC_CryptoAPI">
+      <HintPath>..\..\ACLibrary\ACCryptoAPI\bin\Debug\AC_CryptoAPI.dll</HintPath>
     </Reference>
     <Reference Include="LPU_Encrypted_Res">
       <HintPath>..\LPU_Encrypted_Res\bin\Debug\LPU_Encrypted_Res.dll</HintPath>

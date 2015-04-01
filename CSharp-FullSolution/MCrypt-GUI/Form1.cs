@@ -14,7 +14,7 @@
    limitations under the License.
 */
 
-using LPU_Crypt_API;
+using ACLibrary.Crypto.MixCryptSeries;
 using System;
 using System.Text;
 using System.Windows.Forms;
@@ -134,7 +134,7 @@ namespace MCrypt_GUI
 
         public void doEncrypt()
         {
-            DataStore.finalResult = new MixCrypt().encrypt(input.Text, DataStore.Key);
+            DataStore.finalResult = new Mid().EncryptString(input.Text, DataStore.Key);
         }
 
         public void doDecrypt()
@@ -142,7 +142,7 @@ namespace MCrypt_GUI
             StringBuilder sb = new StringBuilder();
             try
             {
-                sb.Append(new MixCrypt().decrypt(input.Text, DataStore.Key));
+                sb.Append(new Mid().DecryptString(input.Text, DataStore.Key));
             }
             catch (System.Security.Cryptography.CryptographicException ce)
             {

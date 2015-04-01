@@ -42,7 +42,7 @@
             this.textBox1.Location = new System.Drawing.Point(12, 97);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(135, 21);
-            this.textBox1.TabIndex = 8;
+            this.textBox1.TabIndex = 2;
             this.textBox1.UseSystemPasswordChar = true;
             // 
             // label3
@@ -60,7 +60,7 @@
             this.cancel.Location = new System.Drawing.Point(90, 124);
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(57, 26);
-            this.cancel.TabIndex = 10;
+            this.cancel.TabIndex = 4;
             this.cancel.Text = "取消";
             this.cancel.UseVisualStyleBackColor = true;
             this.cancel.Click += new System.EventHandler(this.button2_Click);
@@ -81,7 +81,7 @@
             this.sBox.Location = new System.Drawing.Point(12, 59);
             this.sBox.Name = "sBox";
             this.sBox.Size = new System.Drawing.Size(121, 20);
-            this.sBox.TabIndex = 11;
+            this.sBox.TabIndex = 1;
             // 
             // OK2
             // 
@@ -89,7 +89,7 @@
             this.OK2.Location = new System.Drawing.Point(12, 124);
             this.OK2.Name = "OK2";
             this.OK2.Size = new System.Drawing.Size(57, 26);
-            this.OK2.TabIndex = 12;
+            this.OK2.TabIndex = 3;
             this.OK2.Text = "确定";
             this.OK2.UseVisualStyleBackColor = true;
             this.OK2.Click += new System.EventHandler(this.OK2_Click);
@@ -103,7 +103,7 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "请选择星期：";
             // 
-            // AnotherPasswordChangeMode
+            // DayOfWeekPasswordChangeMode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -119,7 +119,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AnotherPasswordChangeMode";
+            this.Name = "DayOfWeekPasswordChangeMode";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "星期模式";
             this.Load += new System.EventHandler(this.AnotherPasswordChangeMode_Load);

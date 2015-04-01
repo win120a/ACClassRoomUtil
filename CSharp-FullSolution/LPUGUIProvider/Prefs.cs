@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using LPUGUIProvider.Properties;
 using ACLibrary.Collection;
+using System.ComponentModel;
 
 namespace LPUGUIProvider
 {
@@ -17,8 +18,8 @@ namespace LPUGUIProvider
 
         private void button1_Click(object sender, EventArgs e) // ok
         {
-            Properties.Settings.Default.autologoff = checkBox1.Checked;
-            Properties.Settings.Default.Save();
+            Settings.Default.operateID = SelectBoxData[comboBox1.Text];
+            Settings.Default.Save();
             Application.Exit();
         }
 
@@ -41,15 +42,7 @@ namespace LPUGUIProvider
                 comboBox1.Items.Add(s);
             }
 
-            checkBox1.Checked = Settings.Default.autologoff;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Settings.Default.operateID = SelectBoxData[comboBox1.Text];
-            Settings.Default.autologoff = checkBox1.Checked;
-            Settings.Default.Save();
-            Application.Exit();
+            comboBox1.Text = SelectBoxData.GetKeyByValue(Settings.Default.operateID);
         }
     }
 }
