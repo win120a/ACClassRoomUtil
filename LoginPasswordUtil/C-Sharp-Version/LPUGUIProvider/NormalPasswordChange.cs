@@ -110,10 +110,7 @@ namespace LPUGUIProvider
 
                 MessageBox.Show("执行完毕！", "完成");
 
-                if (LPUGUIProvider.Properties.Settings.Default.autologoff)
-                {
-                    PowerTool.LogoffFromSystem();
-                }
+                Cases.ExecuteCases();
 
                 Application.Exit();
             }

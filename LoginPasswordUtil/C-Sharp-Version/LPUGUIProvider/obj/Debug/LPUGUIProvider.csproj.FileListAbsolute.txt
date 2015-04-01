@@ -1,8 +1,6 @@
 E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\LPUGUIProvider.dll
 E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\LPUGUIProvider.pdb
-E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\LPU_Crypt_API.dll
 E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\LPU_Encrypted_Res.dll
-E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\LPU_Crypt_API.pdb
 E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\LPU_Encrypted_Res.pdb
 E:\VSProj\ACClassRoomUtil\LPUGUIProvider\obj\Debug\LPUGUIProvider.DecryptPass.resources
 E:\VSProj\ACClassRoomUtil\LPUGUIProvider\obj\Debug\LPUGUIProvider.NormalPasswordChange.resources
@@ -21,3 +19,4 @@ E:\VSProj\ACClassRoomUtil\LPUGUIProvider\obj\Debug\LPUGUIProvider.DayOfWeekPassw
 E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\AC_CryptoAPI.dll
 E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\AC_CryptoAPI.pdb
 E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\AC_CryptoAPI.xml
+E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\ACCollectionLib.xml

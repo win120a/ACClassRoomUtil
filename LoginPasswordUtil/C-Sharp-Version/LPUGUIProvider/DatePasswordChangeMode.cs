@@ -96,10 +96,7 @@ namespace LPUGUIProvider
                                                new Resources(),
                                                dow_int); // Change psw.
 
-            if (LPUGUIProvider.Properties.Settings.Default.autologoff) // Logoff.
-            {
-                PowerTool.LogoffFromSystem();
-            }
+            Cases.ExecuteCases();
 
             Application.Exit();
             #endregion

