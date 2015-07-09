@@ -13,10 +13,8 @@ E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\LPU_Util_Encypted.pdb
 E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\LPUGUIProvider.dll.config
 E:\VSProj\ACClassRoomUtil\LPUGUIProvider\obj\Debug\LPUGUIProvider.Prefs.resources
 E:\VSProj\ACClassRoomUtil\LPUGUIProvider\obj\Debug\LPUGUIProvider.DatePasswordChangeMode.resources
-E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\ACCollectionLib.dll
-E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\ACCollectionLib.pdb
 E:\VSProj\ACClassRoomUtil\LPUGUIProvider\obj\Debug\LPUGUIProvider.DayOfWeekPasswordChangeMode.resources
-E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\AC_CryptoAPI.dll
-E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\AC_CryptoAPI.pdb
-E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\AC_CryptoAPI.xml
-E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\ACCollectionLib.xml
+E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\ACLibrary.Crypto.dll
+E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\ACLibrary.TypeConvertLib.dll
+E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\ACLibrary.Crypto.pdb
+E:\VSProj\ACClassRoomUtil\LPUGUIProvider\bin\Debug\ACLibrary.TypeConvertLib.pdb

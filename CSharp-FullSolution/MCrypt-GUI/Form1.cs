@@ -1,5 +1,5 @@
 ﻿/*
-   Copyright (C) 2011-2014 AC Inc. (Andy Cheung)
+   Copyright (C) 2011-2015 AC Inc. (Andy Cheung)
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -19,12 +19,14 @@ using System;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading;
+using ACLibrary.Crypto.CryptoProviders;
+using ACLibrary.TypeConvert;
 
 namespace MCrypt_GUI
 {
     public partial class Main : Form
     {
-        // int whichMethod;
+        int whichMethod;
 
         public Main()
         {
@@ -134,15 +136,17 @@ namespace MCrypt_GUI
 
         public void doEncrypt()
         {
-            DataStore.finalResult = new Mid().EncryptString(input.Text, DataStore.Key);
+            ICryptoProvider engine = DetermineAndLoadEngine();
+            DataStore.finalResult = engine.EncryptString(input.Text, DataStore.Key);
         }
 
         public void doDecrypt()
         {
+            ICryptoProvider engine = DetermineAndLoadEngine();
             StringBuilder sb = new StringBuilder();
             try
             {
-                sb.Append(new Mid().DecryptString(input.Text, DataStore.Key));
+                sb.Append(engine.DecryptString(input.Text, DataStore.Key));
             }
             catch (System.Security.Cryptography.CryptographicException ce)
             {
@@ -153,42 +157,81 @@ namespace MCrypt_GUI
 
         private void aesonly_CheckedChanged(object sender, EventArgs e)
         {
-
+            whichMethod = 0;
         }
 
         private void desonly_CheckedChanged(object sender, EventArgs e)
         {
-
+            whichMethod = 1;
         }
 
         private void rc2only_CheckedChanged(object sender, EventArgs e)
         {
-
+            whichMethod = 2;
         }
 
         private void RijndaelOnly_CheckedChanged(object sender, EventArgs e)
         {
-
+            whichMethod = 3;
         }
 
         private void MixCryptWeak_CheckedChanged(object sender, EventArgs e)
         {
-
+            whichMethod = 4;
         }
 
         private void MixCryptMid_CheckedChanged(object sender, EventArgs e)
         {
-
+            whichMethod = 5;
         }
 
         private void MixCryptStronger_CheckedChanged(object sender, EventArgs e)
         {
-
+            whichMethod = 6;
         }
 
         private void MixCryptStrongest_CheckedChanged(object sender, EventArgs e)
         {
+            whichMethod = 7;
+        }
 
+        private ICryptoProvider DetermineAndLoadEngine()
+        {
+            ICryptoProvider ip = null;
+            switch (whichMethod)
+            {
+                case 0:
+                    ip = new AESProvider();
+                    break;
+                case 1:
+                    ip = new DESProvider();
+                    break;
+                case 2:
+                    ip = new RC2Provider();
+                    break;
+                case 3:
+                    ip = new RijndaelProvider();
+                    break;
+                case 4:
+                    ip = new Weaker();
+                    break;
+                case 5:
+                    ip = new Mid();
+                    break;
+                case 6:
+                    ip = new Stronger();
+                    break;
+                case 7:
+                    ip = new Strongest();
+                    break;
+            }
+
+            return ip;
+        }
+
+        private void test_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(NumberConverter.Int2String(whichMethod));
         }
     }
 }

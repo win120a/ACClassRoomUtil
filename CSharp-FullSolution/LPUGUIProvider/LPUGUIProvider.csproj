@@ -34,8 +34,8 @@
     <Reference Include="ACCollectionLib">
       <HintPath>..\..\ACLibrary\ACCollectionLib\bin\Debug\ACCollectionLib.dll</HintPath>
     </Reference>
-    <Reference Include="AC_CryptoAPI">
-      <HintPath>..\..\ACLibrary\ACCryptoAPI\bin\Debug\AC_CryptoAPI.dll</HintPath>
+    <Reference Include="ACLibrary.Crypto">
+      <HintPath>..\..\ACLibrary\ACCryptoAPI\bin\Debug\ACLibrary.Crypto.dll</HintPath>
     </Reference>
     <Reference Include="LPU_Encrypted_Res">
       <HintPath>..\LPU_Encrypted_Res\bin\Debug\LPU_Encrypted_Res.dll</HintPath>

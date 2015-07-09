@@ -40,14 +40,15 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.aesonly = new System.Windows.Forms.RadioButton();
-            this.desonly = new System.Windows.Forms.RadioButton();
-            this.rc2only = new System.Windows.Forms.RadioButton();
-            this.RijndaelOnly = new System.Windows.Forms.RadioButton();
-            this.MixCryptWeak = new System.Windows.Forms.RadioButton();
-            this.MixCryptMid = new System.Windows.Forms.RadioButton();
-            this.MixCryptStronger = new System.Windows.Forms.RadioButton();
             this.MixCryptStrongest = new System.Windows.Forms.RadioButton();
+            this.MixCryptStronger = new System.Windows.Forms.RadioButton();
+            this.MixCryptMid = new System.Windows.Forms.RadioButton();
+            this.MixCryptWeak = new System.Windows.Forms.RadioButton();
+            this.RijndaelOnly = new System.Windows.Forms.RadioButton();
+            this.rc2only = new System.Windows.Forms.RadioButton();
+            this.desonly = new System.Windows.Forms.RadioButton();
+            this.aesonly = new System.Windows.Forms.RadioButton();
+            this.test = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -162,6 +163,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.test);
             this.groupBox1.Controls.Add(this.MixCryptStrongest);
             this.groupBox1.Controls.Add(this.MixCryptStronger);
             this.groupBox1.Controls.Add(this.MixCryptMid);
@@ -176,79 +178,18 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Crypt Method";
-            this.groupBox1.Visible = false;
             // 
-            // aesonly
+            // MixCryptStrongest
             // 
-            this.aesonly.AutoSize = true;
-            this.aesonly.Location = new System.Drawing.Point(23, 30);
-            this.aesonly.Name = "aesonly";
-            this.aesonly.Size = new System.Drawing.Size(71, 16);
-            this.aesonly.TabIndex = 0;
-            this.aesonly.TabStop = true;
-            this.aesonly.Text = "AES Only";
-            this.aesonly.UseVisualStyleBackColor = true;
-            this.aesonly.CheckedChanged += new System.EventHandler(this.aesonly_CheckedChanged);
-            // 
-            // desonly
-            // 
-            this.desonly.AutoSize = true;
-            this.desonly.Location = new System.Drawing.Point(139, 30);
-            this.desonly.Name = "desonly";
-            this.desonly.Size = new System.Drawing.Size(71, 16);
-            this.desonly.TabIndex = 1;
-            this.desonly.TabStop = true;
-            this.desonly.Text = "DES Only";
-            this.desonly.UseVisualStyleBackColor = true;
-            this.desonly.CheckedChanged += new System.EventHandler(this.desonly_CheckedChanged);
-            // 
-            // rc2only
-            // 
-            this.rc2only.AutoSize = true;
-            this.rc2only.Location = new System.Drawing.Point(257, 30);
-            this.rc2only.Name = "rc2only";
-            this.rc2only.Size = new System.Drawing.Size(71, 16);
-            this.rc2only.TabIndex = 2;
-            this.rc2only.TabStop = true;
-            this.rc2only.Text = "RC2 Only";
-            this.rc2only.UseVisualStyleBackColor = true;
-            this.rc2only.CheckedChanged += new System.EventHandler(this.rc2only_CheckedChanged);
-            // 
-            // RijndaelOnly
-            // 
-            this.RijndaelOnly.AutoSize = true;
-            this.RijndaelOnly.Location = new System.Drawing.Point(375, 30);
-            this.RijndaelOnly.Name = "RijndaelOnly";
-            this.RijndaelOnly.Size = new System.Drawing.Size(101, 16);
-            this.RijndaelOnly.TabIndex = 3;
-            this.RijndaelOnly.TabStop = true;
-            this.RijndaelOnly.Text = "Rijndael Only";
-            this.RijndaelOnly.UseVisualStyleBackColor = true;
-            this.RijndaelOnly.CheckedChanged += new System.EventHandler(this.RijndaelOnly_CheckedChanged);
-            // 
-            // MixCryptWeak
-            // 
-            this.MixCryptWeak.AutoSize = true;
-            this.MixCryptWeak.Location = new System.Drawing.Point(487, 30);
-            this.MixCryptWeak.Name = "MixCryptWeak";
-            this.MixCryptWeak.Size = new System.Drawing.Size(173, 16);
-            this.MixCryptWeak.TabIndex = 4;
-            this.MixCryptWeak.TabStop = true;
-            this.MixCryptWeak.Text = "MixCrypt Weak (3AES Only)";
-            this.MixCryptWeak.UseVisualStyleBackColor = true;
-            this.MixCryptWeak.CheckedChanged += new System.EventHandler(this.MixCryptWeak_CheckedChanged);
-            // 
-            // MixCryptMid
-            // 
-            this.MixCryptMid.AutoSize = true;
-            this.MixCryptMid.Location = new System.Drawing.Point(23, 68);
-            this.MixCryptMid.Name = "MixCryptMid";
-            this.MixCryptMid.Size = new System.Drawing.Size(143, 16);
-            this.MixCryptMid.TabIndex = 5;
-            this.MixCryptMid.TabStop = true;
-            this.MixCryptMid.Text = "MixCrypt (3AES+3DES)";
-            this.MixCryptMid.UseVisualStyleBackColor = true;
-            this.MixCryptMid.CheckedChanged += new System.EventHandler(this.MixCryptMid_CheckedChanged);
+            this.MixCryptStrongest.AutoSize = true;
+            this.MixCryptStrongest.Location = new System.Drawing.Point(405, 68);
+            this.MixCryptStrongest.Name = "MixCryptStrongest";
+            this.MixCryptStrongest.Size = new System.Drawing.Size(167, 16);
+            this.MixCryptStrongest.TabIndex = 7;
+            this.MixCryptStrongest.TabStop = true;
+            this.MixCryptStrongest.Text = "MixCrypt Strongest (All)";
+            this.MixCryptStrongest.UseVisualStyleBackColor = true;
+            this.MixCryptStrongest.CheckedChanged += new System.EventHandler(this.MixCryptStrongest_CheckedChanged);
             // 
             // MixCryptStronger
             // 
@@ -262,17 +203,89 @@
             this.MixCryptStronger.UseVisualStyleBackColor = true;
             this.MixCryptStronger.CheckedChanged += new System.EventHandler(this.MixCryptStronger_CheckedChanged);
             // 
-            // MixCryptStrongest
+            // MixCryptMid
             // 
-            this.MixCryptStrongest.AutoSize = true;
-            this.MixCryptStrongest.Location = new System.Drawing.Point(405, 68);
-            this.MixCryptStrongest.Name = "MixCryptStrongest";
-            this.MixCryptStrongest.Size = new System.Drawing.Size(167, 16);
-            this.MixCryptStrongest.TabIndex = 7;
-            this.MixCryptStrongest.TabStop = true;
-            this.MixCryptStrongest.Text = "MixCrypt Strongest (All)";
-            this.MixCryptStrongest.UseVisualStyleBackColor = true;
-            this.MixCryptStrongest.CheckedChanged += new System.EventHandler(this.MixCryptStrongest_CheckedChanged);
+            this.MixCryptMid.AutoSize = true;
+            this.MixCryptMid.Location = new System.Drawing.Point(23, 68);
+            this.MixCryptMid.Name = "MixCryptMid";
+            this.MixCryptMid.Size = new System.Drawing.Size(143, 16);
+            this.MixCryptMid.TabIndex = 5;
+            this.MixCryptMid.TabStop = true;
+            this.MixCryptMid.Text = "MixCrypt (3AES+3DES)";
+            this.MixCryptMid.UseVisualStyleBackColor = true;
+            this.MixCryptMid.CheckedChanged += new System.EventHandler(this.MixCryptMid_CheckedChanged);
+            // 
+            // MixCryptWeak
+            // 
+            this.MixCryptWeak.AutoSize = true;
+            this.MixCryptWeak.Location = new System.Drawing.Point(487, 30);
+            this.MixCryptWeak.Name = "MixCryptWeak";
+            this.MixCryptWeak.Size = new System.Drawing.Size(173, 16);
+            this.MixCryptWeak.TabIndex = 4;
+            this.MixCryptWeak.TabStop = true;
+            this.MixCryptWeak.Text = "MixCrypt Weak (3AES Only)";
+            this.MixCryptWeak.UseVisualStyleBackColor = true;
+            this.MixCryptWeak.CheckedChanged += new System.EventHandler(this.MixCryptWeak_CheckedChanged);
+            // 
+            // RijndaelOnly
+            // 
+            this.RijndaelOnly.AutoSize = true;
+            this.RijndaelOnly.Location = new System.Drawing.Point(375, 30);
+            this.RijndaelOnly.Name = "RijndaelOnly";
+            this.RijndaelOnly.Size = new System.Drawing.Size(101, 16);
+            this.RijndaelOnly.TabIndex = 3;
+            this.RijndaelOnly.TabStop = true;
+            this.RijndaelOnly.Text = "Rijndael Only";
+            this.RijndaelOnly.UseVisualStyleBackColor = true;
+            this.RijndaelOnly.CheckedChanged += new System.EventHandler(this.RijndaelOnly_CheckedChanged);
+            // 
+            // rc2only
+            // 
+            this.rc2only.AutoSize = true;
+            this.rc2only.Location = new System.Drawing.Point(257, 30);
+            this.rc2only.Name = "rc2only";
+            this.rc2only.Size = new System.Drawing.Size(71, 16);
+            this.rc2only.TabIndex = 2;
+            this.rc2only.TabStop = true;
+            this.rc2only.Text = "RC2 Only";
+            this.rc2only.UseVisualStyleBackColor = true;
+            this.rc2only.CheckedChanged += new System.EventHandler(this.rc2only_CheckedChanged);
+            // 
+            // desonly
+            // 
+            this.desonly.AutoSize = true;
+            this.desonly.Location = new System.Drawing.Point(139, 30);
+            this.desonly.Name = "desonly";
+            this.desonly.Size = new System.Drawing.Size(71, 16);
+            this.desonly.TabIndex = 1;
+            this.desonly.TabStop = true;
+            this.desonly.Text = "DES Only";
+            this.desonly.UseVisualStyleBackColor = true;
+            this.desonly.CheckedChanged += new System.EventHandler(this.desonly_CheckedChanged);
+            // 
+            // aesonly
+            // 
+            this.aesonly.AutoSize = true;
+            this.aesonly.Checked = true;
+            this.aesonly.Location = new System.Drawing.Point(23, 30);
+            this.aesonly.Name = "aesonly";
+            this.aesonly.Size = new System.Drawing.Size(71, 16);
+            this.aesonly.TabIndex = 0;
+            this.aesonly.TabStop = true;
+            this.aesonly.Text = "AES Only";
+            this.aesonly.UseVisualStyleBackColor = true;
+            this.aesonly.CheckedChanged += new System.EventHandler(this.aesonly_CheckedChanged);
+            // 
+            // test
+            // 
+            this.test.Location = new System.Drawing.Point(588, 52);
+            this.test.Name = "test";
+            this.test.Size = new System.Drawing.Size(53, 31);
+            this.test.TabIndex = 8;
+            this.test.Text = "Test";
+            this.test.UseVisualStyleBackColor = true;
+            this.test.Visible = false;
+            this.test.Click += new System.EventHandler(this.test_Click);
             // 
             // Main
             // 
@@ -325,6 +338,7 @@
         private System.Windows.Forms.RadioButton rc2only;
         private System.Windows.Forms.RadioButton desonly;
         private System.Windows.Forms.RadioButton aesonly;
+        private System.Windows.Forms.Button test;
     }
 }
 

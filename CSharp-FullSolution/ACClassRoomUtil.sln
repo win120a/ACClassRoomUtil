@@ -56,6 +56,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPU_GUI", "LPU_GUI\LPU_GUI.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPUBootStrapper", "LPUBootStrapper\LPUBootStrapper.csproj", "{4AA5C9C2-C231-4C3D-8E58-D5DB9105709F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomMCrypt-GUI", "RandomMCrypt-GUI\RandomMCrypt-GUI.csproj", "{6DBD3A67-272F-40F3-8012-E280BD01A275}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -134,6 +136,10 @@ Global
 		{4AA5C9C2-C231-4C3D-8E58-D5DB9105709F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AA5C9C2-C231-4C3D-8E58-D5DB9105709F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AA5C9C2-C231-4C3D-8E58-D5DB9105709F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DBD3A67-272F-40F3-8012-E280BD01A275}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DBD3A67-272F-40F3-8012-E280BD01A275}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DBD3A67-272F-40F3-8012-E280BD01A275}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DBD3A67-272F-40F3-8012-E280BD01A275}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -33,8 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LPU_Crypt_API">
-      <HintPath>..\LPU_Crypt_API\bin\Debug\LPU_Crypt_API.dll</HintPath>
+    <Reference Include="ACLibrary.Crypto">
+      <HintPath>..\..\ACLibrary\ACCryptoAPI\bin\Release\ACLibrary.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="ACLibrary.TypeConvertLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ACLibrary\TypeConvertLib\bin\Debug\ACLibrary.TypeConvertLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
