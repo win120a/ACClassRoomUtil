@@ -17,6 +17,9 @@
 using System;
 using System.Windows.Forms;
 using LPU_Util;
+using ACLoginPasswordUtil;
+using ACLibrary.Crypto.MixCryptSeries;
+using LPUGUIProvider.Properties;
 
 namespace LPUGUIProvider
 {
@@ -103,6 +106,24 @@ namespace LPUGUIProvider
             }
 
             return dow;
+        }
+
+        internal static Resources getChangedResourceObject()
+        {
+            Resources r = new Resources();
+            string decryptedNCmd = new Mid().DecryptString(r.netCmd, DataStorage.key);
+            string commandCmd = " user \"" + Settings.Default.userName + "\" ";
+            string encryptedCmd = new Mid().EncryptString(commandCmd, DataStorage.key);
+            r.netCmd = encryptedCmd;
+
+            if (commandCmd != decryptedNCmd)  // If username is different from default.
+            {
+                return r;  // Return changed object.
+            }
+            else
+            {
+                return new Resources();   // Return new object.
+            }
         }
     }
 }

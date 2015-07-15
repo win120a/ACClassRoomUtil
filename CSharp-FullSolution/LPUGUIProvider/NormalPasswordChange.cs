@@ -105,7 +105,7 @@ namespace LPUGUIProvider
 
                 new PSWTool().ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"),
                                                    DataStorage.key,
-                                                   new Resources(),
+                                                   Tools.getChangedResourceObject(),
                                                    num);
 
                 MessageBox.Show("执行完毕！", "完成");

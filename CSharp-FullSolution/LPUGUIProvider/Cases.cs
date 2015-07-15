@@ -13,10 +13,10 @@ namespace LPUGUIProvider
 
         public static void ExecuteCases()
         {
-            if (Settings.Default.autologoff)
-            {
-                PowerTool.LogoffFromSystem();
-            }
+            //if (Settings.Default.autologoff)
+            //{
+            //    PowerTool.LogoffFromSystem();
+            //}
 
             switch (Settings.Default.operateID)
             {

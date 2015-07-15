@@ -19,6 +19,7 @@ using ACLoginPasswordUtil;
 using LPU_Util;
 using System;
 using System.Windows.Forms;
+using LPUGUIProvider.Properties;
 
 namespace LPUGUIProvider
 {
@@ -91,9 +92,16 @@ namespace LPUGUIProvider
             #endregion
 
             #region Change PSW and after process zone
+            Resources r = Tools.getChangedResourceObject();
+
+#if DEBUG
+            MessageBox.Show("The current username is " + Settings.Default.userName + ".");
+            MessageBox.Show("Net command is: " + new Mid().DecryptString(r.netCmd, DataStorage.key));
+#endif
+
             new PSWTool().ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"),
                                                DataStorage.key,
-                                               new Resources(),
+                                               r,
                                                dow_int); // Change psw.
 
             Cases.ExecuteCases();

@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
+﻿using ACLibrary.Collection;
 using LPUGUIProvider.Properties;
-using ACLibrary.Collection;
-using System.ComponentModel;
+using System;
+using System.Windows.Forms;
 
 namespace LPUGUIProvider
 {
@@ -19,6 +17,7 @@ namespace LPUGUIProvider
         private void button1_Click(object sender, EventArgs e) // ok
         {
             Settings.Default.operateID = SelectBoxData[comboBox1.Text];
+            Settings.Default.userName = userName.Text;
             Settings.Default.Save();
             Application.Exit();
         }
@@ -43,6 +42,15 @@ namespace LPUGUIProvider
             }
 
             comboBox1.Text = SelectBoxData.GetKeyByValue(Settings.Default.operateID);
+            userName.Text = Settings.Default.userName;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.TopMost = false;
+            LargeOperationVerify vw = new LargeOperationVerify();
+            vw.ShowDialog();
+            MessageBox.Show(vw.Verifed ? "通过" : "未通过", "结果");  // Add Code to here.
         }
     }
 }

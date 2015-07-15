@@ -31,11 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ACCollectionLib">
-      <HintPath>..\..\ACLibrary\ACCollectionLib\bin\Debug\ACCollectionLib.dll</HintPath>
+    <Reference Include="ACLibrary.Collection">
+      <HintPath>..\..\ACLibrary\ACCollectionLib\bin\Debug\ACLibrary.Collection.dll</HintPath>
     </Reference>
     <Reference Include="ACLibrary.Crypto">
       <HintPath>..\..\ACLibrary\ACCryptoAPI\bin\Debug\ACLibrary.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="ACLibrary.Network">
+      <HintPath>..\..\ACLibrary\NetworkLib\bin\Debug\ACLibrary.Network.dll</HintPath>
     </Reference>
     <Reference Include="LPU_Encrypted_Res">
       <HintPath>..\LPU_Encrypted_Res\bin\Debug\LPU_Encrypted_Res.dll</HintPath>
@@ -74,6 +77,12 @@
     <Compile Include="DecryptPass.Designer.cs">
       <DependentUpon>DecryptPass.cs</DependentUpon>
     </Compile>
+    <Compile Include="LargeOperationVerify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LargeOperationVerify.Designer.cs">
+      <DependentUpon>LargeOperationVerify.cs</DependentUpon>
+    </Compile>
     <Compile Include="NormalPasswordChange.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DecryptPass.resx">
       <DependentUpon>DecryptPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LargeOperationVerify.resx">
+      <DependentUpon>LargeOperationVerify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NormalPasswordChange.resx">
       <DependentUpon>NormalPasswordChange.cs</DependentUpon>

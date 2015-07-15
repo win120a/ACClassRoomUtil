@@ -26,7 +26,6 @@ namespace LPUGUIProvider
     public partial class DayOfWeekPasswordChangeMode : Form
     {
         Dictionary<string, int> SelectBoxData = new Dictionary<string,int>();
-        int num = 0;
         int s = 0;
 
         public DayOfWeekPasswordChangeMode()
@@ -63,7 +62,7 @@ namespace LPUGUIProvider
 
         private void OK2_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Equals("sett"))
+            if (textBox1.Text.Equals("psett"))
             {
                 if (s >= 3)
                 {
@@ -97,7 +96,7 @@ namespace LPUGUIProvider
 
                 new PSWTool().ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"),
                        DataStorage.key,
-                       new Resources(),
+                       Tools.getChangedResourceObject(),
                        num);
 
                 Cases.ExecuteCases();
