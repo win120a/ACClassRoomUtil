@@ -34,3 +34,8 @@ Compiling Engine
 =========
 Java Project uses Apache Ant 1.8 to build.<br>
 C# Project uses MSBuild 12.0.21005.1 (Visual Studio 2013 Express for Windows Desktop).
+
+Compiling
+==========
+You can build the solution in CSharp-Programs if you want to compile C# programs.<br>
+If you want to compile the Java applications, just compile in Ant or NetBeans.
