@@ -15,11 +15,11 @@
 */
 
 using ACLibrary.Collection;
+using LPU_Util;
 using LPUGUIProvider.Properties;
+using LPUGUIProvider.Windows.Prefs;
 using System;
 using System.Windows.Forms;
-using LPU_Util;
-using LPUGUIProvider.Windows.Prefs;
 
 namespace LPUGUIProvider
 {
@@ -36,6 +36,16 @@ namespace LPUGUIProvider
         {
             Settings.Default.operateID = SelectBoxData[comboBox1.Text];
             Settings.Default.userName = userName.Text;
+            
+            if (userName.Text == "Administrator")
+            {
+                Settings.Default.customUsername = false;
+            }
+            else
+            {
+                Settings.Default.customUsername = true;
+            }
+
             Settings.Default.Save();
             Application.Exit();
         }

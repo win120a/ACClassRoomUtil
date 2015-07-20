@@ -41,8 +41,9 @@ namespace LPUGUIProvider
             {
                 new Mid().DecryptString(r.baseCmd, textBox1.Text);
             }
-            catch (System.Security.Cryptography.CryptographicException)
+            catch (System.Security.Cryptography.CryptographicException ex)
             {
+                Tools.HandleExceptions(ex);
                 MessageBox.Show("密码错误", "异常");
                 return;
             }

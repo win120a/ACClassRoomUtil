@@ -165,5 +165,17 @@ namespace LPUGUIProvider.Properties {
                 this["settPass"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool customUsername {
+            get {
+                return ((bool)(this["customUsername"]));
+            }
+            set {
+                this["customUsername"] = value;
+            }
+        }
     }
 }

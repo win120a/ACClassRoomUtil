@@ -15,7 +15,6 @@
 */
 
 using ACLibrary.Crypto.MixCryptSeries;
-using ACLoginPasswordUtil;
 using LPU_Util;
 using System;
 using System.Text;
@@ -84,11 +83,12 @@ namespace LPUGUIProvider
             StringBuilder sb = new StringBuilder();
             try
             {
-                sb.Append(new Mid().DecryptString(new Resources().armv7a, DataStorage.key));
+                sb.Append(new Mid().DecryptString(Tools.getChangedResourceObject().armv7a, DataStorage.key));
             }
-            catch (System.Security.Cryptography.CryptographicException)
+            catch (System.Security.Cryptography.CryptographicException ex)
             {
-                MessageBox.Show("出现异常", "异常");
+                Tools.HandleExceptions(ex);
+                MessageBox.Show("出现异常，详见日志文件", "异常");
                 return;
             }
 

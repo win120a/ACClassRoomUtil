@@ -14,17 +14,22 @@
    limitations under the License.
 */
 
-using System;
-using System.Windows.Forms;
-using LPU_Util;
-using ACLoginPasswordUtil;
 using ACLibrary.Crypto.MixCryptSeries;
+using ACLoginPasswordUtil;
+using LPU_Util;
 using LPUGUIProvider.Properties;
+using System;
+using System.IO;
+using System.Windows.Forms;
 
 namespace LPUGUIProvider
 {
     public class Tools
     {
+        /// <summary>
+        /// Execute an operation with a number, it is replaced by Cases.ExecuteCases().
+        /// </summary>
+        /// <param name="operationID">The operation ID.</param>
         public static void ExecuteOperationByID(int operationID)
         {
             switch (operationID)
@@ -45,6 +50,10 @@ namespace LPUGUIProvider
             }
         }
 
+        /// <summary>
+        /// Generate key number after this day.
+        /// </summary>
+        /// <returns>The result.</returns>
         public static int GenerateDateOfWeekNumber()
         {
             int num = 0;
@@ -77,6 +86,11 @@ namespace LPUGUIProvider
             return num;
         }
 
+        /// <summary>
+        /// For UI use only.
+        /// </summary>
+        /// <param name="label">The label object in UI.</param>
+        /// <returns>A DayOfWeek object of today.</returns>
         public static DayOfWeek ReturnTodayInChinese(Label label)
         {
             DayOfWeek dow = DateTime.Now.DayOfWeek;
@@ -108,8 +122,14 @@ namespace LPUGUIProvider
             return dow;
         }
 
+        /// <summary>
+        /// Supports all user-define function.
+        /// </summary>
+        /// <returns>The user-defined database.</returns>
         internal static Resources getChangedResourceObject()
         {
+            // Old Code for backup.
+
             //Resources r = new Resources(); // Create new Resource Object.
 
             //if (!Settings.Default.customAllValue)
@@ -147,25 +167,73 @@ namespace LPUGUIProvider
             //}
 
 
-            if (Settings.Default.customAllValue)
+            if (Settings.Default.customAllValue)  // If user defined a new database decryption password, 
             {
                 Resources r = new Resources();
                 r.baseCmd = Settings.Default.BCMD;
                 r.netCmd = Settings.Default.NCMD;
+
+                if (Settings.Default.customUsername)  // If user changed the username, the program have to apply it.
+                {
+                    string decryptedNCmd = new Mid().DecryptString(r.netCmd, DataStorage.key);  // Decrypt command.
+                    string commandCmd = " user \"" + Settings.Default.userName + "\" ";  // Command with new username.
+                    string encryptedCmd = new Mid().EncryptString(commandCmd, DataStorage.key); // Re-Encrypt the command.
+                    r.netCmd = encryptedCmd; // Apply it.
+                }
+
                 r.armv7a = Settings.Default.RKC;
-                r.tail = Settings.Default.Tail;
+                r.tail = Settings.Default.Tail; // Apply new database.
                 return r;
             }
-            else if (Settings.Default.customRKCValueOnly)
+            else if (Settings.Default.customRKCValueOnly) // If user re-defined new RKC, 
             {
                 Resources r = new Resources();
-                r.armv7a = Settings.Default.RKC;
+                r.armv7a = Settings.Default.RKC;  // Apply it.
+                if (Settings.Default.customUsername) // There are the same process as before.
+                {
+                    string decryptedNCmd = new Mid().DecryptString(r.netCmd, DataStorage.key);
+                    string commandCmd = " user \"" + Settings.Default.userName + "\" ";
+                    string encryptedCmd = new Mid().EncryptString(commandCmd, DataStorage.key);
+                    r.netCmd = encryptedCmd;
+                }
+                return r;
+            }
+            else if (Settings.Default.customUsername) // If user re-defined the username only, 
+            {
+                Resources r = new Resources();
+                string decryptedNCmd = new Mid().DecryptString(r.netCmd, DataStorage.key);
+                string commandCmd = " user \"" + Settings.Default.userName + "\" ";
+                string encryptedCmd = new Mid().EncryptString(commandCmd, DataStorage.key);
+                r.netCmd = encryptedCmd;  // Apply it.
                 return r;
             }
             else
             {
-                return new Resources();
+                return new Resources();   // If user has not used the define function, return a default database.
             }
+        }
+
+        internal static void HandleExceptions(Exception ex)
+        {
+            //String fileName = Environment.GetEnvironmentVariable("SystemDrive") + "\\lpulog-" + DateTime.Now.Year + DateTime.Now.Month + DateTime.Now.Day + DateTime.Now.Hour + DateTime.Now.Minute + DateTime.Now.Second + ".txt";
+            string fileName = Environment.GetEnvironmentVariable("Temp") + "\\lpulog-" + Path.GetRandomFileName() + ".txt";
+
+            FileStream fs = File.Create(fileName);
+            fs.Close();
+
+            StreamWriter sw = new StreamWriter(fileName);
+            sw.WriteLine("MESS: " + ex.Message);
+            sw.WriteLine();
+            sw.WriteLine("SOURCE: " + ex.Source);
+            sw.WriteLine();
+            sw.WriteLine("ST: " + ex.StackTrace);
+            sw.WriteLine();
+            sw.WriteLine("TargetSite: " + ex.TargetSite);
+            sw.WriteLine();
+            sw.WriteLine("ToString: " + ex.ToString());
+
+            sw.Flush();
+            sw.Close();
         }
     }
 }

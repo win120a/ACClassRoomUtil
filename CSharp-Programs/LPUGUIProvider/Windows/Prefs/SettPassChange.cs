@@ -14,10 +14,10 @@
    limitations under the License.
 */
 
+using ACLibrary.Crypto.MixCryptSeries;
 using LPUGUIProvider.Properties;
 using System;
 using System.Windows.Forms;
-using ACLibrary.Crypto.MixCryptSeries;
 
 namespace LPUGUIProvider.Windows.Prefs
 {

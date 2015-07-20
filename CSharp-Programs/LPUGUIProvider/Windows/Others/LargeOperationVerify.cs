@@ -129,6 +129,13 @@ namespace LPUGUIProvider
             // Split them into arrays.
             string[] values = value.Split('.');
 
+            // Check length of the array.
+            if (values.Length != 4)
+            {
+                MessageBox.Show("非法验证字符！", "警告！");
+                return false;
+            }
+
             // Verify DHCP
             foreach (string macAddr in NICInfoHelper.GetPrivateNICMAC())
             {
@@ -194,8 +201,9 @@ namespace LPUGUIProvider
             {
                 TBilder.Append(engine.DecryptString(onlineMessage, olp.Text));   // Secure decrypt it.
             }
-            catch (CryptographicException)
+            catch (CryptographicException ex)
             {
+                Tools.HandleExceptions(ex);
                 MessageBox.Show("联网验证密码错误！", "提示");
                 return false;
             }

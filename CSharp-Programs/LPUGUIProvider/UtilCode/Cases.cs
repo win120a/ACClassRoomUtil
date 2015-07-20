@@ -14,12 +14,8 @@
    limitations under the License.
 */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using LPUGUIProvider.Properties;
 using LPU_Util;
+using LPUGUIProvider.Properties;
 
 namespace LPUGUIProvider
 {
