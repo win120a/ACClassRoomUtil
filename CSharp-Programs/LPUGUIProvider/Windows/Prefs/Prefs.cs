@@ -150,6 +150,7 @@ namespace LPUGUIProvider
                 if (result == DialogResult.Yes)
                 {
                     Settings.Default.ignoreSPSWChange = true;
+                    Settings.Default.ignoreDate = DateTime.Now.Date;
                 }
             }
         }

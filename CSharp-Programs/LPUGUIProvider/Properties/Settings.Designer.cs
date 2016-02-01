@@ -189,5 +189,16 @@ namespace LPUGUIProvider.Properties {
                 this["ignoreSPSWChange"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime ignoreDate {
+            get {
+                return ((global::System.DateTime)(this["ignoreDate"]));
+            }
+            set {
+                this["ignoreDate"] = value;
+            }
+        }
     }
 }

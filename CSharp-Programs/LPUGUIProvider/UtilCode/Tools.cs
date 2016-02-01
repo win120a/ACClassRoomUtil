@@ -236,14 +236,25 @@ namespace LPUGUIProvider
             sw.Close();
         }
 
-        public static void setIgnoreSPSWChange(bool value)
+        internal static void setIgnoreSPSWChange(bool value)
         {
             Settings.Default.ignoreSPSWChange = value;
         }
 
         public static bool getIgnoreSPSWChange()
         {
-            return Settings.Default.ignoreSPSWChange;
+            if (Settings.Default.ignoreDate == null && Settings.Default.ignoreSPSWChange == false)
+            {
+                return false;
+            }
+            else if (Settings.Default.ignoreDate == DateTime.Now.Date)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

@@ -44,7 +44,7 @@ namespace LPU_GUI
                     }
                     catch (CryptographicException)
                     {
-                        Console.WriteLine("You have entered an incorrect password!");
+                        MessageBox.Show("The system can't continue because the password is incorrect.", "Error.");
                         return;
                     }
 
@@ -63,8 +63,11 @@ namespace LPU_GUI
                         return;
                     }
                 }
-
-                return;
+                else
+                {
+                    MessageBox.Show("The program can't run in this mode because the mode has been blocked by Administrator.", "Error");
+                    return;
+                }
             }
 
             Application.EnableVisualStyles();
