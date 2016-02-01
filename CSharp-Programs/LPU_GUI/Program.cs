@@ -33,7 +33,7 @@ namespace LPU_GUI
         {
             if(args.Length >= 2)
             {
-                if (args[0] == "/q")
+                if (args[0] == "/q" && !(Tools.getIgnoreSPSWChange()))
                 {
                     string usrPass = args[1];
                     DataStorage.key = args[1];
@@ -63,6 +63,8 @@ namespace LPU_GUI
                         return;
                     }
                 }
+
+                return;
             }
 
             Application.EnableVisualStyles();

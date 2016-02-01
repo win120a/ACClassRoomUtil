@@ -235,5 +235,15 @@ namespace LPUGUIProvider
             sw.Flush();
             sw.Close();
         }
+
+        public static void setIgnoreSPSWChange(bool value)
+        {
+            Settings.Default.ignoreSPSWChange = value;
+        }
+
+        public static bool getIgnoreSPSWChange()
+        {
+            return Settings.Default.ignoreSPSWChange;
+        }
     }
 }

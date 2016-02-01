@@ -38,11 +38,12 @@
             this.button4 = new System.Windows.Forms.Button();
             this.dbdpc = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.ignoreSPC = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(3, 209);
+            this.button1.Location = new System.Drawing.Point(3, 240);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -52,7 +53,8 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(84, 209);
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button2.Location = new System.Drawing.Point(84, 240);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
@@ -134,13 +136,24 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // ignoreSPC
+            // 
+            this.ignoreSPC.Location = new System.Drawing.Point(2, 209);
+            this.ignoreSPC.Name = "ignoreSPC";
+            this.ignoreSPC.Size = new System.Drawing.Size(154, 25);
+            this.ignoreSPC.TabIndex = 12;
+            this.ignoreSPC.Text = "忽略今天的自动密码修改";
+            this.ignoreSPC.UseVisualStyleBackColor = true;
+            this.ignoreSPC.Click += new System.EventHandler(this.ignoreSPC_Click);
+            // 
             // Prefs
             // 
             this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.button2;
-            this.ClientSize = new System.Drawing.Size(164, 244);
+            this.ClientSize = new System.Drawing.Size(164, 272);
+            this.Controls.Add(this.ignoreSPC);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.dbdpc);
             this.Controls.Add(this.button4);
@@ -176,5 +189,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button dbdpc;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button ignoreSPC;
     }
 }

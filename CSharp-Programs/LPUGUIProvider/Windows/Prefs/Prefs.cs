@@ -71,6 +71,11 @@ namespace LPUGUIProvider
 
             comboBox1.Text = SelectBoxData.GetKeyByValue(Settings.Default.operateID);
             userName.Text = Settings.Default.userName;
+
+            if (Settings.Default.ignoreSPSWChange)
+            {
+                ignoreSPC.Enabled = false;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -129,6 +134,23 @@ namespace LPUGUIProvider
             {
                 this.Hide();
                 new SettPassChange().Show();
+            }
+        }
+
+        private void ignoreSPC_Click(object sender, EventArgs e)
+        {
+            this.TopMost = false;
+            LargeOperationVerify vw = new LargeOperationVerify();
+            vw.ShowDialog();
+            MessageBox.Show(vw.Verifed ? "通过" : "未通过", "结果");
+
+            if (vw.Verifed)
+            {
+                DialogResult result = MessageBox.Show("确实要忽略吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (result == DialogResult.Yes)
+                {
+                    Settings.Default.ignoreSPSWChange = true;
+                }
             }
         }
     }
