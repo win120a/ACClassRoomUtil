@@ -1,5 +1,5 @@
 ﻿/*
-   Copyright (C) 2011-2014 AC Inc. (Andy Cheung)
+   Copyright (C) 2011-2016 AC Inc. (Andy Cheung)
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -14,8 +14,11 @@
    limitations under the License.
 */
 
+using ACLibrary.Crypto.MixCryptSeries;
+using LPU_Util;
 using LPUGUIProvider;
 using System;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace LPU_GUI
@@ -26,8 +29,42 @@ namespace LPU_GUI
         /// 应用程序的主入口点。
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
+            if(args.Length >= 2)
+            {
+                if (args[0] == "/q")
+                {
+                    string usrPass = args[1];
+                    DataStorage.key = args[1];
+
+                    try
+                    {
+                        new Mid().DecryptString(Tools.getChangedResourceObject().baseCmd, usrPass);
+                    }
+                    catch (CryptographicException)
+                    {
+                        Console.WriteLine("You have entered an incorrect password!");
+                        return;
+                    }
+
+                    if (DateTime.Now.DayOfWeek == DayOfWeek.Friday)
+                    {
+                        new PSWTool().ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"), usrPass, Tools.getChangedResourceObject(), 1);
+                        return;
+                    }
+                    else if (DateTime.Now.DayOfWeek == DayOfWeek.Saturday || DateTime.Now.DayOfWeek == DayOfWeek.Sunday)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        new PSWTool().ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"), usrPass, Tools.getChangedResourceObject(), ((int)DateTime.Now.DayOfWeek) + 1);
+                        return;
+                    }
+                }
+            }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new DecryptPass());

@@ -21,7 +21,7 @@ using System.Windows.Forms;
 
 namespace LPUGUIProvider.Windows.Prefs
 {
-    public partial class SettPassChange : Form
+    internal partial class SettPassChange : Form
     {
         public SettPassChange()
         {

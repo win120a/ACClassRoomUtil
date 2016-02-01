@@ -22,7 +22,7 @@ using System.Windows.Forms;
 
 namespace LPUGUIProvider
 {
-    public partial class RKCChange : Form
+    internal partial class RKCChange : Form
     {
         public RKCChange()
         {

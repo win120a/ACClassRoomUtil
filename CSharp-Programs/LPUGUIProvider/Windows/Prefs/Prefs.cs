@@ -23,7 +23,7 @@ using System.Windows.Forms;
 
 namespace LPUGUIProvider
 {
-    public partial class Prefs : Form
+    internal partial class Prefs : Form
     {
         ACDictionary<string, int> SelectBoxData = new ACDictionary<string, int>();
 

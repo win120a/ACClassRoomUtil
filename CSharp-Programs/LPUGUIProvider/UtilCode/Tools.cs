@@ -30,7 +30,7 @@ namespace LPUGUIProvider
         /// Execute an operation with a number, it is replaced by Cases.ExecuteCases().
         /// </summary>
         /// <param name="operationID">The operation ID.</param>
-        public static void ExecuteOperationByID(int operationID)
+        internal static void ExecuteOperationByID(int operationID)
         {
             switch (operationID)
             {
@@ -54,7 +54,7 @@ namespace LPUGUIProvider
         /// Generate key number after this day.
         /// </summary>
         /// <returns>The result.</returns>
-        public static int GenerateDateOfWeekNumber()
+        internal static int GenerateDateOfWeekNumber()
         {
             int num = 0;
             DayOfWeek dow = DateTime.Now.DayOfWeek;
@@ -91,7 +91,7 @@ namespace LPUGUIProvider
         /// </summary>
         /// <param name="label">The label object in UI.</param>
         /// <returns>A DayOfWeek object of today.</returns>
-        public static DayOfWeek ReturnTodayInChinese(Label label)
+        internal static DayOfWeek ReturnTodayInChinese(Label label)
         {
             DayOfWeek dow = DateTime.Now.DayOfWeek;
             switch (dow.ToString())
@@ -126,7 +126,7 @@ namespace LPUGUIProvider
         /// Supports all user-define function.
         /// </summary>
         /// <returns>The user-defined database.</returns>
-        internal static Resources getChangedResourceObject()
+        public static Resources getChangedResourceObject()
         {
             // Old Code for backup.
 

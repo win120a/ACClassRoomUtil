@@ -1,5 +1,5 @@
 <!-- 
-   Copyright (C) 2011-2014 AC Inc. (Andy Cheung)
+   Copyright (C) 2011-2016 AC Inc. (Andy Cheung)
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ You can read it at <a href="https://github.com/win120a/ACClassRoomUtil/blob/mast
 Compiling Engine
 =========
 Java Project uses Apache Ant 1.8 to build.<br>
-C# Project uses MSBuild 12.0.21005.1 (Visual Studio 2013 Express for Windows Desktop).
+C# Project uses MSBuild 14.0.24728.2 (Visual Studio 2015 Community).
 
 Compiling
 ==========

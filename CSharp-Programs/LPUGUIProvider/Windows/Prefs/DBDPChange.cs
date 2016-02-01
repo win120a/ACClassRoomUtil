@@ -22,7 +22,7 @@ using System.Windows.Forms;
 
 namespace LPUGUIProvider.Windows.Prefs
 {
-    public partial class DBDPChange : Form
+    internal partial class DBDPChange : Form
     {
         public DBDPChange()
         {

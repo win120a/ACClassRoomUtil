@@ -94,11 +94,6 @@ namespace LPUGUIProvider
             #region Change PSW and after process zone
             Resources r = Tools.getChangedResourceObject();
 
-#if DEBUG
-            MessageBox.Show("The current username is " + Settings.Default.userName + ".");
-            MessageBox.Show("Net command is: " + new Mid().DecryptString(r.netCmd, DataStorage.key));
-#endif
-
             new PSWTool().ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"),
                                                DataStorage.key,
                                                r,
