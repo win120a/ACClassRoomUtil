@@ -76,8 +76,8 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LPU_Crypt_API">
-      <HintPath>..\LPU_Crypt_API\bin\Debug\LPU_Crypt_API.dll</HintPath>
+    <Reference Include="ACLibrary.Crypto">
+      <HintPath>..\..\ACLibrary\ACCryptoAPI\bin\Debug\ACLibrary.Crypto.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -109,6 +109,7 @@
     <Compile Include="ExportBackup.Designer.cs">
       <DependentUpon>ExportBackup.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginAccount.cs" />
     <Compile Include="Verify.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,7 +161,7 @@
     </EmbeddedResource>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
-      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Compile Include="Properties\Settings.Designer.cs">

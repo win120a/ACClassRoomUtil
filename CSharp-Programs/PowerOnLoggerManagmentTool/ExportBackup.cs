@@ -14,7 +14,8 @@
    limitations under the License.
 */
 
-using LPU_Crypt_API;
+using ACLibrary.Crypto;
+using ACLibrary.Crypto.MixCryptSeries;
 using System;
 using System.Collections;
 using System.IO;
@@ -62,7 +63,7 @@ namespace PowerOnLoggerManagmentTool
             {
                 sb.Append(s + "/");
             }
-            String es = new LPU_Crypt_API.MixCrypt().encrypt(sb.ToString(), "123");
+            String es = new Mid().EncryptString(sb.ToString(), "123");
             sw.Write(es);
             sw.Flush();
             sw.Close();
@@ -110,7 +111,7 @@ namespace PowerOnLoggerManagmentTool
                 String name = ofd.FileName;
                 StreamReader sr = new StreamReader(name);
                 String econtent = sr.ReadToEnd();
-                String content = new MixCrypt().decrypt(econtent, "123");
+                String content = new Mid().DecryptString(econtent, "123");
                 String[] logs = content.Split('/');
                 foreach (String s in logs)
                 {

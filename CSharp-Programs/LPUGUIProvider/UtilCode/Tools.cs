@@ -24,7 +24,7 @@ using System.Windows.Forms;
 
 namespace LPUGUIProvider
 {
-    public class Tools
+    public sealed class Tools
     {
         /// <summary>
         /// Execute an operation with a number, it is replaced by Cases.ExecuteCases().
@@ -239,6 +239,7 @@ namespace LPUGUIProvider
         internal static void setIgnoreSPSWChange(bool value)
         {
             Settings.Default.ignoreSPSWChange = value;
+            Settings.Default.Save();
         }
 
         public static bool getIgnoreSPSWChange()
@@ -250,6 +251,13 @@ namespace LPUGUIProvider
             else if (Settings.Default.ignoreDate == DateTime.Now.Date)
             {
                 return true;
+            }
+            else if (Settings.Default.ignoreDate < DateTime.Now.Date)
+            {
+                Settings.Default.ignoreDate = new DateTime(1);
+                Settings.Default.ignoreSPSWChange = false;
+                Settings.Default.Save();
+                return false;
             }
             else
             {
