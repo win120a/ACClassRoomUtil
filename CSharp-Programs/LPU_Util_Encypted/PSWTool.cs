@@ -1,5 +1,5 @@
 ﻿/*
-   Copyright (C) 2011-2014 AC Inc. (Andy Cheung)
+   Copyright (C) 2011-2016 AC Inc. (Andy Cheung)
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -14,11 +14,11 @@
    limitations under the License.
 */
 
+using ACLibrary.Crypto.MixCryptSeries;
 using ACLoginPasswordUtil;
 using System;
-using System.Text;
 using System.Diagnostics;
-using ACLibrary.Crypto.MixCryptSeries;
+using System.Text;
 
 namespace LPU_Util
 {

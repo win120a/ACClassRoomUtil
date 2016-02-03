@@ -1,5 +1,5 @@
 ﻿/*
-   Copyright (C) 2011-2014 AC Inc. (Andy Cheung)
+   Copyright (C) 2011-2016 AC Inc. (Andy Cheung)
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -15,9 +15,6 @@
 */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace LPU_Util
 {

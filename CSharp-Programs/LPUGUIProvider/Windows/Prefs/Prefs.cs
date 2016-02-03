@@ -1,5 +1,5 @@
 ﻿/*
-   Copyright (C) 2011-2015 AC Inc. (Andy Cheung)
+   Copyright (C) 2011-2016 AC Inc. (Andy Cheung)
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
    limitations under the License.
 */
 
+using ACCVF;
 using ACLibrary.Collection;
 using LPU_Util;
 using LPUGUIProvider.Properties;
@@ -72,6 +73,8 @@ namespace LPUGUIProvider
             comboBox1.Text = SelectBoxData.GetKeyByValue(Settings.Default.operateID);
             userName.Text = Settings.Default.userName;
 
+            Tools.getIgnoreSPSWChange();
+
             if (Settings.Default.ignoreSPSWChange)
             {
                 ignoreSPC.Enabled = false;
@@ -83,9 +86,9 @@ namespace LPUGUIProvider
             this.TopMost = false;
             LargeOperationVerify vw = new LargeOperationVerify();
             vw.ShowDialog();
-            MessageBox.Show(vw.Verifed ? "通过" : "未通过", "结果");
+            MessageBox.Show(vw.Verified ? "通过" : "未通过", "结果");
 
-            if (vw.Verifed)
+            if (vw.Verified)
             {
                 this.Hide();
                 new RKCChange().Show();
@@ -97,9 +100,9 @@ namespace LPUGUIProvider
             this.TopMost = false;
             LargeOperationVerify vw = new LargeOperationVerify();
             vw.ShowDialog();
-            MessageBox.Show(vw.Verifed ? "通过" : "未通过", "结果");
+            MessageBox.Show(vw.Verified ? "通过" : "未通过", "结果");
 
-            if (vw.Verifed)
+            if (vw.Verified)
             {
                 DialogResult result = MessageBox.Show("您确定要将用户" + Settings.Default.userName + "的密码消除吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (result == DialogResult.Yes)
@@ -114,9 +117,9 @@ namespace LPUGUIProvider
             this.TopMost = false;
             LargeOperationVerify vw = new LargeOperationVerify();
             vw.ShowDialog();
-            MessageBox.Show(vw.Verifed ? "通过" : "未通过", "结果");
+            MessageBox.Show(vw.Verified ? "通过" : "未通过", "结果");
 
-            if (vw.Verifed)
+            if (vw.Verified)
             {
                 this.Hide();
                 new DBDPChange().Show();
@@ -128,9 +131,9 @@ namespace LPUGUIProvider
             this.TopMost = false;
             LargeOperationVerify vw = new LargeOperationVerify();
             vw.ShowDialog();
-            MessageBox.Show(vw.Verifed ? "通过" : "未通过", "结果");
+            MessageBox.Show(vw.Verified ? "通过" : "未通过", "结果");
 
-            if (vw.Verifed)
+            if (vw.Verified)
             {
                 this.Hide();
                 new SettPassChange().Show();
@@ -142,9 +145,9 @@ namespace LPUGUIProvider
             this.TopMost = false;
             LargeOperationVerify vw = new LargeOperationVerify();
             vw.ShowDialog();
-            MessageBox.Show(vw.Verifed ? "通过" : "未通过", "结果");
+            MessageBox.Show(vw.Verified ? "通过" : "未通过", "结果");
 
-            if (vw.Verifed)
+            if (vw.Verified)
             {
                 DialogResult result = MessageBox.Show("确实要忽略吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (result == DialogResult.Yes)

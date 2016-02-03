@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="accvf">
+      <HintPath>..\CommonVerifyFramework\bin\Release\accvf.dll</HintPath>
+    </Reference>
     <Reference Include="ACLibrary.Collection">
       <HintPath>..\..\ACLibrary\ACCollectionLib\bin\Debug\ACLibrary.Collection.dll</HintPath>
     </Reference>
@@ -76,12 +79,6 @@
     </Compile>
     <Compile Include="Windows\Others\DecryptPass.Designer.cs">
       <DependentUpon>DecryptPass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\Others\LargeOperationVerify.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows\Others\LargeOperationVerify.Designer.cs">
-      <DependentUpon>LargeOperationVerify.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\ModPass\NormalPasswordChange.cs">
       <SubType>Form</SubType>
@@ -131,9 +128,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Others\DecryptPass.resx">
       <DependentUpon>DecryptPass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Others\LargeOperationVerify.resx">
-      <DependentUpon>LargeOperationVerify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\ModPass\NormalPasswordChange.resx">
       <DependentUpon>NormalPasswordChange.cs</DependentUpon>

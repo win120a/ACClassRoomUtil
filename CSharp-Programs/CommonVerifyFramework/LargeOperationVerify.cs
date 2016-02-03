@@ -1,5 +1,5 @@
 ﻿/*
-   Copyright (C) 2011-2015 AC Inc. (Andy Cheung)
+   Copyright (C) 2011-2016 AC Inc. (Andy Cheung)
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -24,17 +24,17 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 
-namespace LPUGUIProvider
+namespace ACCVF
 {
     public partial class LargeOperationVerify : Form
     {
-        private bool verifed = false;
+        private bool verified = false;
 
-        public bool Verifed
+        public bool Verified
         {
             get
             {
-                return verifed;
+                return verified;
             }
         }
 
@@ -99,7 +99,7 @@ namespace LPUGUIProvider
 
         private void cancel_Click(object sender, EventArgs e)
         {
-            verifed = false;
+            verified = false;
             this.Hide();
             //this.Dispose();
             GC.Collect();
@@ -201,9 +201,8 @@ namespace LPUGUIProvider
             {
                 TBilder.Append(engine.DecryptString(onlineMessage, olp.Text));   // Secure decrypt it.
             }
-            catch (CryptographicException ex)
+            catch (CryptographicException)
             {
-                Tools.HandleExceptions(ex);
                 MessageBox.Show("联网验证密码错误！", "提示");
                 return false;
             }
@@ -220,8 +219,15 @@ namespace LPUGUIProvider
 
         private void ok_Click(object sender, EventArgs e)
         {
-            verifed = VerifyValue(textBox1.Text);   // Verify Value.
-            this.Hide();
+            verified = VerifyValue(textBox1.Text);   // Verify Value.
+            Hide();
+        }
+
+        public static bool ShowAndVerify()
+        {
+            LargeOperationVerify lov = new LargeOperationVerify();
+            lov.ShowDialog();
+            return lov.Verified;
         }
     }
 }

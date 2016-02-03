@@ -1,5 +1,5 @@
 ﻿/*
-   Copyright (C) 2011-2014 AC Inc. (Andy Cheung)
+   Copyright (C) 2011-2016 AC Inc. (Andy Cheung)
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -14,6 +14,8 @@
    limitations under the License.
 */
 
+using ACLibrary.Crypto.MixCryptSeries;
+using PowerOnLoggerManagmentTool.Properties;
 using System;
 using System.Windows.Forms;
 
@@ -21,19 +23,23 @@ namespace PowerOnLoggerManagmentTool
 {
     public partial class Account : Form
     {
+        private Mid ee = new Mid();
+        private LoginAccount currLA;
+
         public Account()
         {
             InitializeComponent();
+            currLA = LoginAccount.ReadFromSettings(ee, ee.DecryptString(Settings.Default.RecoveryKey, ""));
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            textBox1.Text = Properties.Settings.Default.User;
+            textBox1.Text = currLA.User;
         }
 
         private void Account_Load(object sender, EventArgs e)
         {
-            textBox1.Text = Properties.Settings.Default.User;
+            textBox1.Text = currLA.User;
         }
 
         private void pc_Click(object sender, EventArgs e)
@@ -44,14 +50,15 @@ namespace PowerOnLoggerManagmentTool
                 return;
             }
 
-            if (op.Text.Equals(Properties.Settings.Default.Pass))
+            if (op.Text.Equals(currLA.Password))
             {
                 if (np.Text.Equals(npc.Text))
                 {
-                    Properties.Settings.Default.Pass = np.Text;
-                    Properties.Settings.Default.Save();
+                    currLA.Password = np.Text;
+                    currLA.PasswordHint = pswHint.Text;
+                    LoginAccount.SaveToSettings(currLA);
                     MessageBox.Show("Change Password Successful.\n Please Re-login.", "OK");
-                    this.Hide();
+                    Hide();
                     new Verify().Show();
                 }
                 else
@@ -74,10 +81,10 @@ namespace PowerOnLoggerManagmentTool
             }
             if (nu.Text.Equals(nuc.Text))
             {
-                Properties.Settings.Default.User = nu.Text;
-                Properties.Settings.Default.Save();
+                currLA.User = nu.Text;
+                LoginAccount.SaveToSettings(currLA);
                 MessageBox.Show("Change Username Successful.\n Please Re-login.", "OK");
-                this.Hide();
+                Hide();
                 new Verify().Show();
             }
             else
@@ -88,7 +95,7 @@ namespace PowerOnLoggerManagmentTool
 
         private void exit_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             new Main().Show();
         }
     }

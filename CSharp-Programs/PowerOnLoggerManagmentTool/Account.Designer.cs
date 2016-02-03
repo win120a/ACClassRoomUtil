@@ -45,13 +45,15 @@
             this.np = new System.Windows.Forms.TextBox();
             this.npc = new System.Windows.Forms.TextBox();
             this.uc = new System.Windows.Forms.Button();
+            this.pswHint = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pc
             // 
-            this.pc.Location = new System.Drawing.Point(142, 260);
+            this.pc.Location = new System.Drawing.Point(142, 278);
             this.pc.Name = "pc";
             this.pc.Size = new System.Drawing.Size(62, 24);
             this.pc.TabIndex = 6;
@@ -62,7 +64,7 @@
             // exit
             // 
             this.exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.exit.Location = new System.Drawing.Point(292, 260);
+            this.exit.Location = new System.Drawing.Point(288, 278);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(28, 24);
             this.exit.TabIndex = 7;
@@ -136,6 +138,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.pswHint);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
@@ -144,7 +148,7 @@
             this.groupBox2.Controls.Add(this.npc);
             this.groupBox2.Location = new System.Drawing.Point(12, 148);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(304, 106);
+            this.groupBox2.Size = new System.Drawing.Size(304, 124);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Password";
@@ -152,7 +156,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 67);
+            this.label4.Location = new System.Drawing.Point(9, 71);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 12);
             this.label4.TabIndex = 21;
@@ -161,7 +165,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 17);
+            this.label6.Location = new System.Drawing.Point(6, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 12);
             this.label6.TabIndex = 19;
@@ -170,7 +174,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 40);
+            this.label5.Location = new System.Drawing.Point(6, 44);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 20;
@@ -210,12 +214,29 @@
             this.uc.UseVisualStyleBackColor = true;
             this.uc.Click += new System.EventHandler(this.uc_Click);
             // 
+            // pswHint
+            // 
+            this.pswHint.Location = new System.Drawing.Point(89, 95);
+            this.pswHint.Name = "pswHint";
+            this.pswHint.PasswordChar = '#';
+            this.pswHint.Size = new System.Drawing.Size(205, 21);
+            this.pswHint.TabIndex = 22;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(0, 98);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(83, 12);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Password Hint";
+            // 
             // Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.exit;
-            this.ClientSize = new System.Drawing.Size(332, 296);
+            this.ClientSize = new System.Drawing.Size(332, 316);
             this.Controls.Add(this.uc);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -255,5 +276,7 @@
         private System.Windows.Forms.TextBox np;
         private System.Windows.Forms.TextBox npc;
         private System.Windows.Forms.Button uc;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox pswHint;
     }
 }

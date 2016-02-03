@@ -1,4 +1,4 @@
-﻿namespace LPUGUIProvider
+﻿namespace ACCVF
 {
     partial class LargeOperationVerify
     {
@@ -132,7 +132,7 @@
             this.MinimizeBox = false;
             this.Name = "LargeOperationVerify";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "由于涉及到工作机理，因此需要验证";
+            this.Text = "由于涉及到工作机理，因此需要验证 （AC大操作统一验证框架）";
             this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();

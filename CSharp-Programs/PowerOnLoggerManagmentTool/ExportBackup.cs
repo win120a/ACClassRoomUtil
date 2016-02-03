@@ -1,5 +1,5 @@
 ﻿/*
-   Copyright (C) 2011-2014 AC Inc. (Andy Cheung)
+   Copyright (C) 2011-2016 AC Inc. (Andy Cheung)
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -14,7 +14,6 @@
    limitations under the License.
 */
 
-using ACLibrary.Crypto;
 using ACLibrary.Crypto.MixCryptSeries;
 using System;
 using System.Collections;
@@ -34,7 +33,7 @@ namespace PowerOnLoggerManagmentTool
         private void WriteLogs(String name)
         {
             StreamWriter sw = new StreamWriter(name);
-            String path = Environment.GetEnvironmentVariable("SystemRoot") + "\\System32\\AC-Engine\\PowerOnLogger";
+            string path = Environment.GetEnvironmentVariable("SystemRoot") + "\\System32\\AC-Engine\\PowerOnLogger";
             IEnumerable enu0 = Directory.EnumerateFiles(path);
             sw.WriteLine("AC POL Log Report File V2.00");
             sw.WriteLine("Copyright (C) AC Inc.");

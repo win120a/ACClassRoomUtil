@@ -20,6 +20,6 @@ namespace LPUGUIProvider
 {
     public class DataStorage
     {
-        public static String key;
+        public static string key;
     }
 }

@@ -27,30 +27,6 @@ namespace LPUGUIProvider
     public sealed class Tools
     {
         /// <summary>
-        /// Execute an operation with a number, it is replaced by Cases.ExecuteCases().
-        /// </summary>
-        /// <param name="operationID">The operation ID.</param>
-        internal static void ExecuteOperationByID(int operationID)
-        {
-            switch (operationID)
-            {
-                case 1:
-                    PowerTool.ShutdownSystem();
-                    break;
-                case 2:
-                    PowerTool.RebootSystem();
-                    break;
-                case 3:
-                    PowerTool.LogoffFromSystem();
-                    break;
-                case 0:
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        /// <summary>
         /// Generate key number after this day.
         /// </summary>
         /// <returns>The result.</returns>

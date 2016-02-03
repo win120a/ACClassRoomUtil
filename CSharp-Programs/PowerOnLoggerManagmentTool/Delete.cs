@@ -1,5 +1,5 @@
 ﻿/*
-   Copyright (C) 2011-2014 AC Inc. (Andy Cheung)
+   Copyright (C) 2011-2016 AC Inc. (Andy Cheung)
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -16,7 +16,10 @@
 
 using System;
 using System.IO;
+using ACCVF;
 using System.Windows.Forms;
+using ACLibrary.Crypto.MixCryptSeries;
+using PowerOnLoggerManagmentTool.Properties;
 
 namespace PowerOnLoggerManagmentTool
 {
@@ -46,27 +49,33 @@ namespace PowerOnLoggerManagmentTool
 
             remainChance = maxWrongCount - wrongCount;
 
-            if (Properties.Settings.Default.Pass.Equals(textBox1.Text))
+            Mid ee = new Mid();
+            LoginAccount currLA = LoginAccount.ReadFromSettings(ee, ee.DecryptString(Settings.Default.RecoveryKey, ""));
+
+            if (currLA.Password.Equals(textBox1.Text))
             {
-                if (MessageBox.Show("Are you sure?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation).Equals(DialogResult.Yes))
+                if (LargeOperationVerify.ShowAndVerify())
                 {
-                    if (Directory.Exists(Environment.GetEnvironmentVariable("SystemRoot") + "\\System32\\AC-Engine\\PowerOnLogger"))
+                    if (MessageBox.Show("Are you sure?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation).Equals(DialogResult.Yes))
                     {
-                        Directory.Delete(Environment.GetEnvironmentVariable("SystemRoot") + "\\System32\\AC-Engine\\PowerOnLogger", true);
-                        Directory.CreateDirectory(Environment.GetEnvironmentVariable("SystemRoot") + "\\System32\\AC-Engine\\PowerOnLogger");
-                        MessageBox.Show("Delete Log Successful.", "Done");
-                        this.Hide();
-                        this.Dispose();
-                        GC.Collect();
-                        new Main().Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("You did not install POL.", "HINT!");
-                        this.Hide();
-                        this.Dispose();
-                        GC.Collect();
-                        new Main().Show();
+                        if (Directory.Exists(Environment.GetEnvironmentVariable("SystemRoot") + "\\System32\\AC-Engine\\PowerOnLogger"))
+                        {
+                            Directory.Delete(Environment.GetEnvironmentVariable("SystemRoot") + "\\System32\\AC-Engine\\PowerOnLogger", true);
+                            Directory.CreateDirectory(Environment.GetEnvironmentVariable("SystemRoot") + "\\System32\\AC-Engine\\PowerOnLogger");
+                            MessageBox.Show("Delete Log Successful.", "Done");
+                            this.Hide();
+                            this.Dispose();
+                            GC.Collect();
+                            new Main().Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("You did not install POL.", "HINT!");
+                            this.Hide();
+                            this.Dispose();
+                            GC.Collect();
+                            new Main().Show();
+                        }
                     }
                 }
                 else
@@ -94,14 +103,10 @@ namespace PowerOnLoggerManagmentTool
 
                 if (wrongCount >= maxWrongCount)
                 {
-                    this.Hide();
-                    this.Dispose();
-                    GC.Collect();
-                    Main mainObj = new Main();
-                    mainObj.button1.Enabled = false;
-                    mainObj.button2.Enabled = false;
-                    mainObj.button3.Enabled = false;
-                    mainObj.Show();
+                    Hide();
+                    Properties.Settings.Default.Disable = true;
+                    Properties.Settings.Default.Save();
+                    Application.Exit();
                 }
             }
         }

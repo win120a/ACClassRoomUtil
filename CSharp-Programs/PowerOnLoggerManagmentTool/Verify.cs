@@ -1,5 +1,5 @@
 ﻿/*
-   Copyright (C) 2011-2014 AC Inc. (Andy Cheung)
+   Copyright (C) 2011-2016 AC Inc. (Andy Cheung)
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -14,8 +14,10 @@
    limitations under the License.
 */
 
+using ACLibrary.Crypto.MixCryptSeries;
 using System;
 using System.Windows.Forms;
+using PowerOnLoggerManagmentTool.Properties;
 
 namespace PowerOnLoggerManagmentTool
 {
@@ -28,14 +30,16 @@ namespace PowerOnLoggerManagmentTool
 
         private void co_Click(object sender, EventArgs e)
         {
+            Mid ee = new Mid();
+            LoginAccount currLA = LoginAccount.ReadFromSettings(ee, ee.DecryptString(Settings.Default.RecoveryKey, ""));
 #if DEBUG
-            MessageBox.Show(Properties.Settings.Default.User);
-            MessageBox.Show(Properties.Settings.Default.Pass);
-            this.Hide();
+            MessageBox.Show(currLA.User);
+            MessageBox.Show(currLA.Password);
+            Hide();
             GC.Collect();
             new Main().Show();
 #else
-            if ((p.Text.Equals(Properties.Settings.Default.Pass)) && (u.Text.Equals(Properties.Settings.Default.User)))
+            if ((p.Text.Equals(currLA.Password)) && (u.Text.Equals(currLA.User)))
             {
                 this.Hide();
                 GC.Collect();
@@ -51,6 +55,22 @@ namespace PowerOnLoggerManagmentTool
         private void cc_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Verify_Load(object sender, EventArgs e)
+        {
+            if (Settings.Default.Disable)
+            {
+                MessageBox.Show("It seems that you have attempted too many times of entering password.\nThe System has been blocked.", "Error");
+                Application.Exit();
+            }
+        }
+
+        private void fp_Click(object sender, EventArgs e)
+        {
+            Mid ee = new Mid();
+            LoginAccount currLA = LoginAccount.ReadFromSettings(ee, ee.DecryptString(Settings.Default.RecoveryKey, ""));
+            MessageBox.Show(currLA.PasswordHint, "The password hint");
         }
     }
 }

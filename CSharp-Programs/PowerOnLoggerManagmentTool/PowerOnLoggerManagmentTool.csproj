@@ -76,6 +76,9 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="accvf">
+      <HintPath>..\CommonVerifyFramework\bin\Release\accvf.dll</HintPath>
+    </Reference>
     <Reference Include="ACLibrary.Crypto">
       <HintPath>..\..\ACLibrary\ACCryptoAPI\bin\Debug\ACLibrary.Crypto.dll</HintPath>
     </Reference>
