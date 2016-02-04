@@ -16,6 +16,7 @@
 
 using ACLibrary.Crypto.MixCryptSeries;
 using PowerOnLoggerManagmentTool.Properties;
+using ACCVF;
 using System;
 using System.Windows.Forms;
 
@@ -39,6 +40,13 @@ namespace PowerOnLoggerManagmentTool
 
         private void Account_Load(object sender, EventArgs e)
         {
+            if (!LargeOperationVerify.ShowAndVerify())
+            {
+                Hide();
+                GC.Collect();
+                Dispose();
+                new Main().Show();
+            }
             textBox1.Text = currLA.User;
         }
 

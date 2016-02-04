@@ -220,7 +220,7 @@ namespace LPUGUIProvider
 
         public static bool getIgnoreSPSWChange()
         {
-            if (Settings.Default.ignoreDate == null && Settings.Default.ignoreSPSWChange == false)
+            if (Settings.Default.ignoreDate == new DateTime(1) && Settings.Default.ignoreSPSWChange == false)
             {
                 return false;
             }
