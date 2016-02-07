@@ -254,3 +254,13 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+
+# Netbeans part
+# Thanks github's repo "gitignore".
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+.nb-gradle/
