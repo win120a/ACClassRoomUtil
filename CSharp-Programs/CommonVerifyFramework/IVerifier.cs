@@ -1,4 +1,4 @@
-<!-- 
+﻿/*
    Copyright (C) 2011-2016 AC Inc. (Andy Cheung)
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,25 +12,16 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
--->
+*/
 
+namespace ACCVF
+{
+    public interface IVerifier
+    {
+        bool VerifyValue(string value1, string value2);
+        string Hints();
 
-Framework Reqired
-============
-At least Java 7 for Java Projects.<br>
-At least .net framework 4 for C# projects.
-
-Platform
-============
-Known support platform: Windows XP, Windows 7<br>
-These applications do NOT support any other platforms (such as Linux).<br>
-
-License
-============
-These programs are licensed with Apache License.<br>
-You can read it at <a href="https://github.com/win120a/ACClassRoomUtil/blob/master/LICENSE">here</a>.
-
-Compiling Engine
-=========
-All of the Java Projects are Netbeans 8.0 project.<br>
-C# Projects use MSBuild 14.0.24728.2 (Visual Studio 2015 Community).
+        string GetFirstVerifyInstructionString();
+        string GetSecondVerifyInstructionString();
+    }
+}

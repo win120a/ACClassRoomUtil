@@ -81,9 +81,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(10, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 12);
+            this.label1.Size = new System.Drawing.Size(89, 12);
             this.label1.TabIndex = 4;
-            this.label1.Text = "请照约定输入验证字符：";
+            this.label1.Text = "第一验证字符：";
             // 
             // pv
             // 
@@ -108,9 +108,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(10, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 12);
+            this.label2.Size = new System.Drawing.Size(89, 12);
             this.label2.TabIndex = 999;
-            this.label2.Text = "联网验证字符密码：";
+            this.label2.Text = "第二验证字符：";
             // 
             // LargeOperationVerify
             // 
@@ -132,8 +132,9 @@
             this.MinimizeBox = false;
             this.Name = "LargeOperationVerify";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "由于涉及到工作机理，因此需要验证 （AC大操作统一验证框架）";
+            this.Text = "AC统一验证框架";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.LargeOperationVerify_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

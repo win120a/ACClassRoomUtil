@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerOnLoggerManagmentTool", "PowerOnLoggerManagmentTool\PowerOnLoggerManagmentTool.csproj", "{28FB18F5-6FD7-4178-AAE6-6A499F4A1BB8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9E78F71F-9E8F-4501-BC85-D9C35C49A693} = {9E78F71F-9E8F-4501-BC85-D9C35C49A693}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPU_Encrypted_Res", "LPU_Encrypted_Res\LPU_Encrypted_Res.csproj", "{A65558EA-A9D0-43B9-8CAE-BDE8F2C013AC}"
 EndProject
