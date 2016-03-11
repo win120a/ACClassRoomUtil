@@ -30,14 +30,19 @@ namespace PowerOnLoggerManagmentTool
 
         private void LoadLogs()
         {
+            string path32 = Environment.GetEnvironmentVariable("SystemRoot") + "\\System32\\AC-Engine\\PowerOnLogger";
+            string path64 = Environment.GetEnvironmentVariable("SystemRoot") + "\\SysWOW64\\AC-Engine\\PowerOnLogger";
+
+            string path = Directory.Exists(path32) ? path32 : path64;
+
             listBox1.Items.Clear();
-            if (!(Directory.Exists(Environment.GetEnvironmentVariable("SystemRoot") + "\\System32\\AC-Engine\\PowerOnLogger")))
+            if (!(Directory.Exists(path)) && !(Directory.Exists(path64)))
             {
                 listBox1.Items.Add("You didn't install POL.");
                 return;
             }
+
             listBox1.Hide();
-            String path = Environment.GetEnvironmentVariable("SystemRoot") + "\\System32\\AC-Engine\\PowerOnLogger";
             IEnumerable enu0 = Directory.EnumerateFiles(path);
             listBox1.BeginUpdate();
             foreach (string s in enu0)
