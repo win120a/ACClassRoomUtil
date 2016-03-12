@@ -65,7 +65,7 @@ namespace PowerOnLoggerManagmentTool
             }
             set
             {
-                passwordHint = cryptoEngine.EncryptString(passwordHint, "");
+                passwordHint = cryptoEngine.EncryptString(value, "");
             }
         }
 
