@@ -113,6 +113,7 @@
       <DependentUpon>ExportBackup.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginAccount.cs" />
+    <Compile Include="Tools.cs" />
     <Compile Include="Verify.cs">
       <SubType>Form</SubType>
     </Compile>

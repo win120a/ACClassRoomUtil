@@ -66,7 +66,7 @@ namespace PowerOnLoggerManagmentTool
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             GC.Collect();
             new Main().Show();
         }

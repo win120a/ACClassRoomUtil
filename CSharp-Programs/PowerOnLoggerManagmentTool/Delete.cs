@@ -37,8 +37,8 @@ namespace PowerOnLoggerManagmentTool
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            this.Dispose();
+            Hide();
+            Dispose();
             GC.Collect();
             new Main().Show();
         }
@@ -58,21 +58,21 @@ namespace PowerOnLoggerManagmentTool
                 {
                     if (MessageBox.Show("Are you sure?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation).Equals(DialogResult.Yes))
                     {
-                        if (Directory.Exists(Environment.GetEnvironmentVariable("SystemRoot") + "\\System32\\AC-Engine\\PowerOnLogger"))
+                        if (Directory.Exists(Tools.GetLogPath()))
                         {
-                            Directory.Delete(Environment.GetEnvironmentVariable("SystemRoot") + "\\System32\\AC-Engine\\PowerOnLogger", true);
-                            Directory.CreateDirectory(Environment.GetEnvironmentVariable("SystemRoot") + "\\System32\\AC-Engine\\PowerOnLogger");
+                            Directory.Delete(Tools.GetLogPath(), true);
+                            Directory.CreateDirectory(Tools.GetLogPath());
                             MessageBox.Show("Delete Log Successful.", "Done");
-                            this.Hide();
-                            this.Dispose();
+                            Hide();
+                            Dispose();
                             GC.Collect();
                             new Main().Show();
                         }
                         else
                         {
                             MessageBox.Show("You did not install POL.", "HINT!");
-                            this.Hide();
-                            this.Dispose();
+                            Hide();
+                            Dispose();
                             GC.Collect();
                             new Main().Show();
                         }
@@ -80,8 +80,8 @@ namespace PowerOnLoggerManagmentTool
                 }
                 else
                 {
-                    this.Hide();
-                    this.Dispose();
+                    Hide();
+                    Dispose();
                     GC.Collect();
                     new Main().Show();
                 }
@@ -104,8 +104,8 @@ namespace PowerOnLoggerManagmentTool
                 if (wrongCount >= maxWrongCount)
                 {
                     Hide();
-                    Properties.Settings.Default.Disable = true;
-                    Properties.Settings.Default.Save();
+                    Settings.Default.Disable = true;
+                    Settings.Default.Save();
                     Application.Exit();
                 }
             }

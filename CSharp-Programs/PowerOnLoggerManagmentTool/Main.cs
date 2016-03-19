@@ -30,8 +30,8 @@ namespace PowerOnLoggerManagmentTool
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            this.Dispose();
+            Hide();
+            Dispose();
             GC.Collect();
             new Account().Show();
         }
@@ -44,8 +44,8 @@ namespace PowerOnLoggerManagmentTool
 
         private void lo_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            this.Dispose();
+            Hide();
+            Dispose();
             GC.Collect();
             new Verify().Show();
         }
@@ -57,16 +57,16 @@ namespace PowerOnLoggerManagmentTool
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            this.Dispose();
+            Hide();
+            Dispose();
             GC.Collect();
             new View().Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            this.Dispose();
+            Hide();
+            Dispose();
             GC.Collect();
             new Delete().Show();
         }
@@ -74,16 +74,16 @@ namespace PowerOnLoggerManagmentTool
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Stop();
-            this.Hide();
-            this.Dispose();
+            Hide();
+            Dispose();
             GC.Collect();
             new Verify().Show();
         }
 
         private void export_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            this.Dispose();
+            Hide();
+            Dispose();
             GC.Collect();
             new ExportBackup().Show();
         }

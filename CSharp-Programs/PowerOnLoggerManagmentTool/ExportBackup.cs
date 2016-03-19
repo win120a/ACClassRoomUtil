@@ -30,10 +30,10 @@ namespace PowerOnLoggerManagmentTool
             InitializeComponent();
         }
 
-        private void WriteLogs(String name)
+        private void WriteLogs(string name)
         {
             StreamWriter sw = new StreamWriter(name);
-            string path = Environment.GetEnvironmentVariable("SystemRoot") + "\\System32\\AC-Engine\\PowerOnLogger";
+            string path = Tools.GetLogPath();
             IEnumerable enu0 = Directory.EnumerateFiles(path);
             sw.WriteLine("AC POL Log Report File V2.00");
             sw.WriteLine("Copyright (C) AC Inc.");
@@ -52,17 +52,17 @@ namespace PowerOnLoggerManagmentTool
             sw.Close();
         }
 
-        private void WriteLogsWithCrypt(String name)
+        private void WriteLogsWithCrypt(string name)
         {
             StreamWriter sw = new StreamWriter(name);
-            String path = Environment.GetEnvironmentVariable("SystemRoot") + "\\System32\\AC-Engine\\PowerOnLogger";
+            string path = Tools.GetLogPath();
             IEnumerable enu0 = Directory.EnumerateFiles(path);
             StringBuilder sb = new StringBuilder();
             foreach (string s in enu0)
             {
                 sb.Append(s + "/");
             }
-            String es = new Mid().EncryptString(sb.ToString(), "123");
+            string es = new Mid().EncryptString(sb.ToString(), "123");
             sw.Write(es);
             sw.Flush();
             sw.Close();
@@ -70,8 +70,8 @@ namespace PowerOnLoggerManagmentTool
 
         private void exit_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            this.Dispose();
+            Hide();
+            Dispose();
             GC.Collect();
             new Main().Show();
         }
@@ -83,7 +83,7 @@ namespace PowerOnLoggerManagmentTool
             DialogResult r = sfd.ShowDialog();
             if (r.Equals(DialogResult.OK))
             {
-                String name = sfd.FileName;
+                string name = sfd.FileName;
                 WriteLogs(name);
             }
         }
@@ -95,7 +95,7 @@ namespace PowerOnLoggerManagmentTool
             DialogResult r = sfd.ShowDialog();
             if (r.Equals(DialogResult.OK))
             {
-                String name = sfd.FileName;
+                string name = sfd.FileName;
                 WriteLogsWithCrypt(name);
             }
         }
@@ -107,12 +107,12 @@ namespace PowerOnLoggerManagmentTool
             DialogResult r = ofd.ShowDialog();
             if (r.Equals(DialogResult.OK))
             {
-                String name = ofd.FileName;
+                string name = ofd.FileName;
                 StreamReader sr = new StreamReader(name);
-                String econtent = sr.ReadToEnd();
-                String content = new Mid().DecryptString(econtent, "123");
-                String[] logs = content.Split('/');
-                foreach (String s in logs)
+                string econtent = sr.ReadToEnd();
+                string content = new Mid().DecryptString(econtent, "123");
+                string[] logs = content.Split('/');
+                foreach (string s in logs)
                 {
                     if (s == "")
                     {
@@ -120,6 +120,10 @@ namespace PowerOnLoggerManagmentTool
                     }
                     else
                     {
+                        if (Tools.Is64BitOS())
+                        {
+                            s.Replace("System32", "SysWOW64");
+                        }
 #if DEBUG
                         MessageBox.Show(s);
 #endif
