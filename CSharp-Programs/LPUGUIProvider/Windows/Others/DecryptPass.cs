@@ -49,7 +49,7 @@ namespace LPUGUIProvider
             }
 
             DataStorage.key = textBox1.Text;
-            this.Hide();
+            Hide();
             new NormalPasswordChange().Show();
         }
 

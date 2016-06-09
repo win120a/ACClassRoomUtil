@@ -83,21 +83,21 @@ namespace LPUGUIProvider
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.TopMost = false;
+            TopMost = false;
             LargeOperationVerify vw = new LargeOperationVerify();
             vw.ShowDialog();
             MessageBox.Show(vw.Verified ? "通过" : "未通过", "结果");
 
             if (vw.Verified)
             {
-                this.Hide();
+                Hide();
                 new RKCChange().Show();
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.TopMost = false;
+            TopMost = false;
             LargeOperationVerify vw = new LargeOperationVerify();
             vw.ShowDialog();
             MessageBox.Show(vw.Verified ? "通过" : "未通过", "结果");
@@ -107,42 +107,42 @@ namespace LPUGUIProvider
                 DialogResult result = MessageBox.Show("您确定要将用户" + Settings.Default.userName + "的密码消除吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (result == DialogResult.Yes)
                 {
-                    new PSWTool().SetSystemPasswordEmpty(Settings.Default.userName);
+                    PSWTool.SetSystemPasswordEmpty(Settings.Default.userName);
                 }
             }
         }
 
         private void dbdpc_Click(object sender, EventArgs e)
         {
-            this.TopMost = false;
+            TopMost = false;
             LargeOperationVerify vw = new LargeOperationVerify();
             vw.ShowDialog();
             MessageBox.Show(vw.Verified ? "通过" : "未通过", "结果");
 
             if (vw.Verified)
             {
-                this.Hide();
+                Hide();
                 new DBDPChange().Show();
             }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.TopMost = false;
+            TopMost = false;
             LargeOperationVerify vw = new LargeOperationVerify();
             vw.ShowDialog();
             MessageBox.Show(vw.Verified ? "通过" : "未通过", "结果");
 
             if (vw.Verified)
             {
-                this.Hide();
+                Hide();
                 new SettPassChange().Show();
             }
         }
 
         private void ignoreSPC_Click(object sender, EventArgs e)
         {
-            this.TopMost = false;
+            TopMost = false;
             LargeOperationVerify vw = new LargeOperationVerify();
             vw.ShowDialog();
             MessageBox.Show(vw.Verified ? "通过" : "未通过", "结果");

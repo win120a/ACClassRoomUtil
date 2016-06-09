@@ -50,7 +50,7 @@ namespace LPU_GUI
 
                     if (DateTime.Now.DayOfWeek == DayOfWeek.Friday)
                     {
-                        new PSWTool().ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"), usrPass, Tools.getChangedResourceObject(), 1);
+                        PSWTool.ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"), usrPass, Tools.getChangedResourceObject(), 1);
                         return;
                     }
                     else if (DateTime.Now.DayOfWeek == DayOfWeek.Saturday || DateTime.Now.DayOfWeek == DayOfWeek.Sunday)
@@ -59,7 +59,7 @@ namespace LPU_GUI
                     }
                     else
                     {
-                        new PSWTool().ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"), usrPass, Tools.getChangedResourceObject(), ((int)DateTime.Now.DayOfWeek) + 1);
+                        PSWTool.ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"), usrPass, Tools.getChangedResourceObject(), ((int)DateTime.Now.DayOfWeek) + 1);
                         return;
                     }
                 }

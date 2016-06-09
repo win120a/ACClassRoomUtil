@@ -40,9 +40,6 @@
     <Reference Include="ACLibrary.Crypto">
       <HintPath>..\..\ACLibrary\ACCryptoAPI\bin\Debug\ACLibrary.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="ACLibrary.Network">
-      <HintPath>..\..\ACLibrary\NetworkLib\bin\Debug\ACLibrary.Network.dll</HintPath>
-    </Reference>
     <Reference Include="LPU_Encrypted_Res">
       <HintPath>..\LPU_Encrypted_Res\bin\Debug\LPU_Encrypted_Res.dll</HintPath>
     </Reference>

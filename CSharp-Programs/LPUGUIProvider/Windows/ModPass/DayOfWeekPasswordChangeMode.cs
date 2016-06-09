@@ -65,7 +65,7 @@ namespace LPUGUIProvider
             {
                 if (s >= 3)
                 {
-                    this.Hide();
+                    Hide();
                     new Prefs().Show();
                 }
                 s++;
@@ -93,10 +93,10 @@ namespace LPUGUIProvider
 
                 //MessageBox.Show("You selected " + num + ".");
 
-                new PSWTool().ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"),
-                       DataStorage.key,
-                       Tools.getChangedResourceObject(),
-                       num);
+                PSWTool.ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"),
+                                            DataStorage.key,
+                                            Tools.getChangedResourceObject(),
+                                            num);
 
                 Cases.ExecuteCases();
 

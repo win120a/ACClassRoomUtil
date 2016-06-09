@@ -38,17 +38,17 @@ namespace RMCrypt_GUI
 
             DataStore.erkr = new int[] { digi1, digi2, digi3, digi4, digi5, digi6 };
 
-            this.Hide();
+            Hide();
             GC.Collect();
-            this.Dispose();
+            Dispose();
         }
 
         private void can_Click(object sender, EventArgs e)
         {
             DataStore.exit = true;
-            this.Hide();
+            Hide();
             GC.Collect();
-            this.Dispose();
+            Dispose();
         }
 
         private void EnterKey_Load(object sender, EventArgs e)

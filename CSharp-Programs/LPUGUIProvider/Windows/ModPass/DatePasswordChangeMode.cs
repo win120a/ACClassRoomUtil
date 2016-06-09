@@ -94,10 +94,10 @@ namespace LPUGUIProvider
             #region Change PSW and after process zone
             Resources r = Tools.getChangedResourceObject();
 
-            new PSWTool().ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"),
-                                               DataStorage.key,
-                                               r,
-                                               dow_int); // Change psw.
+            PSWTool.ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"),
+                                         DataStorage.key,
+                                         r,
+                                         dow_int); // Change psw.
 
             Cases.ExecuteCases();
 

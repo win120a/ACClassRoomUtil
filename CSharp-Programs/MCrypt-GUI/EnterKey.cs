@@ -29,17 +29,17 @@ namespace MCrypt_GUI
         private void ok_Click(object sender, EventArgs e)
         {
             DataStore.Key = textBox1.Text;
-            this.Hide();
+            Hide();
             GC.Collect();
-            this.Dispose();
+            Dispose();
         }
 
         private void can_Click(object sender, EventArgs e)
         {
             DataStore.exit = true;
-            this.Hide();
+            Hide();
             GC.Collect();
-            this.Dispose();
+            Dispose();
         }
 
         private void EnterKey_Load(object sender, EventArgs e)

@@ -71,9 +71,9 @@ namespace LPUGUIProvider
                 label3.Visible = false;
                 textBox1.Visible = false;
                 button1.Enabled = false;
-                System.Drawing.Size s = this.Size;
+                System.Drawing.Size s = Size;
                 s.Height = 150;
-                this.Size = s;
+                Size = s;
             }
             
         }
@@ -103,10 +103,10 @@ namespace LPUGUIProvider
                 //                num, 
                 //                "Debbuging mode");
 
-                new PSWTool().ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"),
-                                                   DataStorage.key,
-                                                   Tools.getChangedResourceObject(),
-                                                   num);
+                PSWTool.ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"),
+                                             DataStorage.key,
+                                             Tools.getChangedResourceObject(),
+                                             num);
 
                 MessageBox.Show("执行完毕！", "完成");
 
@@ -123,18 +123,18 @@ namespace LPUGUIProvider
 
         private void sdate_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             GC.Collect();
             new DatePasswordChangeMode().Show();
-            this.Dispose();
+            Dispose();
         }
 
         private void week_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             GC.Collect();
             new DayOfWeekPasswordChangeMode().Show();
-            this.Dispose();
+            Dispose();
         }
     }
 }

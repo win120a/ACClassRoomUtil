@@ -20,7 +20,6 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using ACLibrary.Crypto.CryptoProviders;
-using ACLibrary.TypeConvert;
 
 namespace RMCrypt_GUI
 {
@@ -35,26 +34,26 @@ namespace RMCrypt_GUI
 
         private void SetAllButtonEnabled()
         {
-            this.button1.Enabled = true;
-            this.button2.Enabled = true;
-            this.button3.Enabled = true;
-            this.button4.Enabled = true;
-            this.button5.Enabled = true;
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
+            button5.Enabled = true;
         }
 
         // e
         private void button1_Click(object sender, EventArgs e)
         {
-            this.button1.Enabled = false;
-            this.button2.Enabled = false;
-            this.button3.Enabled = false;
-            this.button4.Enabled = false;
-            this.button5.Enabled = false;
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = false;
 
-            this.TopMost = false;
+            TopMost = false;
             EnterKey ek = new EnterKey();
             ek.ShowDialog();
-            this.TopMost = tm.Checked;
+            TopMost = tm.Checked;
             if (DataStore.exit)
             {
                 return;
@@ -75,13 +74,13 @@ namespace RMCrypt_GUI
         // d
         private void button2_Click(object sender, EventArgs e)
         {
-            this.button1.Enabled = false;
-            this.button2.Enabled = false;
-            this.button3.Enabled = false;
-            this.button4.Enabled = false;
-            this.button5.Enabled = false;
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = false;
 
-            this.TopMost = false;
+            TopMost = false;
             EnterKey ek = new EnterKey();
             ek.ShowDialog();
 
@@ -99,7 +98,7 @@ namespace RMCrypt_GUI
                 return;
             }
 
-            this.TopMost = tm.Checked;
+            TopMost = tm.Checked;
 
             //Thread t = new Thread(new ThreadStart(doDecrypt));
             //t.Start();
@@ -133,7 +132,7 @@ namespace RMCrypt_GUI
 
         private void tm_CheckedChanged(object sender, EventArgs e)
         {
-            this.TopMost = tm.Checked;
+            TopMost = tm.Checked;
         }
 
         private void button4_Click(object sender, EventArgs e)

@@ -35,16 +35,16 @@ namespace MCrypt_GUI
         // e
         private void button1_Click(object sender, EventArgs e)
         {
-            this.button1.Enabled = false;
-            this.button2.Enabled = false;
-            this.button3.Enabled = false;
-            this.button4.Enabled = false;
-            this.button5.Enabled = false;
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = false;
 
-            this.TopMost = false;
+            TopMost = false;
             EnterKey ek = new EnterKey();
             ek.ShowDialog();
-            this.TopMost = tm.Checked;
+            TopMost = tm.Checked;
             if (DataStore.exit)
             {
                 return;
@@ -60,25 +60,25 @@ namespace MCrypt_GUI
             DataStore.finalResult = "";
             result.SelectAll();
 
-            this.button1.Enabled = true;
-            this.button2.Enabled = true;
-            this.button3.Enabled = true;
-            this.button4.Enabled = true;
-            this.button5.Enabled = true;
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
+            button5.Enabled = true;
         }
         // d
         private void button2_Click(object sender, EventArgs e)
         {
-            this.button1.Enabled = false;
-            this.button2.Enabled = false;
-            this.button3.Enabled = false;
-            this.button4.Enabled = false;
-            this.button5.Enabled = false;
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = false;
 
-            this.TopMost = false;
+            TopMost = false;
             EnterKey ek = new EnterKey();
             ek.ShowDialog();
-            this.TopMost = tm.Checked;
+            TopMost = tm.Checked;
             if (DataStore.exit)
             {
                 return;
@@ -94,11 +94,11 @@ namespace MCrypt_GUI
             DataStore.finalResult = "";
             result.SelectAll();
 
-            this.button1.Enabled = true;
-            this.button2.Enabled = true;
-            this.button3.Enabled = true;
-            this.button4.Enabled = true;
-            this.button5.Enabled = true;
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
+            button5.Enabled = true;
         }
         // c
         private void button3_Click(object sender, EventArgs e)
@@ -121,7 +121,7 @@ namespace MCrypt_GUI
 
         private void tm_CheckedChanged(object sender, EventArgs e)
         {
-            this.TopMost = tm.Checked;
+            TopMost = tm.Checked;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -148,7 +148,7 @@ namespace MCrypt_GUI
             {
                 sb.Append(engine.DecryptString(input.Text, DataStore.Key));
             }
-            catch (System.Security.Cryptography.CryptographicException ce)
+            catch (System.Security.Cryptography.CryptographicException)
             {
                 MessageBox.Show("Password Wrong!", "Fail");
             }

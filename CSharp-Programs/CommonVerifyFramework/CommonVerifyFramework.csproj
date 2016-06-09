@@ -37,9 +37,6 @@
     <Reference Include="ACLibrary.Crypto">
       <HintPath>..\..\ACLibrary\ACCryptoAPI\bin\Debug\ACLibrary.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="ACLibrary.Network">
-      <HintPath>..\..\ACLibrary\NetworkLib\bin\Debug\ACLibrary.Network.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -59,6 +56,7 @@
     <Compile Include="LargeOperationVerify.Designer.cs">
       <DependentUpon>LargeOperationVerify.cs</DependentUpon>
     </Compile>
+    <Compile Include="NICInfoHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
