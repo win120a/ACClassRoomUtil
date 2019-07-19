@@ -1,5 +1,5 @@
 <!-- 
-   Copyright (C) 2011-2016 AC Inc. (Andy Cheung)
+   Copyright (C) 2011-2019 Andy Cheung
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -23,14 +23,14 @@ At least .net framework 4 for C# projects.
 Platform
 ============
 Known support platform: Windows XP, Windows 7<br>
-These applications do NOT support any other platforms (such as Linux).<br>
+Windows Only.<br>
 
 License
 ============
 These programs are licensed with Apache License.<br>
 You can read it at <a href="https://github.com/win120a/ACClassRoomUtil/blob/master/LICENSE">here</a>.
 
-Compiling Engine
+IDE
 =========
-All of the Java Projects are Netbeans 8.0 project.<br>
-C# Projects use MSBuild 14.0.24728.2 (Visual Studio 2015 Community).
+NetBeans 8.0 (Java Project)<br>
+Visual Studio 2019 (C# Project)
