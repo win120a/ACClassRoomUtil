@@ -59,15 +59,11 @@
       <HintPath>..\..\ACLibrary\ACCryptoAPI\bin\Debug\ACLibrary.Crypto.dll</HintPath>
     </Reference>
     <Reference Include="LPUGUIProvider">
-      <HintPath>..\LPUGUIProvider\bin\Debug\LPUGUIProvider.dll</HintPath>
-    </Reference>
-    <Reference Include="LPU_Encrypted_Res, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\LPU_Encrypted_Res\bin\Debug\LPU_Encrypted_Res.dll</HintPath>
+      <HintPath>..\LPUGUIProvider\bin\Release\LPUGUIProvider.dll</HintPath>
     </Reference>
     <Reference Include="LPU_Util_Encypted, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\LPU_Util_Encypted\bin\Debug\LPU_Util_Encypted.dll</HintPath>
+      <HintPath>..\LPU_Util_Encypted\bin\Release\LPU_Util_Encypted.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

@@ -47,7 +47,7 @@ namespace LPUGUIProvider
 
                 if (n.Text == c.Text)  // Verify new keys and confirm.
                 {
-                    Settings.Default.RKC = new Mid().EncryptString(n.Text, DataStorage.key);  // Encrypt and store.
+                    Settings.Default.RKC = Mid.Instance.EncryptString(n.Text, DataStorage.key);  // Encrypt and store.
 
                     Settings.Default.customRKCValueOnly = true; // Set flag.
 
@@ -79,7 +79,7 @@ namespace LPUGUIProvider
 
             if (Settings.Default.customRKCValueOnly || Settings.Default.customAllValue)  // If set another RKC or Change DB decrypt pass, 
             {
-                Mid engine = new Mid();
+                Mid engine = Mid.Instance;
 
                 string orkc = engine.DecryptString(Settings.Default.RKC, DataStorage.key); // Decrypt it to verify.
 
@@ -90,7 +90,7 @@ namespace LPUGUIProvider
             }
             else  // Otherwise, 
             {
-                Mid engine = new Mid();
+                Mid engine = Mid.Instance;
 
                 string orkc = engine.DecryptString(new Resources().armv7a, DataStorage.key); // Decrypt, 
 

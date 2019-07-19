@@ -42,7 +42,7 @@ namespace LPUGUIProvider.Windows.Prefs
             }
             else
             {
-                if ((new Mid().DecryptString(Tools.getChangedResourceObject().armv7a, DataStorage.key)) == s.Text)
+                if ((Mid.Instance.DecryptString(Tools.getChangedResourceObject().armv7a, DataStorage.key)) == s.Text)
                 {
                     MessageBox.Show("不能与密码根相同！", "提示");
                     return;

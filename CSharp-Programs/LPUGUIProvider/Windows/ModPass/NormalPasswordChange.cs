@@ -83,7 +83,7 @@ namespace LPUGUIProvider
             StringBuilder sb = new StringBuilder();
             try
             {
-                sb.Append(new Mid().DecryptString(Tools.getChangedResourceObject().armv7a, DataStorage.key));
+                sb.Append(Mid.Instance.DecryptString(Tools.getChangedResourceObject().armv7a, DataStorage.key));
             }
             catch (System.Security.Cryptography.CryptographicException ex)
             {
@@ -92,7 +92,7 @@ namespace LPUGUIProvider
                 return;
             }
 
-            if (textBox1.Text.Equals(new Mid().DecryptString(Tools.getChangedResourceObject().armv7a, DataStorage.key)))
+            if (textBox1.Text.Equals(Mid.Instance.DecryptString(Tools.getChangedResourceObject().armv7a, DataStorage.key)))
             {
                 int num = 0;
 
@@ -103,8 +103,7 @@ namespace LPUGUIProvider
                 //                num, 
                 //                "Debbuging mode");
 
-                PSWTool.ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"),
-                                             DataStorage.key,
+                PSWTool.ChangeSystemPassword(DataStorage.key,
                                              Tools.getChangedResourceObject(),
                                              num);
 

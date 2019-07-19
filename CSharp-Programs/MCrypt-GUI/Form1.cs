@@ -201,28 +201,28 @@ namespace MCrypt_GUI
             switch (whichMethod)
             {
                 case 0:
-                    ip = new AESProvider();
+                    ip = AESProvider.Instance;
                     break;
                 case 1:
-                    ip = new DESProvider();
+                    ip = DESProvider.Instance;
                     break;
                 case 2:
-                    ip = new RC2Provider();
+                    ip = RC2Provider.Instance;
                     break;
                 case 3:
-                    ip = new RijndaelProvider();
+                    ip = RijndaelProvider.Instance;
                     break;
                 case 4:
-                    ip = new Weaker();
+                    ip = Weaker.Instance;
                     break;
                 case 5:
-                    ip = new Mid();
+                    ip = Mid.Instance;
                     break;
                 case 6:
-                    ip = new Stronger();
+                    ip = Stronger.Instance;
                     break;
                 case 7:
-                    ip = new Strongest();
+                    ip = Strongest.Instance;
                     break;
             }
 

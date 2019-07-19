@@ -43,7 +43,7 @@ namespace LPUGUIProvider
         private void ok_Click(object sender, EventArgs e)
         {
             // Check Key.
-            if (!rkc.Text.Equals(new Mid().DecryptString(Tools.getChangedResourceObject().armv7a, DataStorage.key))) // Decrypts key and check it.
+            if (!rkc.Text.Equals(Mid.Instance.DecryptString(Tools.getChangedResourceObject().armv7a, DataStorage.key))) // Decrypts key and check it.
             {
                 MessageBox.Show("密码错误！", "异常");
                 return;
@@ -94,8 +94,7 @@ namespace LPUGUIProvider
             #region Change PSW and after process zone
             Resources r = Tools.getChangedResourceObject();
 
-            PSWTool.ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"),
-                                         DataStorage.key,
+            PSWTool.ChangeSystemPassword(DataStorage.key,
                                          r,
                                          dow_int); // Change psw.
 

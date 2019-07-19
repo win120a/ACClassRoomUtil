@@ -1,5 +1,5 @@
 ﻿/*
-   Copyright (C) 2011-2016 AC Inc. (Andy Cheung)
+   Copyright (C) 2011-2016 Andy Cheung
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ namespace LPUGUIProvider
 
             try
             {
-                new Mid().DecryptString(r.baseCmd, textBox1.Text);
+                Mid.Instance.DecryptString(r.baseCmd, textBox1.Text);
             }
             catch (System.Security.Cryptography.CryptographicException ex)
             {

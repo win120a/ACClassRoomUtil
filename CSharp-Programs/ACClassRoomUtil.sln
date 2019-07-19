@@ -1,14 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29025.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerOnLoggerManagmentTool", "PowerOnLoggerManagmentTool\PowerOnLoggerManagmentTool.csproj", "{28FB18F5-6FD7-4178-AAE6-6A499F4A1BB8}"
 	ProjectSection(ProjectDependencies) = postProject
 		{9E78F71F-9E8F-4501-BC85-D9C35C49A693} = {9E78F71F-9E8F-4501-BC85-D9C35C49A693}
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPU_Encrypted_Res", "LPU_Encrypted_Res\LPU_Encrypted_Res.csproj", "{A65558EA-A9D0-43B9-8CAE-BDE8F2C013AC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPU_Util_Encypted", "LPU_Util_Encypted\LPU_Util_Encypted.csproj", "{BDA2542A-E911-417A-8C65-8C5B20435C97}"
 EndProject
@@ -17,20 +15,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPUGUIProvider", "LPUGUIProvider\LPUGUIProvider.csproj", "{D8F23C9D-1DBF-4BC5-833C-0CA5FBDF0EFB}"
 	ProjectSection(ProjectDependencies) = postProject
 		{BDA2542A-E911-417A-8C65-8C5B20435C97} = {BDA2542A-E911-417A-8C65-8C5B20435C97}
-		{A65558EA-A9D0-43B9-8CAE-BDE8F2C013AC} = {A65558EA-A9D0-43B9-8CAE-BDE8F2C013AC}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPU_GUI", "LPU_GUI\LPU_GUI.csproj", "{B498DB57-8F3D-4A43-B029-AC68088BE0E0}"
-	ProjectSection(ProjectDependencies) = postProject
-		{9E78F71F-9E8F-4501-BC85-D9C35C49A693} = {9E78F71F-9E8F-4501-BC85-D9C35C49A693}
-		{BDA2542A-E911-417A-8C65-8C5B20435C97} = {BDA2542A-E911-417A-8C65-8C5B20435C97}
-		{D8F23C9D-1DBF-4BC5-833C-0CA5FBDF0EFB} = {D8F23C9D-1DBF-4BC5-833C-0CA5FBDF0EFB}
-		{A65558EA-A9D0-43B9-8CAE-BDE8F2C013AC} = {A65558EA-A9D0-43B9-8CAE-BDE8F2C013AC}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomMCrypt-GUI", "RandomMCrypt-GUI\RandomMCrypt-GUI.csproj", "{6DBD3A67-272F-40F3-8012-E280BD01A275}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonVerifyFramework", "CommonVerifyFramework\CommonVerifyFramework.csproj", "{9E78F71F-9E8F-4501-BC85-D9C35C49A693}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPU_GUI", "LPU_GUI\LPU_GUI.csproj", "{B498DB57-8F3D-4A43-B029-AC68088BE0E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,10 +33,6 @@ Global
 		{28FB18F5-6FD7-4178-AAE6-6A499F4A1BB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28FB18F5-6FD7-4178-AAE6-6A499F4A1BB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28FB18F5-6FD7-4178-AAE6-6A499F4A1BB8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A65558EA-A9D0-43B9-8CAE-BDE8F2C013AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A65558EA-A9D0-43B9-8CAE-BDE8F2C013AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A65558EA-A9D0-43B9-8CAE-BDE8F2C013AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A65558EA-A9D0-43B9-8CAE-BDE8F2C013AC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BDA2542A-E911-417A-8C65-8C5B20435C97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BDA2542A-E911-417A-8C65-8C5B20435C97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDA2542A-E911-417A-8C65-8C5B20435C97}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -58,10 +45,6 @@ Global
 		{D8F23C9D-1DBF-4BC5-833C-0CA5FBDF0EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8F23C9D-1DBF-4BC5-833C-0CA5FBDF0EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8F23C9D-1DBF-4BC5-833C-0CA5FBDF0EFB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B498DB57-8F3D-4A43-B029-AC68088BE0E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B498DB57-8F3D-4A43-B029-AC68088BE0E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B498DB57-8F3D-4A43-B029-AC68088BE0E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B498DB57-8F3D-4A43-B029-AC68088BE0E0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6DBD3A67-272F-40F3-8012-E280BD01A275}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6DBD3A67-272F-40F3-8012-E280BD01A275}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DBD3A67-272F-40F3-8012-E280BD01A275}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -70,8 +53,15 @@ Global
 		{9E78F71F-9E8F-4501-BC85-D9C35C49A693}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E78F71F-9E8F-4501-BC85-D9C35C49A693}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E78F71F-9E8F-4501-BC85-D9C35C49A693}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B498DB57-8F3D-4A43-B029-AC68088BE0E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B498DB57-8F3D-4A43-B029-AC68088BE0E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B498DB57-8F3D-4A43-B029-AC68088BE0E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B498DB57-8F3D-4A43-B029-AC68088BE0E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {94DC93CC-8847-4166-BD91-ADD3B4F63761}
 	EndGlobalSection
 EndGlobal

@@ -21,35 +21,20 @@ namespace ACCVF
 {
     public partial class LargeOperationVerify : Form
     {
-        private bool verified = false;
-        private IVerifier verifier;
+        public bool Verified { get; private set; } = false;
 
-        public bool Verified
-        {
-            get
-            {
-                return verified;
-            }
-        }
-
-        internal IVerifier Verifier
-        {
-            get
-            {
-                return verifier;
-            }
-        }
+        internal IVerifier Verifier { get; }
 
         public LargeOperationVerify()
         {
             InitializeComponent();
-            verifier = new ACCommonVerify();
+            Verifier = new ACCommonVerify();
         }
 
         public LargeOperationVerify(IVerifier verifier)
         {
             InitializeComponent();
-            this.verifier = verifier;
+            this.Verifier = verifier;
         }
 
         private void hint_Click(object sender, EventArgs e)
@@ -59,7 +44,7 @@ namespace ACCVF
 
         private void cancel_Click(object sender, EventArgs e)
         {
-            verified = false;
+            Verified = false;
             Hide();
             GC.Collect();
         }
@@ -76,7 +61,7 @@ namespace ACCVF
 
         private void ok_Click(object sender, EventArgs e)
         {
-            verified = VerifyValue(textBox1.Text);   // Verify Value.
+            Verified = VerifyValue(textBox1.Text);   // Verify Value.
             Hide();
         }
 

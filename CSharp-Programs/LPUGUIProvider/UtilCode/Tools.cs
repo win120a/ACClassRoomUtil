@@ -104,45 +104,6 @@ namespace LPUGUIProvider
         /// <returns>The user-defined database.</returns>
         public static Resources getChangedResourceObject()
         {
-            // Old Code for backup.
-
-            //Resources r = new Resources(); // Create new Resource Object.
-
-            //if (!Settings.Default.customAllValue)
-            //{
-            //    if (Settings.Default.customRKCValueOnly || Settings.Default.customAllValue)
-            //    {
-            //        r.armv7a = Settings.Default.RKC;
-            //    }
-
-            //    r.netCmd = encryptedCmd;
-            //}
-
-            //string decryptedNCmd = new Mid().DecryptString(r.netCmd, DataStorage.key);
-            //string commandCmd = " user \"" + Settings.Default.userName + "\" ";
-            //string encryptedCmd = new Mid().EncryptString(commandCmd, DataStorage.key);
-
-            //string decyptedRKC = new Mid().DecryptString(r.armv7a, DataStorage.key);
-            //string currentDecryptedRKC = new Mid().DecryptString(Settings.Default.RKC, DataStorage.key);
-
-            //if (Settings.Default.customAllValue)
-            //{
-            //    r.baseCmd = Settings.Default.BCMD;
-            //    r.netCmd = Settings.Default.NCMD;
-            //    r.armv7a = Settings.Default.RKC;
-            //    r.tail = Settings.Default.Tail;
-            //}
-
-            //if (commandCmd != decryptedNCmd || decyptedRKC != currentDecryptedRKC)  // If username (RKC) is different from default.
-            //{
-            //    return r;  // Return changed object.
-            //}
-            //else
-            //{
-            //    return new Resources();   // Return new object.
-            //}
-
-
             if (Settings.Default.customAllValue)  // If user defined a new database decryption password, 
             {
                 Resources r = new Resources();
@@ -151,9 +112,9 @@ namespace LPUGUIProvider
 
                 if (Settings.Default.customUsername)  // If user changed the username, the program have to apply it.
                 {
-                    string decryptedNCmd = new Mid().DecryptString(r.netCmd, DataStorage.key);  // Decrypt command.
+                    string decryptedNCmd = Mid.Instance.DecryptString(r.netCmd, DataStorage.key);  // Decrypt command.
                     string commandCmd = " user \"" + Settings.Default.userName + "\" ";  // Command with new username.
-                    string encryptedCmd = new Mid().EncryptString(commandCmd, DataStorage.key); // Re-Encrypt the command.
+                    string encryptedCmd = Mid.Instance.EncryptString(commandCmd, DataStorage.key); // Re-Encrypt the command.
                     r.netCmd = encryptedCmd; // Apply it.
                 }
 
@@ -167,9 +128,9 @@ namespace LPUGUIProvider
                 r.armv7a = Settings.Default.RKC;  // Apply it.
                 if (Settings.Default.customUsername) // There are the same process as before.
                 {
-                    string decryptedNCmd = new Mid().DecryptString(r.netCmd, DataStorage.key);
+                    string decryptedNCmd = Mid.Instance.DecryptString(r.netCmd, DataStorage.key);
                     string commandCmd = " user \"" + Settings.Default.userName + "\" ";
-                    string encryptedCmd = new Mid().EncryptString(commandCmd, DataStorage.key);
+                    string encryptedCmd = Mid.Instance.EncryptString(commandCmd, DataStorage.key);
                     r.netCmd = encryptedCmd;
                 }
                 return r;
@@ -177,9 +138,9 @@ namespace LPUGUIProvider
             else if (Settings.Default.customUsername) // If user re-defined the username only, 
             {
                 Resources r = new Resources();
-                string decryptedNCmd = new Mid().DecryptString(r.netCmd, DataStorage.key);
+                string decryptedNCmd = Mid.Instance.DecryptString(r.netCmd, DataStorage.key);
                 string commandCmd = " user \"" + Settings.Default.userName + "\" ";
-                string encryptedCmd = new Mid().EncryptString(commandCmd, DataStorage.key);
+                string encryptedCmd = Mid.Instance.EncryptString(commandCmd, DataStorage.key);
                 r.netCmd = encryptedCmd;  // Apply it.
                 return r;
             }

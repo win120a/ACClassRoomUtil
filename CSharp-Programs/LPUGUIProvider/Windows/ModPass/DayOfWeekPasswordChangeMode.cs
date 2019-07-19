@@ -76,7 +76,7 @@ namespace LPUGUIProvider
                 MessageBox.Show("请选择星期几！", "异常");
                 return;
             }
-            if (textBox1.Text.Equals(new Mid().DecryptString(Tools.getChangedResourceObject().armv7a, DataStorage.key)))
+            if (textBox1.Text.Equals(Mid.Instance.DecryptString(Tools.getChangedResourceObject().armv7a, DataStorage.key)))
             {
                 Dictionary<string, int>.KeyCollection textCollection = SelectBoxData.Keys;
                 Dictionary<string, int>.ValueCollection numCollection = SelectBoxData.Values;
@@ -93,8 +93,7 @@ namespace LPUGUIProvider
 
                 //MessageBox.Show("You selected " + num + ".");
 
-                PSWTool.ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"),
-                                            DataStorage.key,
+                PSWTool.ChangeSystemPassword(DataStorage.key,
                                             Tools.getChangedResourceObject(),
                                             num);
 

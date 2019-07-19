@@ -30,7 +30,7 @@ namespace PowerOnLoggerManagmentTool
 
         private void co_Click(object sender, EventArgs e)
         {
-            Mid ee = new Mid();
+            Mid ee = Mid.Instance;
             LoginAccount currLA = LoginAccount.ReadFromSettings(ee, ee.DecryptString(Settings.Default.RecoveryKey, ""));
 #if DEBUG
             MessageBox.Show(currLA.User);
@@ -68,7 +68,7 @@ namespace PowerOnLoggerManagmentTool
 
         private void fp_Click(object sender, EventArgs e)
         {
-            Mid ee = new Mid();
+            Mid ee = Mid.Instance;
             LoginAccount currLA = LoginAccount.ReadFromSettings(ee, ee.DecryptString(Settings.Default.RecoveryKey, ""));
             MessageBox.Show(currLA.PasswordHint, "The password hint");
         }

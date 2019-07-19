@@ -24,7 +24,7 @@ namespace PowerOnLoggerManagmentTool
 {
     public partial class Account : Form
     {
-        private Mid ee = new Mid();
+        private Mid ee = Mid.Instance;
         private LoginAccount currLA;
 
         public Account()

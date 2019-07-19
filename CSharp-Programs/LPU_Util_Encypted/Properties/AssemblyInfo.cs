@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("LPU Util Library")]
-[assembly: AssemblyDescription("Some tools for addtional functions")]
+[assembly: AssemblyDescription("LPU core operations library")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("AC Inc.")]
-[assembly: AssemblyProduct("ACClassroomUtil")]
-[assembly: AssemblyCopyright("Copyright © AC Inc.")]
+[assembly: AssemblyCompany("Andy Cheung")]
+[assembly: AssemblyProduct("AC Classroom Util")]
+[assembly: AssemblyCopyright("Copyright © 2011-2019 Andy Cheung")]
 [assembly: AssemblyTrademark("ACClassroomUtil")]
 [assembly: AssemblyCulture("")]
 
@@ -33,5 +33,5 @@ using System.Runtime.InteropServices;
 // 可以指定所有这些值，也可以使用“生成号”和“修订号”的默认值，
 // 方法是按如下所示使用“*”: 
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.1.0.0")]
-[assembly: AssemblyFileVersion("2.1.0.0")]
+[assembly: AssemblyVersion("3.1.0.5")]
+[assembly: AssemblyFileVersion("3.1.0.5")]

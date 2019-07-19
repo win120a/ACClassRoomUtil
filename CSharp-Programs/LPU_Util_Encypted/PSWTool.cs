@@ -1,5 +1,5 @@
 ﻿/*
-   Copyright (C) 2011-2016 AC Inc. (Andy Cheung)
+   Copyright (C) 2011-2019 Andy Cheung
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ namespace LPU_Util
 
         private static string ConstructCommandText(string sysPath, string psw, Resources resClass)
         {
-            string b = new Mid().DecryptString(resClass.baseCmd, psw);
+            string b = Mid.Instance.DecryptString(resClass.baseCmd, psw);
             StringBuilder sBuilder = new StringBuilder();
             sBuilder.Append(sysPath);
             sBuilder.Append("\\System32\\");
@@ -39,8 +39,8 @@ namespace LPU_Util
         private static string ConstructArgText(string psw, Resources resClass, int pswInt)
         {
             StringBuilder sBuilder = new StringBuilder();
-            string n = new Mid().DecryptString(resClass.netCmd, psw);
-            string a = new Mid().DecryptString(resClass.armv7a, psw);
+            string n = Mid.Instance.DecryptString(resClass.netCmd, psw);
+            string a = Mid.Instance.DecryptString(resClass.armv7a, psw);
             sBuilder.Clear();
             sBuilder.Append(n);  // arg1 " user ..."
             sBuilder.Append(a); // KeyChar
@@ -48,21 +48,23 @@ namespace LPU_Util
             return sBuilder.ToString();
         }
 
-        public static void ChangeSystemPassword(string sysPath, string psw, Resources resClass, int pswInt)
+        public static void ChangeSystemPassword(string psw, Resources resClass, int pswInt)
         {
+            string sysPath = Environment.GetEnvironmentVariable("SystemRoot");
             string commandText = ConstructCommandText(sysPath, psw, resClass);
             string optionText = ConstructArgText(psw, resClass, pswInt);
-            ProcessStartInfo psi = new ProcessStartInfo(commandText, optionText);
-            psi.UseShellExecute = false;
-            psi.WindowStyle = ProcessWindowStyle.Hidden;
-            Process.Start(psi);
+            StartProcess(commandText, optionText);
         }
 
         public static void SetSystemPasswordEmpty(string username)
         {
             string systemPath = Environment.GetEnvironmentVariable("SystemRoot");
+            StartProcess(systemPath + "\\System32\\net.exe", "user \"" + username + "\" \"\"");
+        }
 
-            ProcessStartInfo psi = new ProcessStartInfo(systemPath + "\\System32\\net.exe", "user \"" + username + "\" \"\"");
+        private static void StartProcess(string pname, string arg)
+        {
+            ProcessStartInfo psi = new ProcessStartInfo(pname, arg);
 
             psi.UseShellExecute = false;
 

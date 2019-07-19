@@ -14,8 +14,6 @@
    limitations under the License.
 */
 
-using System;
-
 namespace LPUGUIProvider
 {
     public class DataStorage

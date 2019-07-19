@@ -49,7 +49,7 @@ namespace PowerOnLoggerManagmentTool
 
             remainChance = maxWrongCount - wrongCount;
 
-            Mid ee = new Mid();
+            Mid ee = Mid.Instance;
             LoginAccount currLA = LoginAccount.ReadFromSettings(ee, ee.DecryptString(Settings.Default.RecoveryKey, ""));
 
             if (currLA.Password.Equals(textBox1.Text))

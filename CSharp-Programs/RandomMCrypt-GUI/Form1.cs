@@ -18,8 +18,6 @@ using ACLibrary.Crypto.RandomKeyMixCrypt;
 using System;
 using System.Text;
 using System.Windows.Forms;
-using System.Threading;
-using ACLibrary.Crypto.CryptoProviders;
 
 namespace RMCrypt_GUI
 {

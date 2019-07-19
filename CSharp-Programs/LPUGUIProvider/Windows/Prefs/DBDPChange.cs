@@ -58,7 +58,7 @@ namespace LPUGUIProvider.Windows.Prefs
 
         private void CreateNewEncryptedDatabase()
         {
-            Mid engine = new Mid();
+            Mid engine = Mid.Instance;
             Resources rClass = Tools.getChangedResourceObject();
 
             // Decrypt old database.

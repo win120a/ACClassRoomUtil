@@ -9,9 +9,9 @@ using System.Resources;
 [assembly: AssemblyTitle("AC LPU GUI Provider")]
 [assembly: AssemblyDescription("AC LPU GUI Provider")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("AC Inc.")]
-[assembly: AssemblyProduct("ACClassRoomUtil")]
-[assembly: AssemblyCopyright("Copyright © AC Inc.")]
+[assembly: AssemblyCompany("Andy Cheung")]
+[assembly: AssemblyProduct("AC ClassRoom Util")]
+[assembly: AssemblyCopyright("Copyright © 2011-2019 Andy Cheung")]
 [assembly: AssemblyTrademark("ACClassRoomUtil")]
 [assembly: AssemblyCulture("")]
 
@@ -33,6 +33,6 @@ using System.Resources;
 // 可以指定所有这些值，也可以使用“生成号”和“修订号”的默认值，
 // 方法是按如下所示使用“*”: 
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("5.0.0.1")]
-[assembly: AssemblyFileVersion("5.0.0.1")]
+[assembly: AssemblyVersion("5.2.0.1")]
+[assembly: AssemblyFileVersion("5.2.0.1")]
 [assembly: NeutralResourcesLanguageAttribute("zh-CN")]

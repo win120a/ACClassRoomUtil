@@ -1,5 +1,5 @@
 ﻿/*
-   Copyright (C) 2011-2016 AC Inc. (Andy Cheung)
+   Copyright (C) 2011-2019 Andy Cheung
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -175,9 +175,9 @@ namespace ACCVF
 
             // Online Verify Part
             // Get Verify Message.
-            string onlineMessage = new WebClient().DownloadString("http://win120a.github.io/Api/VChar.txt");
+            string onlineMessage = new WebClient().DownloadString("http://win120a.github.io/api/VChar.txt");
 
-            Mid engine = new Mid();
+            Mid engine = Mid.Instance;
             StringBuilder TBilder = new StringBuilder();
 
             try

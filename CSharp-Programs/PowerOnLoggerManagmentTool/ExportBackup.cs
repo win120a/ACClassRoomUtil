@@ -62,7 +62,7 @@ namespace PowerOnLoggerManagmentTool
             {
                 sb.Append(s + "/");
             }
-            string es = new Mid().EncryptString(sb.ToString(), "123");
+            string es = Mid.Instance.EncryptString(sb.ToString(), "123");
             sw.Write(es);
             sw.Flush();
             sw.Close();
@@ -110,7 +110,7 @@ namespace PowerOnLoggerManagmentTool
                 string name = ofd.FileName;
                 StreamReader sr = new StreamReader(name);
                 string econtent = sr.ReadToEnd();
-                string content = new Mid().DecryptString(econtent, "123");
+                string content = Mid.Instance.DecryptString(econtent, "123");
                 string[] logs = content.Split('/');
                 foreach (string s in logs)
                 {

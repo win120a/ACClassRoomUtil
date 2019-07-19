@@ -40,11 +40,8 @@
     <Reference Include="ACLibrary.Crypto">
       <HintPath>..\..\ACLibrary\ACCryptoAPI\bin\Debug\ACLibrary.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="LPU_Encrypted_Res">
-      <HintPath>..\LPU_Encrypted_Res\bin\Debug\LPU_Encrypted_Res.dll</HintPath>
-    </Reference>
     <Reference Include="LPU_Util_Encypted">
-      <HintPath>..\LPU_Util_Encypted\bin\Debug\LPU_Util_Encypted.dll</HintPath>
+      <HintPath>..\LPU_Util_Encypted\bin\Release\LPU_Util_Encypted.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

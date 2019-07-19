@@ -40,7 +40,7 @@ namespace LPU_GUI
 
                     try
                     {
-                        new Mid().DecryptString(Tools.getChangedResourceObject().baseCmd, usrPass);
+                        Mid.Instance.DecryptString(Tools.getChangedResourceObject().baseCmd, usrPass);
                     }
                     catch (CryptographicException)
                     {
@@ -50,7 +50,7 @@ namespace LPU_GUI
 
                     if (DateTime.Now.DayOfWeek == DayOfWeek.Friday)
                     {
-                        PSWTool.ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"), usrPass, Tools.getChangedResourceObject(), 1);
+                        PSWTool.ChangeSystemPassword(usrPass, Tools.getChangedResourceObject(), 1);
                         return;
                     }
                     else if (DateTime.Now.DayOfWeek == DayOfWeek.Saturday || DateTime.Now.DayOfWeek == DayOfWeek.Sunday)
@@ -59,7 +59,7 @@ namespace LPU_GUI
                     }
                     else
                     {
-                        PSWTool.ChangeSystemPassword(Environment.GetEnvironmentVariable("SystemRoot"), usrPass, Tools.getChangedResourceObject(), ((int)DateTime.Now.DayOfWeek) + 1);
+                        PSWTool.ChangeSystemPassword(usrPass, Tools.getChangedResourceObject(), ((int)DateTime.Now.DayOfWeek) + 1);
                         return;
                     }
                 }
