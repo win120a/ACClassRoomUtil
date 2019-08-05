@@ -24,10 +24,10 @@ namespace PowerOnLoggerManagmentTool
         private string user;
         private string password;
         private string passwordHint;
-        private ICryptoProvider cryptoEngine;
+        private IStringCryptoProvider cryptoEngine;
         private string DBUnlockingPassword;
 
-        public LoginAccount(ICryptoProvider ce, string DBUP)
+        public LoginAccount(IStringCryptoProvider ce, string DBUP)
         {
             DBUnlockingPassword = DBUP;
             cryptoEngine = ce;
@@ -80,7 +80,7 @@ namespace PowerOnLoggerManagmentTool
             settI.Save();
         }
 
-        public static LoginAccount ReadFromSettings(ICryptoProvider icp, string dbup)
+        public static LoginAccount ReadFromSettings(IStringCryptoProvider icp, string dbup)
         {
             Settings settI = Settings.Default;
 

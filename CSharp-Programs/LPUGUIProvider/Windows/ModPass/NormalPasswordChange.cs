@@ -38,7 +38,7 @@ namespace LPUGUIProvider
         {
             DayOfWeek dow = Tools.ReturnTodayInChinese(label1);
 
-            int num = Tools.GenerateDateOfWeekNumber();
+            int num = Tools.GetNextDateOfWeekNumber();
 
             switch (num)
             {
@@ -96,7 +96,7 @@ namespace LPUGUIProvider
             {
                 int num = 0;
 
-                num = Tools.GenerateDateOfWeekNumber();
+                num = Tools.GetNextDateOfWeekNumber();
 
                 //MessageBox.Show("Application is in debugging mode.\n" + 
                 //                "The key varable is: " + 
@@ -109,7 +109,7 @@ namespace LPUGUIProvider
 
                 MessageBox.Show("执行完毕！", "完成");
 
-                Cases.ExecuteCases();
+                Tools.ExecuteCasesByID();
 
                 Application.Exit();
             }

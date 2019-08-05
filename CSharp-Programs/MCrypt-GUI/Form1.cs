@@ -136,13 +136,13 @@ namespace MCrypt_GUI
 
         public void doEncrypt()
         {
-            ICryptoProvider engine = DetermineAndLoadEngine();
+            IStringCryptoProvider engine = DetermineAndLoadEngine();
             DataStore.finalResult = engine.EncryptString(input.Text, DataStore.Key);
         }
 
         public void doDecrypt()
         {
-            ICryptoProvider engine = DetermineAndLoadEngine();
+            IStringCryptoProvider engine = DetermineAndLoadEngine();
             StringBuilder sb = new StringBuilder();
             try
             {
@@ -195,9 +195,9 @@ namespace MCrypt_GUI
             whichMethod = 7;
         }
 
-        private ICryptoProvider DetermineAndLoadEngine()
+        private IStringCryptoProvider DetermineAndLoadEngine()
         {
-            ICryptoProvider ip = null;
+            IStringCryptoProvider ip = null;
             switch (whichMethod)
             {
                 case 0:

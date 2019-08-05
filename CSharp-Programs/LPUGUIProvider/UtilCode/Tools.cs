@@ -26,11 +26,13 @@ namespace LPUGUIProvider
 {
     public sealed class Tools
     {
+        private Tools() { }
+
         /// <summary>
         /// Generate key number after this day.
         /// </summary>
         /// <returns>The result.</returns>
-        internal static int GenerateDateOfWeekNumber()
+        internal static int GetNextDateOfWeekNumber()
         {
             int num = 0;
             DayOfWeek dow = DateTime.Now.DayOfWeek;
@@ -179,7 +181,7 @@ namespace LPUGUIProvider
             Settings.Default.Save();
         }
 
-        public static bool getIgnoreSPSWChange()
+        public static bool GetIgnoreSPSWChange()
         {
             if (!Settings.Default.ignoreSPSWChange)
             {
@@ -204,6 +206,24 @@ namespace LPUGUIProvider
             else
             {
                 return false;
+            }
+        }
+
+        public static void ExecuteCasesByID()
+        {
+            switch (Settings.Default.operateID)
+            {
+                case 0:
+                    return;
+                case 1:
+                    PowerTool.ShutdownSystem();
+                    break;
+                case 2:
+                    PowerTool.RebootSystem();
+                    break;
+                case 3:
+                    PowerTool.LogoffFromSystem();
+                    break;
             }
         }
     }

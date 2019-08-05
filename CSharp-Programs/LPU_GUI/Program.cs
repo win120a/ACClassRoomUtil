@@ -33,7 +33,7 @@ namespace LPU_GUI
         {
             if(args.Length >= 2)
             {
-                if (args[0] == "/q" && !(Tools.getIgnoreSPSWChange()))
+                if (args[0] == "/q" && !(Tools.GetIgnoreSPSWChange()))
                 {
                     string usrPass = args[1];
                     DataStorage.key = args[1];
@@ -50,12 +50,12 @@ namespace LPU_GUI
 
                     if (DateTime.Now.DayOfWeek == DayOfWeek.Friday)
                     {
-                        PSWTool.ChangeSystemPassword(usrPass, Tools.getChangedResourceObject(), 1);
+                        PSWTool.ChangeSystemPassword(usrPass, Tools.getChangedResourceObject(), 1);  // Change the password to Monday's
                         return;
                     }
                     else if (DateTime.Now.DayOfWeek == DayOfWeek.Saturday || DateTime.Now.DayOfWeek == DayOfWeek.Sunday)
                     {
-                        return;
+                        return;   // Don't work in Saturday or Sunday.
                     }
                     else
                     {

@@ -54,7 +54,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UtilCode\Cases.cs" />
     <Compile Include="Windows\ModPass\DayOfWeekPasswordChangeMode.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -97,7 +97,7 @@ namespace LPUGUIProvider
                                             Tools.getChangedResourceObject(),
                                             num);
 
-                Cases.ExecuteCases();
+                Tools.ExecuteCasesByID();
 
                 Application.Exit();
             }
