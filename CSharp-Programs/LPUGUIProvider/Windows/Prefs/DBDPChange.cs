@@ -1,5 +1,5 @@
 ﻿/*
-   Copyright (C) 2011-2016 AC Inc. (Andy Cheung)
+   Copyright (C) 2011-2019 Andy Cheung
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -75,12 +75,14 @@ namespace LPUGUIProvider.Windows.Prefs
 
             // Save it.
             Settings settI = Settings.Default;
+
             settI.BCMD = ebCmd;
             settI.NCMD = enCmd;
             settI.RKC = erkc;
             settI.Tail = etail;
             settI.customAllValue = true;
             settI.customRKCValueOnly = false;
+
             settI.Save();
         }
 

@@ -98,7 +98,7 @@ namespace LPUGUIProvider
                                          r,
                                          dow_int); // Change psw.
 
-            Tools.ExecuteCasesByID();
+            Tools.ExecuteCaseByID();
 
             Application.Exit();
             #endregion

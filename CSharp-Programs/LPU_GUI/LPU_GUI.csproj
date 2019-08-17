@@ -58,13 +58,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\ACLibrary\ACCryptoAPI\bin\Debug\ACLibrary.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="LPUGUIProvider">
-      <HintPath>..\LPUGUIProvider\bin\Release\LPUGUIProvider.dll</HintPath>
-    </Reference>
-    <Reference Include="LPU_Util_Encypted, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\LPU_Util_Encypted\bin\Release\LPU_Util_Encypted.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -124,6 +117,16 @@
       <ProductName>Windows Installer 4.5</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LPUGUIProvider\LPUGUIProvider.csproj">
+      <Project>{d8f23c9d-1dbf-4bc5-833c-0ca5fbdf0efb}</Project>
+      <Name>LPUGUIProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LPU_Util_Encypted\LPU_Util_Encypted.csproj">
+      <Project>{bda2542a-e911-417a-8c65-8c5b20435c97}</Project>
+      <Name>LPU_Util_Encypted</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

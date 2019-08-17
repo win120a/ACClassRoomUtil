@@ -38,7 +38,7 @@ namespace ACCVF
         }
         #endregion
 
-        #region Kernel methods
+        #region Core methods
         public string Hints()
         {
             StringBuilder sb = new StringBuilder();
@@ -115,7 +115,8 @@ namespace ACCVF
             // Check length of the array.
             if (values.Length != 4)
             {
-                MessageBox.Show("非法验证字符！", "警告！");
+                MessageBox.Show("非法验证字符！", "警告！", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // MessageBox.Show("IP地址错", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
@@ -135,6 +136,11 @@ namespace ACCVF
                         dhcp = true;
                     }
                 }
+            }
+
+            if (!dhcp)         // Quit the method if the DHCP Value is wrong. (To make the app faster.)
+            {
+                return false;
             }
 
             // Verify DNS.
@@ -157,6 +163,11 @@ namespace ACCVF
                 }
             }
 
+            if (!dns)
+            {
+                return false;
+            }
+
             // Verify IP
             foreach (string macAddr in NICInfoHelper.GetPrivateNICMAC())
             {
@@ -171,6 +182,11 @@ namespace ACCVF
                         ip = true;  // Set flag to true if passed test.
                     }
                 }
+            }
+
+            if (!ip)
+            {
+                return false;
             }
 
             // Online Verify Part

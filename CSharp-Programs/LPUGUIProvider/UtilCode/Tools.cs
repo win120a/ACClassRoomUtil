@@ -1,5 +1,5 @@
 ﻿/*
-   Copyright (C) 2011-2015 AC Inc. (Andy Cheung)
+   Copyright (C) 2011-2019 Andy Cheung
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -175,41 +175,36 @@ namespace LPUGUIProvider
             sw.Close();
         }
 
-        internal static void setIgnoreSPSWChange(bool value)
-        {
-            Settings.Default.ignoreSPSWChange = value;
-            Settings.Default.Save();
-        }
-
         public static bool GetIgnoreSPSWChange()
         {
-            if (!Settings.Default.ignoreSPSWChange)
+            if (!Settings.Default.ignoreSPSWChange)     // If the flag is false, clear the ignore date and return false.
             {
                 Settings.Default.ignoreDate = new DateTime(1);
+                Settings.Default.Save();
                 return false;
             }
             if (Settings.Default.ignoreDate == new DateTime(1) && Settings.Default.ignoreSPSWChange == false)
             {
                 return false;
             }
-            else if (Settings.Default.ignoreDate == DateTime.Now.Date)
+            else if (Settings.Default.ignoreDate == DateTime.Now.Date)   // Gather the date, and compare with the saved date.
             {
-                return true;
+                return true;   // If equals, true.
             }
-            else if (Settings.Default.ignoreDate < DateTime.Now.Date)
+            else if (Settings.Default.ignoreDate < DateTime.Now.Date)      // If date passed, clear the date and flag.
             {
                 Settings.Default.ignoreDate = new DateTime(1);
                 Settings.Default.ignoreSPSWChange = false;
                 Settings.Default.Save();
                 return false;
             }
-            else
+            else   // Other unexpected situation
             {
                 return false;
             }
         }
 
-        public static void ExecuteCasesByID()
+        public static void ExecuteCaseByID()
         {
             switch (Settings.Default.operateID)
             {

@@ -109,7 +109,7 @@ namespace LPUGUIProvider
 
                 MessageBox.Show("执行完毕！", "完成");
 
-                Tools.ExecuteCasesByID();
+                Tools.ExecuteCaseByID();
 
                 Application.Exit();
             }
