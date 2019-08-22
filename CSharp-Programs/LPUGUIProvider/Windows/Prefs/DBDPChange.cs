@@ -16,11 +16,11 @@
 
 using ACLibrary.Crypto.MixCryptSeries;
 using ACLoginPasswordUtil;
-using LPUGUIProvider.Properties;
+using AC.LPU.GUI.Properties;
 using System;
 using System.Windows.Forms;
 
-namespace LPUGUIProvider.Windows.Prefs
+namespace AC.LPU.GUI.Windows.Prefs
 {
     internal partial class DBDPChange : Form
     {

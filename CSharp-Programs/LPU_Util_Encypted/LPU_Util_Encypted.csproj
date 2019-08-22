@@ -7,7 +7,7 @@
     <ProjectGuid>{BDA2542A-E911-417A-8C65-8C5B20435C97}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LPU_Util_Encypted</RootNamespace>
+    <RootNamespace>AC.LPU.Util</RootNamespace>
     <AssemblyName>LPU_Util_Encypted</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

@@ -1,5 +1,5 @@
 ﻿/*
-   Copyright (C) 2011-2016 AC Inc. (Andy Cheung)
+   Copyright (C) 2011-2019 Andy Cheung
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -14,16 +14,15 @@
    limitations under the License.
 */
 
+using AC.LPU.Util;
 using ACLibrary.Crypto.MixCryptSeries;
-using LPU_Util;
-using LPUGUIProvider;
 using System;
 using System.Security.Cryptography;
 using System.Windows.Forms;
 
-namespace LPU_GUI
+namespace AC.LPU.GUI
 {
-    static class Program
+    static class GUIEntrance
     {
         /// <summary>
         /// 应用程序的主入口点。
@@ -31,7 +30,7 @@ namespace LPU_GUI
         [STAThread]
         static void Main(string[] args)
         {
-            if(args.Length >= 2)
+            if (args.Length >= 2)
             {
                 if (args[0] == "/q" && !(Tools.GetIgnoreSPSWChange()))
                 {

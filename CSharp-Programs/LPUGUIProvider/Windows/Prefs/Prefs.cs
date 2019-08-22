@@ -16,13 +16,13 @@
 
 using ACCVF;
 using ACLibrary.Collection;
-using LPU_Util;
-using LPUGUIProvider.Properties;
-using LPUGUIProvider.Windows.Prefs;
+using AC.LPU.Util;
+using AC.LPU.GUI.Properties;
+using AC.LPU.GUI.Windows.Prefs;
 using System;
 using System.Windows.Forms;
 
-namespace LPUGUIProvider
+namespace AC.LPU.GUI
 {
     internal partial class Prefs : Form
     {

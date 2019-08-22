@@ -16,12 +16,12 @@
 
 using ACLibrary.Crypto.MixCryptSeries;
 using ACLoginPasswordUtil;
-using LPU_Util;
-using LPUGUIProvider.Properties;
+using AC.LPU.Util;
+using AC.LPU.GUI.Properties;
 using System;
 using System.Windows.Forms;
 
-namespace LPUGUIProvider
+namespace AC.LPU.GUI
 {
     public partial class DatePasswordChangeMode : Form
     {

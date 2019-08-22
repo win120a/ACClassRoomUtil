@@ -15,12 +15,12 @@
 */
 
 using ACLibrary.Crypto.MixCryptSeries;
-using LPU_Util;
+using AC.LPU.Util;
 using System;
 using System.Text;
 using System.Windows.Forms;
 
-namespace LPUGUIProvider
+namespace AC.LPU.GUI
 {
     public partial class NormalPasswordChange : Form
     {

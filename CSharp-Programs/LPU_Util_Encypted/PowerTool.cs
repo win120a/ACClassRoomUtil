@@ -17,7 +17,7 @@
 using System;
 using System.Diagnostics;
 
-namespace LPU_Util
+namespace AC.LPU.Util
 {
     public class PowerTool
     {

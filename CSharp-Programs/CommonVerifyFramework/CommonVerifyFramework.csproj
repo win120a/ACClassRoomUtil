@@ -7,7 +7,7 @@
     <ProjectGuid>{9E78F71F-9E8F-4501-BC85-D9C35C49A693}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ACCVF</RootNamespace>
+    <RootNamespace>AC.CommonVerifyFramework</RootNamespace>
     <AssemblyName>accvf</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

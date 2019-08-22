@@ -15,7 +15,7 @@
 */
 
 using System.Windows.Forms;
-namespace LPUGUIProvider.Properties {
+namespace AC.LPU.GUI.Properties {
     
     
     // 通过此类可以处理设置类的特定事件: 

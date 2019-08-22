@@ -14,7 +14,7 @@
    limitations under the License.
 */
 
-namespace LPUGUIProvider
+namespace AC.LPU.GUI
 {
     public class DataStorage
     {

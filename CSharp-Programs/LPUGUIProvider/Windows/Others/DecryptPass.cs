@@ -19,7 +19,7 @@ using ACLoginPasswordUtil;
 using System;
 using System.Windows.Forms;
 
-namespace LPUGUIProvider
+namespace AC.LPU.GUI
 {
     public partial class DecryptPass : Form
     {

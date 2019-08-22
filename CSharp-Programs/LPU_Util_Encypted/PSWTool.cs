@@ -20,7 +20,7 @@ using System;
 using System.Diagnostics;
 using System.Text;
 
-namespace LPU_Util
+namespace AC.LPU.Util
 {
     public class PSWTool
     {
@@ -67,6 +67,8 @@ namespace LPU_Util
             ProcessStartInfo psi = new ProcessStartInfo(pname, arg);
 
             psi.UseShellExecute = false;
+
+            psi.CreateNoWindow = true;
 
             psi.WindowStyle = ProcessWindowStyle.Hidden;
 

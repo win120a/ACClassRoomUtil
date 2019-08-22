@@ -16,11 +16,11 @@
 
 using ACLibrary.Crypto.MixCryptSeries;
 using ACLoginPasswordUtil;
-using LPUGUIProvider.Properties;
+using AC.LPU.GUI.Properties;
 using System;
 using System.Windows.Forms;
 
-namespace LPUGUIProvider
+namespace AC.LPU.GUI
 {
     internal partial class RKCChange : Form
     {

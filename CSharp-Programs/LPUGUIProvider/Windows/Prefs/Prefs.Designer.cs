@@ -1,4 +1,4 @@
-﻿namespace LPUGUIProvider
+﻿namespace AC.LPU.GUI
 {
     partial class Prefs
     {

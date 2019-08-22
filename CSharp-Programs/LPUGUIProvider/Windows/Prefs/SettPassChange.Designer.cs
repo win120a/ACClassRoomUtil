@@ -1,4 +1,4 @@
-﻿namespace LPUGUIProvider.Windows.Prefs
+﻿namespace AC.LPU.GUI.Windows.Prefs
 {
     partial class SettPassChange
     {
