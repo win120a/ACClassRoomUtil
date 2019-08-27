@@ -15,7 +15,7 @@
 */
 
 using ACLibrary.Crypto.MixCryptSeries;
-using ACLoginPasswordUtil;
+using AC.LPU.Res;
 using System;
 using System.Diagnostics;
 using System.Text;
@@ -28,7 +28,7 @@ namespace AC.LPU.Util
 
         private static string ConstructCommandText(string sysPath, string psw, Resources resClass)
         {
-            string b = Mid.Instance.DecryptString(resClass.baseCmd, psw);
+            string b = "net.exe";
             StringBuilder sBuilder = new StringBuilder();
             sBuilder.Append(sysPath);
             sBuilder.Append("\\System32\\");

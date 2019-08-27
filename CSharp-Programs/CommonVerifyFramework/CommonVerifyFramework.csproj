@@ -50,6 +50,12 @@
   <ItemGroup>
     <Compile Include="ACCommonVerify.cs" />
     <Compile Include="IVerifier.cs" />
+    <Compile Include="LargeOperationVerifyCallback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LargeOperationVerifyCallback.Designer.cs">
+      <DependentUpon>LargeOperationVerifyCallback.cs</DependentUpon>
+    </Compile>
     <Compile Include="LargeOperationVerify.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="LargeOperationVerifyCallback.resx">
+      <DependentUpon>LargeOperationVerifyCallback.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LargeOperationVerify.resx">
       <DependentUpon>LargeOperationVerify.cs</DependentUpon>
     </EmbeddedResource>

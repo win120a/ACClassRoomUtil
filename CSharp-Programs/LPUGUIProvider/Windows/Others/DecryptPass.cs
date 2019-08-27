@@ -14,8 +14,8 @@
    limitations under the License.
 */
 
+using AC.LPU.Res;
 using ACLibrary.Crypto.MixCryptSeries;
-using ACLoginPasswordUtil;
 using System;
 using System.Windows.Forms;
 
@@ -34,12 +34,12 @@ namespace AC.LPU.GUI
 
             if (Properties.Settings.Default.customAllValue)
             {
-                r.baseCmd = Properties.Settings.Default.BCMD;
+                r.netCmd = Properties.Settings.Default.NCMD;
             }
 
             try
             {
-                Mid.Instance.DecryptString(r.baseCmd, textBox1.Text);
+                Mid.Instance.DecryptString(r.netCmd, textBox1.Text);
             }
             catch (System.Security.Cryptography.CryptographicException ex)
             {

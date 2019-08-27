@@ -15,7 +15,7 @@
 */
 
 using ACLibrary.Crypto.MixCryptSeries;
-using ACLoginPasswordUtil;
+using AC.LPU.Res;
 using AC.LPU.Util;
 using AC.LPU.GUI.Properties;
 using System;
@@ -109,7 +109,6 @@ namespace AC.LPU.GUI
             if (Settings.Default.customAllValue)  // If user defined a new database decryption password, 
             {
                 Resources r = new Resources();
-                r.baseCmd = Settings.Default.BCMD;
                 r.netCmd = Settings.Default.NCMD;
 
                 if (Settings.Default.customUsername)  // If user changed the username, the program have to apply it.

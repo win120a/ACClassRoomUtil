@@ -39,7 +39,7 @@ namespace AC.LPU.GUI
 
                     try
                     {
-                        Mid.Instance.DecryptString(Tools.getChangedResourceObject().baseCmd, usrPass);
+                        Mid.Instance.DecryptString(Tools.getChangedResourceObject().netCmd, usrPass);
                     }
                     catch (CryptographicException)
                     {

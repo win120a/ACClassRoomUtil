@@ -14,11 +14,11 @@
    limitations under the License.
 */
 
-using ACCVF;
-using ACLibrary.Collection;
-using AC.LPU.Util;
 using AC.LPU.GUI.Properties;
 using AC.LPU.GUI.Windows.Prefs;
+using AC.LPU.Util;
+using ACCVF;
+using ACLibrary.Collection;
 using System;
 using System.Windows.Forms;
 
@@ -37,7 +37,7 @@ namespace AC.LPU.GUI
         {
             Settings.Default.operateID = SelectBoxData[comboBox1.Text];
             Settings.Default.userName = userName.Text;
-            
+
             if (userName.Text == "Administrator")
             {
                 Settings.Default.customUsername = false;

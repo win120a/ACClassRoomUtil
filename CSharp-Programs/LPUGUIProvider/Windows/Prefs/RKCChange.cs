@@ -14,9 +14,9 @@
    limitations under the License.
 */
 
-using ACLibrary.Crypto.MixCryptSeries;
-using ACLoginPasswordUtil;
 using AC.LPU.GUI.Properties;
+using AC.LPU.Res;
+using ACLibrary.Crypto.MixCryptSeries;
 using System;
 using System.Windows.Forms;
 

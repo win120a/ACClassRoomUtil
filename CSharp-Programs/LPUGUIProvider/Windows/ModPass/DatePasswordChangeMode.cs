@@ -14,10 +14,9 @@
    limitations under the License.
 */
 
-using ACLibrary.Crypto.MixCryptSeries;
-using ACLoginPasswordUtil;
+using AC.LPU.Res;
 using AC.LPU.Util;
-using AC.LPU.GUI.Properties;
+using ACLibrary.Crypto.MixCryptSeries;
 using System;
 using System.Windows.Forms;
 
@@ -55,7 +54,7 @@ namespace AC.LPU.GUI
             DateTime dt = DateTime.Parse(picker.Text); // Parse text to object.
 
             Properties.Settings.Default.dueDate = dt; // Save it.
-            
+
             Properties.Settings.Default.Save(); // Save to settings zone.
             #endregion
 

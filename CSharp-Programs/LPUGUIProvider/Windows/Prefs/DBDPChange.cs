@@ -14,9 +14,9 @@
    limitations under the License.
 */
 
-using ACLibrary.Crypto.MixCryptSeries;
-using ACLoginPasswordUtil;
 using AC.LPU.GUI.Properties;
+using AC.LPU.Res;
+using ACLibrary.Crypto.MixCryptSeries;
 using System;
 using System.Windows.Forms;
 
@@ -62,13 +62,11 @@ namespace AC.LPU.GUI.Windows.Prefs
             Resources rClass = Tools.getChangedResourceObject();
 
             // Decrypt old database.
-            string bCmd = engine.DecryptString(rClass.baseCmd, DataStorage.key);
             string nCmd = engine.DecryptString(rClass.netCmd, DataStorage.key);
             string rkc = engine.DecryptString(rClass.armv7a, DataStorage.key);
             string tail = engine.DecryptString(rClass.tail, DataStorage.key);
 
             // Create new database.
-            string ebCmd = engine.EncryptString(bCmd, n.Text);
             string enCmd = engine.EncryptString(nCmd, n.Text);
             string erkc = engine.EncryptString(rkc, n.Text);
             string etail = engine.EncryptString(tail, n.Text);
@@ -76,7 +74,6 @@ namespace AC.LPU.GUI.Windows.Prefs
             // Save it.
             Settings settI = Settings.Default;
 
-            settI.BCMD = ebCmd;
             settI.NCMD = enCmd;
             settI.RKC = erkc;
             settI.Tail = etail;
